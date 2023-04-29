@@ -310,3 +310,91 @@ footer{
 .h2Ropa {
 	padding-top: 90px;
 }
+
+/* ACA COMIENZA LA CSS DE CONSEJOSSALUD*/
+
+.sectionNoBackground{						/*section que Contiene a todos los articulos, aplica sin background*/
+	width: 80%;
+	background-position: center;
+  	background-size: cover;
+  	background-repeat:no-repeat ;
+  	max-width: 100%; 	
+}
+
+ul a:hover{
+	color: #93ebeb; 
+	text-shadow: 0 0 1px white;
+	}
+
+ul a:active{
+	color: #fdbb2d;
+	text-shadow: 0 0 1px white;
+}
+
+.h2Salud {
+	font-size:30px;
+	font-family:Times New Roman,Arial,Helvetica; 
+	font-style: italic;
+	font-weight: bold;
+	margin-bottom: 20px;
+	text-shadow: 3px 3px 6px white;
+}
+
+#figura1Salud{
+	height:8%;
+	margin:15px;
+	background-image:url("../Images/imagen1Salud.jpg");
+	background-position: center;
+  	background-size: 97%;
+  	background-repeat:no-repeat ;
+  	
+}
+
+#figura2Salud{
+	height:8%;
+	margin:15px;
+	background-image:url("../Images/imagen2Salud.jpg");
+	background-position: center;
+  	background-size: 100%;
+  	background-repeat:no-repeat ;
+  		
+}
+
+#figura3Salud{
+	height:8%;
+	margin:15px;
+	background-image:url("../Images/imagen3Salud.jpg");
+	background-position: center;
+  	background-size: 100%;
+  	background-repeat:no-repeat ;
+  		
+}
+
+#figura4Salud{
+	height:8%;
+	margin:15px;
+	background-image:url("../Images/imagen4Salud.jpg");
+	background-position: center;
+  	background-size: 100%;
+  	background-repeat:no-repeat ;
+  		
+}
+
+#figura5Salud{
+	height:8%;
+	margin:15px;
+	background-image:url("../Images/imagen5Salud.jpg");
+	background-position: center;
+  	background-size: 100%;
+  	background-repeat:no-repeat ;
+  		
+}
+
+#h2Consejos {
+	font-size:30px;
+	font-family:Times New Roman,Arial,Helvetica; 
+	font-style: italic;
+	font-weight: bold;
+	margin-bottom: 20px;
+	text-shadow: 3px 3px 6px black;
+}
