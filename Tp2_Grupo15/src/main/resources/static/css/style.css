@@ -160,3 +160,153 @@ footer{
 .slider input[type="radio"]:checked ~ img {
    opacity: 1; 
 }
+
+/* ACA COMIENZA EL CSS DE PRODUCTOS*/
+
+#bodyProductos {
+    background: radial-gradient(#fdbb2d, #22c1c3);
+}
+
+
+#headerProductos {
+   background-color: white;
+    width: 1325px;
+    height: 100px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+}
+
+#navProductos ul {
+    display:flex;
+    line-height: 50px;
+    list-style: none;
+}
+
+#navProductos ul li {
+    margin: auto;
+    
+}
+
+#navProductos ul li a:hover {
+    color: aquamarine;
+}
+
+#navProductos ul li :link {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    margin:auto;
+    color: black;
+    
+}
+
+#navProductos ul li :visited {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    margin:auto;
+    color: black;
+}
+
+#contenedor {
+    background-color: white ;
+    width: 1325px;
+    margin: auto;
+    border: 1px solid grey;
+    box-shadow: 0 4px 15px 0 lightblue;
+
+}
+
+.articulos__section {
+    width: 1325px;
+    
+}
+
+.articuloProductos {
+    width: 485.84px;
+    height: 500px;
+    margin: auto;
+    background-color: bisque;
+    border: 2px solid black;
+    box-shadow: 2px 4px 15px 0 black;
+}
+
+#ar {
+	font-size:15px
+	
+}
+
+.articulos__section h2 {
+    font-size:40px;
+	font-family:Times New Roman,Arial,Helvetica; 
+	font-style: italic;
+	font-weight: bold;
+	text-shadow: 3px 3px 6px black;
+    height: 150px;
+    text-align: center;
+    line-height: 100px;
+}
+
+.div__articulos {
+    display: flex;
+    text-align: center;
+    margin: auto;
+}
+
+
+.articuloProductos img {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+}
+
+#navProductos {
+    background-color: white;
+    width: 1325px;
+    height: 50px;
+    margin: auto;   
+}
+
+
+
+.headerProductos__input {
+    width: 1000px;
+    height: 50px;
+    border: 3px solid black;
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#headerProductos img {
+    height: 100px;
+}
+
+.headerProductos__p {
+    font-size: 20px;
+    margin-left: 40px;
+    margin-top: 35px;
+}
+
+#footerProductos {
+    font-size: 30px;
+    height: 90px;
+    background: radial-gradient(#fdbb2d, #22c1c3);
+    border: 1px solid gray;
+    width: 1325px;
+    margin: auto;
+    display: flex;
+    align-items: flex-end;
+    box-shadow: 0 4px 15px 0 lightblue;
+}
+
+.h2Juguetes {
+    padding-top: 90px;
+}
+
+.h2Ropa {
+	padding-top: 90px;
+}
