@@ -1,0 +1,162 @@
+/*@charset "ISO-8859-1";*/
+*{						 /*Quitar todo margen y padding predefinidos*/
+	margin: 0px;
+	padding: 0px;
+}
+
+body{					/*Capa base de toda pagina*/
+	 background: radial-gradient(#fdbb2d, #22c1c3);
+	 font-family: sans-serif;
+	 font-style: italic;
+}
+
+header{					/*Cabecera, se aplica margenes der e izq en 40px*/
+	margin: 20px 40px;
+}
+
+h1{						 /*Titulo Principal de Pagina*/
+	font-size:40px;
+	font-family:Times New Roman,Arial,Helvetica; 
+	font-style: italic;
+	font-weight: bold;
+	margin-bottom: 20px;
+	text-shadow: 3px 3px 6px white;
+}
+
+
+#menuPrincipal{			/*id de nav, se aplica margen y centrado de toda la barra de navegacion*/
+	margin:20px;
+	text-align: center;
+}
+
+#menuPrincipal ul li{   /*Se trabaja sobre lista quitando estilo predefinido, alineando lista y aplicando margen entre cada elemento de lista*/
+	list-style:none;
+	display: inline;
+	margin:20px;
+}
+
+header a{ text-decoration: none;      /*Se Quita estilos de texto predefinido(subrayado) y se aplica color blanco al texto*/            
+          font-weight: bold ; 
+          color: white;
+          }
+          
+header a:hover{ color: #93ebeb; }               
+
+#menuPrincipal li:nth-child(1){
+	color: #93ebeb;
+	text-shadow: 3px 3px 6px black;
+}
+
+.conteiner{						/*div que contiene un section y un aside, se aplica los mismos margenes al igual que a header*/
+	display: flex;
+	margin: 20px 40px;
+}
+
+.section{						/*section que Contiene a todos los articulos*/
+	width: 80%;
+	background-image: linear-gradient( 0deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2) ),url("../Images/imagenfondo.jpg");
+	background-position: center;
+  	background-size: cover;
+  	background-repeat:no-repeat ;
+  	max-width: 100%;
+  	
+}
+
+.articulos{
+	
+	margin: 50px 60px;
+	border: 1px solid white;
+	padding:20px;
+	
+}
+
+h3{
+	margin: 10px 10px;
+	
+}
+
+#listaSecundaria, p{
+	text-shadow: 0 0 3px white;
+	font-weight: bold ;
+}
+
+#listaSecundaria li{
+	margin: 10px 20px;
+}
+
+.publicidad{
+	width: 20%;                 
+    font-weight: bold ; 
+    text-align: center;
+    color: white;
+}
+
+#figura1{
+	height:30%;
+	margin:15px;
+	background-image:url("../Images/imagen1.gif");
+	background-position: center;
+  	background-size: 100%;
+  	background-repeat:no-repeat ;
+  	
+}
+
+#figura2{
+	height:30%;
+	margin:15px;
+	background-image:url("../Images/Imagen2.jpg");
+	background-position: center;
+  	background-size: 100%;
+  	background-repeat:no-repeat ;
+  		
+}
+
+#figura3{
+	height:30%;
+	margin:15px;
+	background-image:url("../Images/Imagen3.jpg");
+	background-position: center;
+  	background-size: 100%;
+  	background-repeat:no-repeat ;
+  		
+}
+
+footer{
+	text-align:right ; 
+	color: rgb(100,100,100);
+}
+
+
+
+.slider{
+    width: 100%;
+    height: 300px;
+    margin: 0px;
+    position: relative;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.slider img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.7s;
+}
+
+.slider input[type="radio"] {
+    position: relative;
+    z-index: 50;
+    margin: 10px;
+    opacity:0.4;
+}
+
+.slider input[type="radio"]:checked ~ img {
+   opacity: 1; 
+}
