@@ -398,3 +398,219 @@ ul a:active{
 	margin-bottom: 20px;
 	text-shadow: 3px 3px 6px black;
 }
+
+/*ACA COMIENZA CONTACTANOS */
+
+#bodyContacto {
+    background: radial-gradient(#fdbb2d, #22c1c3);
+}
+
+
+#headerContacto {
+    height: 405.455px;
+    width: 1144.550px;
+    margin: auto;
+    
+}
+
+
+#headerContacto h1 {
+    font-size:40px;
+	font-family:Times New Roman,Arial,Helvetica; 
+	font-style: italic;
+	font-weight: bold;
+	margin-bottom: 20px;
+	text-shadow: 3px 3px 6px white;
+    
+}
+
+#headerContacto a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+#headerContacto a:hover{
+    color: aquamarine;
+}
+
+
+#navContacto {
+    margin:20px;
+	text-align: center;
+}
+
+#navContacto li:nth-child(1) {
+    color: #93ebeb;
+	text-shadow: 3px 3px 6px black
+}
+
+#navContacto ul li {
+    list-style:none;
+	display: inline;
+	margin:20px;
+}
+
+#sectionContacto {
+    background: transparent;
+    height: 700px;
+    width: 700px;
+    margin: auto;
+    border: 2px solid #1c5;
+}
+
+#sectionContacto h2 {
+    color: black;
+    text-align: center;
+}
+
+#sectionContacto ul {
+    padding-left: 30px;
+}
+
+#section__imagen {
+    width: 150px;
+    height: 150px;
+    border-radius: 10%;
+}
+
+#navContactos__section {
+    padding: 10px;
+}
+
+.texto__section {
+    padding: 10px;
+    background: transparent;
+}
+
+#section__imagenDiv {
+        height: 100px;
+        width: 500px;
+        text-align: center;
+        padding: 20px;
+}
+
+#sectionpContacto__section ul{
+    margin: auto;
+}
+
+#asideContacto{
+    background: transparent;
+    margin: auto;
+    width: 700px;
+    height: 700px;
+    text-align: center;
+    border: 2px solid #1c5;
+
+}
+
+#asideContacto img {
+    display: block;
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+    margin: auto;
+}
+
+
+
+#contenedorContacto2 {
+    width: 1144.550px;
+    height: 700px;
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+    
+}
+
+#contendor__input {
+    text-align: center;
+}
+
+#contendor__input input {
+    background: transparent;
+    width: 500px;
+    height: 50px;
+    margin: 6px 0;
+    border: none;
+    border-bottom: 2px solid #1c5;
+}
+
+#contendor__input input:focus {
+    background: linear-gradient(to bottom,transparent,#b8b7b7);
+    outline: none;
+    border-bottom: 2px solid #5f9;
+}
+
+#contenedorContacto2 button[type="submit"]{
+    background-color: #094;
+    border: none;
+    border-bottom: 2px solid #1c5;
+}
+
+
+#unicoBoton {
+    width: 500px;
+    height: 50px;
+}
+
+#footerContacto {
+    display: block;
+    background: radial-gradient(#fdbb2d, #22c1c3);
+    width: 1144.550px;
+    height: 50px;
+    font-size: 20px;
+    margin: auto;
+    margin-top: 20px;
+    text-align: end;
+    line-height: 50px;
+
+}
+
+#mensaje {
+    background: linear-gradient(to bottom,transparent,#333);
+    width: 500px;
+    height: 50px;
+    margin: 6px 0;
+    border: none;
+    border-bottom: 2px solid #1c5;
+}
+
+#mensaje:focus {
+    background: linear-gradient(to bottom,transparent,#b8b7b7);
+    outline: none;
+    border-bottom: 2px solid #5f9;
+}
+
+
+.slider{
+    width: 100%;
+    height: 300px;
+    margin: 0px;
+    position: relative;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.slider img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.7s;
+}
+
+.slider input[type="radio"] {
+    position: relative;
+    z-index: 50;
+    margin: 10px;
+    opacity:0.4;
+}
+
+.slider input[type="radio"]:checked ~ img {
+   opacity: 1; }
