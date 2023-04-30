@@ -44,7 +44,7 @@ header a:hover{ color: #93ebeb; }
 
 #menuPrincipal li:nth-child(1){
 	color: #93ebeb;
-	text-shadow: 3px 3px 6px black;
+	
 }
 
 .conteiner{						/*div que contiene un section y un aside, se aplica los mismos margenes al igual que a header*/
@@ -122,7 +122,7 @@ h3{
 }
 
 footer{
-	text-align:right ; 
+	text-align:center ; 
 	color: rgb(100,100,100);
 }
 
@@ -614,3 +614,40 @@ ul a:active{
 
 .slider input[type="radio"]:checked ~ img {
    opacity: 1; }
+   
+/*Servicios de Paseo*/
+
+h2{
+	text-align: center;
+	}
+
+.conteinerServiciosPaseo{
+	margin: 20px 40px;
+	justify-content: center ;
+	display: flex;
+}
+
+
+table, th, td {
+	border: 1px solid;
+	justify-content: center ;
+	align-items: center;
+	text-align: center;
+}
+th,td{
+	padding:10px;
+}
+
+
+.GuiaServicios{
+	margin: 20px 40px;
+	display:flex;
+	justify-content: center ;
+	align-items: center;
+	text-align: center;
+}
+
+.forma{
+	width: 33%;
+	
+}

@@ -3,25 +3,48 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Servicios de Paseo</title>
+		<link rel="stylesheet" href="../static/css/style.css">
 	</head>
 <body>
 	<header>
 		<h1>Todo Mascotas</h1>
-		<nav>
+		
+		<ul class="slider">
+            <li>
+                <input type="radio" id="sbutton1" name="sradio" checked>
+                <label for="sbutton1"></label>
+                <img alt="ImagenMascotas" src="../static/Images/Imagen5.jpg" title="Todo Mascotas">
+             </li>
+            <li>
+                <input type="radio" id="sbutton2" name="sradio" >
+                <label for="sbutton2"></label>
+                <img alt="ImagenMascotas" src="../static/Images/Imagen4.jpg" title="Todo Mascotas">
+             </li>
+            <li>
+                <input type="radio" id="sbutton3" name="sradio">
+                <label for="sbutton3"></label>
+                <img alt="ImagenMascotas" src="../static/Images/Mascotas.jpeg" title="Todo Mascotas">
+            </li>
+        </ul>
+		
+		<nav id="menuPrincipal">
 			<ul>
 				<li style="display: inline;"><a href="index.html">Inicio</a></li>
 				<li style="display: inline;"><a href="./productos.html">Productos</a></li>
 				<li style="display: inline;"><a href="ConsejosSaludo.html">Consejos de Salud</a></li>
-				<li style="display: inline;"><a href="./ServiciosPaseo.html">Servicios de Paseo</a></li>
+				<li style="display: inline;"><a href="./ServiciosPaseo.html" style="text-shadow: 3px 3px 6px black;">Servicios de Paseo</a></li>
 				<li style="display: inline;"><a href="Sucursales.html">Sucursales</a></li>
 				<li style="display: inline;"><a href="./contactanos.html">Contactenos</a></li>
 			</ul>
 		</nav>
-		<img alt="" src="../static/Images/Mascotas.jpeg" title="Todo Mascotas" style="width: 100%">
+		
 	</header>
-	<h2 style="display: flex ; justify-content: center ; align-items: center">Servicios de Paseo</h2>
-	<div style="display: flex ; justify-content: center;margin-bottom: 4em">
-    <table border="1">
+	
+	
+	<h2>Servicios de Paseo</h2>
+	<div class="conteinerServiciosPaseo" >
+    
+    <table>
     	<tr>
             <th>Dia</th>
             <th>Lunes</th>
@@ -51,9 +74,24 @@
         </tr>
     </table>
     </div>
-    <footer style="display: flex ; justify-content: right ; text-align:right ;color: rgb(100,100,100);">
-		<p style="margin:0">Copyright 2023 - Todo Mascotas - Diseñado por Grupo 15 - Jujuy - Argentina
-		<br>Integrantes: Castellón Agustin Miqueas, Vilte Ezequiel Carlos, Correjidor Alexis Gabriel</p>
+    
+    <div class="GuiaServicios">
+    <section class="forma">
+    	<h3>Encuentra</h3>
+    	<p>Paseadores y cuidadores calificados en tu zona</p>
+    </section>
+    <section class="forma">
+    	<h3>Evalúa</h3>
+    	<p>Elige días y horarios de acuerdo a tus necesidades</p>
+    </section>
+    <section class="forma">
+    	<h3>Acuerda</h3>
+    	<p>Negocia las condiciones de trabajo con los paseadores o cuidadores</p>
+    </section>
+    </div>
+    
+    <footer>
+		&copy; Copyright 2023 - Todo Mascotas - Diseñado por Grupo 15 - Jujuy - Argentina
 	</footer>
 </body>
 </html>
