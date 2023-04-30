@@ -1,65 +1,89 @@
 <!DOCTYPE html>
-	<html lang="es">
-		<head>
-			<meta charset="UTF-8">
-			<title>Contactnos</title>
-		</head>
-		<body>
-			<section>
-				<h1>Todo Mascotas</h1>
-				<nav>
-				<ul>
-					<li style="display: inline;"><a href="index.html">Inicio</a></li>
-					<li style="display: inline;"><a href="./productos.html">Productos</a></li>
-					<li style="display: inline;"><a href="ConsejosSaludo.html">Consejos de Salud</a></li>
-					<li style="display: inline;"><a href="./ServiciosPaseo.html">Servicios de Paseo</a></li>
-					<li style="display: inline;"><a href="Sucursales.html">Sucursales</a></li>
-					<li style="display: inline;"><a href="./contactanos.html">Contactenos</a></li>
-				</ul>
-				</nav>
-				<img alt="ImagenMascotas" src="../static/Images/Mascotas.jpeg" title="Todo Mascotas" style="width: 100%">
-			</section>
-			
-			<section>
-				<h2>Contáctenos</h2>
-				<p>
-					3915 Av. General Belgrano. 388-4999999
-					<br>
-					Lunes a viernes: 9:00 a. m a 8:00 p. m.
-					<br>
-					Sábado a domingo: 9:00 a. m a 12:30 p. m.
-					<br>
-					<a href="mailto:contactos@email.com.ar">contactos@email.com.ar</a>
-					<br>
-				</p>
-				
-				<ul>
-					<li><a href="https://www.facebook.com/" target=_blank>Facebook</a></li>
-					<li><a href="https://www.instagram.com/" target=_blank>Instagram</a></li>
-					<li><a href="https://twitter.com/i/flow/login" target=_blank>Twitter</a></li>
-				</ul>
-				<p>
-					<label for="nombre">Nombre</label>
-					<input type="text" name="nombre" placeholder="Ingrese su nombre" id="nombre" required>
-					<br>
-					<br>
-					<label for="email">Email</label>
-					<input type="text" name="email" placeholder="Ingrese su email" id="email" required>
-					<br>
-					<br>
-					<label for="ciudad">Ciudad</label>
-					<input type="text" name="ciudad" placeholder="Ingrese su ciudad" id="ciudad" required>
-					<br>
-					<br>
-					<label for="mensaje">Mensaje</label>
-					<textarea id="mensaje"></textarea>
-					<br>
-					<button type="submit">Enviar</button>
-				</p>
-			</section> 
-			<footer style="display: flex ; justify-content: right ; text-align:right ;color: rgb(100,100,100);">
-				<p style="margin:0">Copyright 2023 - Todo Mascotas - Diseñado por Grupo 15 - Jujuy - Argentina
-				<br>Integrantes: Castellón Agustin Miqueas, Vilte Ezequiel Carlos, Correjidor Alexis Gabriel</p>
-			</footer>
-		</body>
-	</html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body id="bodyContacto">
+    <header id="headerContacto">
+      <h1>Todo Mascotas</h1>
+      <!--<img alt="ImagenMascotas" src="../static/Images/Mascotas.jpeg" title="Todo Mascotas" style="width: 100%"> -->
+      <ul class="slider">
+        <li>
+          <input type="radio" id="sbutton1" name="sradio" checked />
+          <label for="sbutton1"></label>
+          <img alt="ImagenMascotas" src="../static/Images/Imagen5.jpg" title="Todo Mascotas">
+        </li>
+        <li>
+          <input type="radio" id="sbutton2" name="sradio" />
+          <label for="sbutton2"></label>
+          <img alt="ImagenMascotas" src="../static/Images/Imagen4.jpg" title="Todo Mascotas">
+        </li>
+        <li>
+          <input type="radio" id="sbutton3" name="sradio" />
+          <label for="sbutton3"></label>
+          <img alt="ImagenMascotas" src="../static/Images/Mascotas.jpeg" title="Todo Mascotas">
+        </li>
+      </ul>
+
+      <nav id="navContacto">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="./productos.html">Productos</a></li>
+          <li><a href="ConsejosSaludo.html">Consejos de Salud</a></li>
+          <li><a href="./ServiciosPaseo.html">Servicios de Paseo</a></li>
+          <li><a href="Sucursales.html">Sucursales</a></li>
+          <li><a href="./contactanos.html">Contactenos</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="contenedorContacto2">
+      <section id="sectionContacto">
+        <h2>Contáctenos</h2>
+        <div class="texto__section">
+          <p>3915 Av. General Belgrano. 388-4999999</p>
+          <p>Lunes a viernes: 9:00 a. m a 8:00 p. m.</p>
+          <p>Sábado a domingo: 9:00 a. m a 12:30 p. m.</p>
+          <a href="mailto:contactos@email.com.ar">contactos@email.com.ar</a>
+        </div>
+        <nav id="navContactos__section">
+          <ul>
+            <li>
+              <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+            </li>
+            <li>
+              <a href="https://twitter.com/i/flow/login" target="_blank">Twitter</a>
+            </li>
+          </ul>
+        </nav>
+        <div id="contendor__input">
+            <input type="text" name="nombre" placeholder="Ingrese su nombre" id="nombre" required>
+            <input type="text" name="email" placeholder="Ingrese su email" id="email" required>
+            <input type="text" name="ciudad" placeholder="Ingrese su ciudad" id="ciudad" required>
+            <textarea id="mensaje" placeholder="Mensaje"></textarea>
+            <div>
+              <button type="submit" id="unicoBoton">Enviar</button>
+            </div>
+        </div>
+        <div id="section__imagenDiv">
+          <img src="../static/Images/correo.jpg" alt="correo" id="section__imagen">
+        </div>
+      </section>
+      <aside id="asideContacto">
+        <h2>Publícidad</h2>
+        <img src="../static/Images/imagen1.gif" alt="" />
+        <img src="../static/Images/Imagen2.jpg" alt="" />
+      </aside>
+    </div>
+    <footer id="footerContacto">
+      <p>Copyright 2023 - Todo Mascotas - Diseñado por Grupo 15 - Jujuy - Argentina</p>
+    </footer>
+  </body>
+</html>
