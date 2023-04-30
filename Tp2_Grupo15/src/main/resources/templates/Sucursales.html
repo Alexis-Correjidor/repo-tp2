@@ -3,45 +3,78 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Sucursales</title>
+		<link rel="stylesheet" href="../static/css/style.css">
 	</head>
 <body>
 	<header>
 		<h1>Todo Mascotas</h1>
-		<nav>
+		
+		<!--<img alt="ImagenMascotas" src="../static/Images/Mascotas.jpeg" title="Todo Mascotas" style="width: 100%"> -->
+		
+		<ul class="slider">
+            <li>
+                <input type="radio" id="sbutton1" name="sradio" checked>
+                <label for="sbutton1"></label>
+                <img alt="ImagenMascotas" src="../static/Images/Imagen5.jpg" title="Todo Mascotas">
+             </li>
+            <li>
+                <input type="radio" id="sbutton2" name="sradio" >
+                <label for="sbutton2"></label>
+                <img alt="ImagenMascotas" src="../static/Images/Imagen4.jpg" title="Todo Mascotas">
+             </li>
+            <li>
+                <input type="radio" id="sbutton3" name="sradio">
+                <label for="sbutton3"></label>
+                <img alt="ImagenMascotas" src="../static/Images/Mascotas.jpeg" title="Todo Mascotas">
+            </li>
+        </ul>
+		
+		<nav id="menuPrincipal">
 			<ul>
-				<li style="display: inline;"><a href="index.html">Inicio</a></li>
-				<li style="display: inline;"><a href="./productos.html">Productos</a></li>
-				<li style="display: inline;"><a href="ConsejosSaludo.html">Consejos de Salud</a></li>
-				<li style="display: inline;"><a href="./ServiciosPaseo.html">Servicios de Paseo</a></li>
-				<li style="display: inline;"><a href="Sucursales.html">Sucursales</a></li>
-				<li style="display: inline;"><a href="./contactanos.html">Contactenos</a></li>
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="./productos.html">Productos</a></li>
+				<li><a href="ConsejosSaludo.html">Consejos de Salud</a></li>
+				<li><a href="./ServiciosPaseo.html">Servicios de Paseo</a></li>
+				<li><a href="Sucursales.html">Sucursales</a></li>
+				<li><a href="./contactanos.html">Contactenos</a></li>
 			</ul>
 		</nav>
-		<img alt="ImagenMascotas" src="../static/Images/Mascotas.jpeg" title="Todo Mascotas" style="width: 100%">
 	</header>
-	<h2>Sucursales</h2>
-	<div>
-		Visitenos en nuestras diferentes sucursales: 
-		<ul>
-			<li><strong>Jujuy</strong></li>
-				<ul>
-					<li><strong>B° Centro</strong></li>
-					<li><strong>Dirección:</strong> Av. General Belgrano 3915</li>
-					<li><strong>Telefono:</strong> +5493884999999</li>
-				</ul>
-			<li><strong>Jujuy</strong></li>
-				<ul>
-					<li><strong>B° Bajo la viña</strong></li>
-					<li><strong>Dirección:</strong> Belgrano 1530</li>
-					<li><strong>Telefono:</strong> +5493885167839</li>
-				</ul>
-			<li><strong>Salta</strong></li>
-				<ul>
-					<li><strong>B° Centro</strong></li>
-					<li><strong>Dirección:</strong> Balvin 1030</li>
-					<li><strong>Telefono:</strong> +5493884192238</li>
-				</ul>
-		</ul>
+	
+	<div class="conteiner">
+		<section class="sectionNoBackground">
+				<h2 class="h2Salud">Sucursales</h2>
+				Encontrá las direcciones y horarios de atención de todas nuestras sucursales.
+				<nav id="navSucursales">
+					<ul id="listaSecundaria">
+						
+							<li><strong>Todo Mascotas - Local 1</strong></li>
+								<ul>
+									<li><strong>Jujuy</strong></li>
+									<li><strong>B° Centro</strong></li>
+									<li><strong>Dirección:</strong> Av. General Belgrano 3915</li>
+									<li><strong>Telefono:</strong> +5493884999999</li> 
+									<li><strong>Horarios: LU/SAB: 09:00 a 12:00hs - 17:00 a 21:00hs </strong></li>
+								</ul>
+							<li><strong>Todo Mascotas - Local 2</strong></li>
+								<ul>
+									<li><strong>Jujuy</strong></li>
+									<li><strong>B° Bajo la viña</strong></li>
+									<li><strong>Dirección:</strong> Belgrano 1530</li>
+									<li><strong>Telefono:</strong> +5493885167839</li>
+									<li><strong>Horarios: LU/SAB: 09:00 a 12:00hs - 17:00 a 21:00hs </strong></li>
+								</ul>
+							<li><strong>Todo Mascotas - Local Salta</strong></li>
+								<ul>
+									<li><strong>Salta</strong></li>
+									<li><strong>B° Centro</strong></li>
+									<li><strong>Dirección:</strong> Balvin 1030</li>
+									<li><strong>Telefono:</strong> +5493884192238</li>
+									<li><strong>Horarios: LU/SAB: 09:00 a 12:00hs - 17:00 a 21:00hs </strong></li>
+								</ul>
+					</ul>
+				</nav>
+		</section>
 	</div>
 	<footer style="display: flex ; justify-content: right ; text-align:right;color: rgb(100,100,100);">
 		<p style="margin:0">Copyright 2023 - Todo Mascotas - Diseñado por Grupo 15 - Jujuy - Argentina
