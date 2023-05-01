@@ -1,4 +1,3 @@
-/*@charset "ISO-8859-1";*/
 *{						 /*Quitar todo margen y padding predefinidos*/
 	margin: 0px;
 	padding: 0px;
@@ -42,10 +41,6 @@ header a{ text-decoration: none;      /*Se Quita estilos de texto predefinido(su
           
 header a:hover{ color: #93ebeb; }               
 
-#menuPrincipal li:nth-child(1){
-	color: #93ebeb;
-	
-}
 
 .conteiner{						/*div que contiene un section y un aside, se aplica los mismos margenes al igual que a header*/
 	display: flex;
@@ -62,20 +57,15 @@ header a:hover{ color: #93ebeb; }
   	
 }
 
-.articulos{
-	
+.articulos{							/*cada articulo posee una etiqueta h3 y cuerpo del articulo*/
 	margin: 50px 60px;
 	border: 1px solid white;
 	padding:20px;
-	
 }
 
-h3{
-	margin: 10px 10px;
-	
-}
+h3{ margin: 10px 10px; }
 
-#listaSecundaria, p{
+#listaSecundaria, p{            	/*Estilo Lista del tercer articulo*/
 	text-shadow: 0 0 3px white;
 	font-weight: bold ;
 }
@@ -84,49 +74,31 @@ h3{
 	margin: 10px 20px;
 }
 
-.publicidad{
+.publicidad{						/*Espacio que ocupara aside*/
 	width: 20%;                 
     font-weight: bold ; 
     text-align: center;
     color: white;
 }
 
-#figura1{
+#figura1, #figura2, #figura3{      /*Estilo Imagenes del aside*/
 	height:30%;
 	margin:15px;
-	background-image:url("../Images/imagen1.gif");
 	background-position: center;
   	background-size: 100%;
   	background-repeat:no-repeat ;
-  	
 }
 
-#figura2{
-	height:30%;
-	margin:15px;
-	background-image:url("../Images/Imagen2.jpg");
-	background-position: center;
-  	background-size: 100%;
-  	background-repeat:no-repeat ;
-  		
-}
+#figura1{ background-image:url("../Images/imagen1.gif"); }  
 
-#figura3{
-	height:30%;
-	margin:15px;
-	background-image:url("../Images/Imagen3.jpg");
-	background-position: center;
-  	background-size: 100%;
-  	background-repeat:no-repeat ;
-  		
-}
+#figura2{ background-image:url("../Images/Imagen2.jpg"); }
 
-footer{
-	text-align:center ; 
+#figura3{ background-image:url("../Images/Imagen3.jpg"); }
+
+footer{									/*Pie de pagina*/
+	text-align:right ; 
 	color: rgb(100,100,100);
 }
-
-
 
 .slider{
     width: 100%;
@@ -161,55 +133,7 @@ footer{
    opacity: 1; 
 }
 
-/* ACA COMIENZA EL CSS DE PRODUCTOS*/
-
-#bodyProductos {
-    background: radial-gradient(#fdbb2d, #22c1c3);
-}
-
-
-#headerProductos {
-   background-color: white;
-    width: 1325px;
-    height: 100px;
-    margin: auto;
-    text-align: center;
-    display: flex;
-}
-
-#navProductos ul {
-    display:flex;
-    line-height: 50px;
-    list-style: none;
-}
-
-#navProductos ul li {
-    margin: auto;
-    
-}
-
-#navProductos ul li a:hover {
-    color: aquamarine;
-}
-
-#navProductos ul li :link {
-    text-decoration: none;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    margin:auto;
-    color: black;
-    
-}
-
-#navProductos ul li :visited {
-    text-decoration: none;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    margin:auto;
-    color: black;
-}
+/*PRODUCTOS*/
 
 #contenedor {
     background-color: white ;
@@ -217,12 +141,10 @@ footer{
     margin: auto;
     border: 1px solid grey;
     box-shadow: 0 4px 15px 0 lightblue;
-
 }
 
 .articulos__section {
-    width: 1325px;
-    
+    width: 1325px;   
 }
 
 .articuloProductos {
@@ -236,7 +158,6 @@ footer{
 
 #ar {
 	font-size:15px
-	
 }
 
 .articulos__section h2 {
@@ -263,46 +184,6 @@ footer{
     margin: auto;
 }
 
-#navProductos {
-    background-color: white;
-    width: 1325px;
-    height: 50px;
-    margin: auto;   
-}
-
-
-
-.headerProductos__input {
-    width: 1000px;
-    height: 50px;
-    border: 3px solid black;
-    border-radius: 20px;
-    margin-left: 20px;
-    margin-top: 20px;
-}
-
-#headerProductos img {
-    height: 100px;
-}
-
-.headerProductos__p {
-    font-size: 20px;
-    margin-left: 40px;
-    margin-top: 35px;
-}
-
-#footerProductos {
-    font-size: 30px;
-    height: 90px;
-    background: radial-gradient(#fdbb2d, #22c1c3);
-    border: 1px solid gray;
-    width: 1325px;
-    margin: auto;
-    display: flex;
-    align-items: flex-end;
-    box-shadow: 0 4px 15px 0 lightblue;
-}
-
 .h2Juguetes {
     padding-top: 90px;
 }
@@ -311,9 +192,9 @@ footer{
 	padding-top: 90px;
 }
 
-/* ACA COMIENZA LA CSS DE CONSEJOSSALUD*/
+/*CONSEJOSSALUD*/
 
-.sectionNoBackground{						/*section que Contiene a todos los articulos, aplica sin background*/
+.sectionNoBackground{						
 	width: 80%;
 	background-position: center;
   	background-size: cover;
@@ -331,6 +212,8 @@ ul a:active{
 	text-shadow: 0 0 1px white;
 }
 
+ul#listaSecundaria{margin:20px 60px;}
+
 .h2Salud {
 	font-size:30px;
 	font-family:Times New Roman,Arial,Helvetica; 
@@ -340,54 +223,32 @@ ul a:active{
 	text-shadow: 3px 3px 6px white;
 }
 
-#figura1Salud{
+#figura1Salud,#figura2Salud,#figura3Salud,#figura4Salud,#figura5Salud{
 	height:8%;
 	margin:15px;
-	background-image:url("../Images/imagen1Salud.jpg");
+	
 	background-position: center;
-  	background-size: 97%;
-  	background-repeat:no-repeat ;
-  	
+  	background-size: 100%;
+  	background-repeat:no-repeat ;}
+
+#figura1Salud{
+	background-image:url("../Images/imagen1Salud.jpg");	
 }
 
 #figura2Salud{
-	height:8%;
-	margin:15px;
-	background-image:url("../Images/imagen2Salud.jpg");
-	background-position: center;
-  	background-size: 100%;
-  	background-repeat:no-repeat ;
-  		
+	background-image:url("../Images/imagen2Salud.jpg");	
 }
 
 #figura3Salud{
-	height:8%;
-	margin:15px;
-	background-image:url("../Images/imagen3Salud.jpg");
-	background-position: center;
-  	background-size: 100%;
-  	background-repeat:no-repeat ;
-  		
+	background-image:url("../Images/imagen3Salud.jpg"); 		
 }
 
 #figura4Salud{
-	height:8%;
-	margin:15px;
-	background-image:url("../Images/imagen4Salud.jpg");
-	background-position: center;
-  	background-size: 100%;
-  	background-repeat:no-repeat ;
-  		
+	background-image:url("../Images/imagen4Salud.jpg");		
 }
 
 #figura5Salud{
-	height:8%;
-	margin:15px;
-	background-image:url("../Images/imagen5Salud.jpg");
-	background-position: center;
-  	background-size: 100%;
-  	background-repeat:no-repeat ;
-  		
+	background-image:url("../Images/imagen5Salud.jpg");		
 }
 
 #h2Consejos {
@@ -395,71 +256,29 @@ ul a:active{
 	font-family:Times New Roman,Arial,Helvetica; 
 	font-style: italic;
 	font-weight: bold;
-	margin-bottom: 20px;
+	margin-top:200px;
+	margin-left:20px;
+	margin-right:20px;
+	margin-bottom:0px;
 	text-shadow: 3px 3px 6px black;
 }
 
-/*ACA COMIENZA CONTACTANOS */
+/*CONTACTANOS */
 
-#bodyContacto {
-    background: radial-gradient(#fdbb2d, #22c1c3);
+#contenedorContacto2{
+	margin:5px 40px;
 }
-
-
-#headerContacto {
-    height: 405.455px;
-    width: 1144.550px;
-    margin: auto;
-    
-}
-
-
-#headerContacto h1 {
-    font-size:40px;
-	font-family:Times New Roman,Arial,Helvetica; 
-	font-style: italic;
-	font-weight: bold;
-	margin-bottom: 20px;
-	text-shadow: 3px 3px 6px white;
-    
-}
-
-#headerContacto a {
-    text-decoration: none;
-    font-weight: bold;
-    color: white;
-}
-
-#headerContacto a:hover{
-    color: aquamarine;
-}
-
-
-#navContacto {
-    margin:20px;
-	text-align: center;
-}
-
-#navContacto li:nth-child(1) {
-    color: #93ebeb;
-	text-shadow: 3px 3px 6px black
-}
-
-#navContacto ul li {
-    list-style:none;
-	display: inline;
-	margin:20px;
-}
-
 #sectionContacto {
     background: transparent;
-    height: 700px;
-    width: 700px;
+    height: 720px;
+    width: 100%;
     margin: auto;
     border: 2px solid #1c5;
 }
 
-#sectionContacto h2 {
+#sectionContacto h2,#asideContacto h2 {
+	margin-top:20px;
+	margin-bottom:20px;
     color: black;
     text-align: center;
 }
@@ -475,19 +294,20 @@ ul a:active{
 }
 
 #navContactos__section {
-    padding: 10px;
+    padding: 10px 90px;
 }
 
 .texto__section {
-    padding: 10px;
+    padding: 10px 90px;
     background: transparent;
 }
 
 #section__imagenDiv {
         height: 100px;
-        width: 500px;
+        width: 100%;
         text-align: center;
-        padding: 20px;
+        padding: 10px;
+        justify-content:center;
 }
 
 #sectionpContacto__section ul{
@@ -498,7 +318,7 @@ ul a:active{
     background: transparent;
     margin: auto;
     width: 700px;
-    height: 700px;
+    height: 720px;
     text-align: center;
     border: 2px solid #1c5;
 
@@ -513,14 +333,12 @@ ul a:active{
 }
 
 
-
 #contenedorContacto2 {
     width: 1144.550px;
     height: 700px;
     display: flex;
     margin: auto;
-    margin-top: 20px;
-    
+    margin-top: 20px;   
 }
 
 #contendor__input {
@@ -554,18 +372,6 @@ ul a:active{
     height: 50px;
 }
 
-#footerContacto {
-    display: block;
-    background: radial-gradient(#fdbb2d, #22c1c3);
-    width: 1144.550px;
-    height: 50px;
-    font-size: 20px;
-    margin: auto;
-    margin-top: 20px;
-    text-align: end;
-    line-height: 50px;
-
-}
 
 #mensaje {
     background: linear-gradient(to bottom,transparent,#333);
@@ -581,39 +387,6 @@ ul a:active{
     outline: none;
     border-bottom: 2px solid #5f9;
 }
-
-
-.slider{
-    width: 100%;
-    height: 300px;
-    margin: 0px;
-    position: relative;
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-.slider img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: all 0.7s;
-}
-
-.slider input[type="radio"] {
-    position: relative;
-    z-index: 50;
-    margin: 10px;
-    opacity:0.4;
-}
-
-.slider input[type="radio"]:checked ~ img {
-   opacity: 1; }
    
 /*Servicios de Paseo*/
 
@@ -640,7 +413,7 @@ th,td{
 
 
 .GuiaServicios{
-	margin: 20px 40px;
+	margin: 30px 40px;
 	display:flex;
 	justify-content: center ;
 	align-items: center;
@@ -652,7 +425,7 @@ th,td{
 	
 }
 
-/*SE CREA CSS SUCURSALES*/
+/*SUCURSALES*/
 
 #navSucursales > ul {
 	margin: 50px 60px;
@@ -662,4 +435,9 @@ th,td{
 	display: flex;
   	flex-direction: column;
   	align-items: center;
+}
+
+.conteinerSucursal{
+	margin: 20px 40px;
+	justify-content: center ;
 }
