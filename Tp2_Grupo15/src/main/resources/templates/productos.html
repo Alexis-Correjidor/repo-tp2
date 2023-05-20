@@ -1,151 +1,89 @@
 <!DOCTYPE html>
-<html lang="es">
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos</title>
-    <link rel="stylesheet" href="../static/css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Productos</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-    <header>
-		<h1>Todo Mascotas</h1>
-		
-		<ul class="slider">
-            <li>
-                <input type="radio" id="sbutton1" name="sradio" checked>
-                <label for="sbutton1"></label>
-                <img alt="ImagenMascotas" src="../static/Images/Imagen5.jpg" title="Todo Mascotas">
-             </li>
-            <li>
-                <input type="radio" id="sbutton2" name="sradio" >
-                <label for="sbutton2"></label>
-                <img alt="ImagenMascotas" src="../static/Images/Imagen4.jpg" title="Todo Mascotas">
-             </li>
-            <li>
-                <input type="radio" id="sbutton3" name="sradio">
-                <label for="sbutton3"></label>
-                <img alt="ImagenMascotas" src="../static/Images/Mascotas.jpeg" title="Todo Mascotas">
-            </li>
-        </ul>
-		
-		<nav id="menuPrincipal">
-			<ul>
-				<li><a href="index.html">Inicio</a></li>
-				<li><a href="./productos.html" style="text-shadow: 3px 3px 6px black;">Productos</a></li>
-				<li><a href="ConsejosSaludo.html">Consejos de Salud</a></li>
-				<li><a href="./ServiciosPaseo.html">Servicios de Paseo</a></li>
-				<li><a href="Sucursales.html">Sucursales</a></li>
-				<li><a href="./contactanos.html">Contactenos</a></li>
-			</ul>
-		</nav>
-	</header>
-        
-    <div id="contenedor">
-        <section class="articulos__section">
-            <h2>Alimentos</h2>
-            <div class="div__articulos">
-                <article class="articuloProductos">
-                    <h3>Alimento Royal Canin Size Health Nutrition Mini Adult para perro adulto de raza pequeña sabor mix en bolsa de 7.5 kg</h3>
-                    <img alt="Alimento de Perro" src="../static/Images/alimentoperro.webp">
-                    <h4>Descripcion</h4>
-                    <p>
-                         Royal Canin produce alimentos centrados en las necesidades únicas de tu mascota, brinda una nutrición específica y eficaz, y lo ayuda a convertirse en su mejor versión
-                         <br>
-                    </p>			
-                </article>
-        
-                <article class="articuloProductos">
-                    <h3>Alimento Excellent Urinary para gato adulto sabor pollo y arroz en bolsa de 7.5 kg</h3>
-                    <img alt="Alimento de Gato" src="../static/Images/alimentogato.webp">
-                    <h4>Descripcion</h4>
-                    <p class="productos_p">
-                        La selección de un alimento adecuado para tu mascota es muy importante para garantizar su crecimiento, desarrollo y salud. Con esta opción de Excellent podrás cubrir las necesidades nutricionales y energéticas de tu gato.	
-                        <br>
-                        
-                    </p>
-                </article>	
-            </div>
-        </section>
-        
-        <section class="articulos__section">
-            <h2 class="h2Juguetes">Juguetes</h2>
-            <div class="div__articulos">
-                <article class="articuloProductos">
-                    <h3>Kong Extreme L Juguetes Rellenable Large Perros</h3>
-                    <img alt="Juguete de Perro" src="../static/Images/jugueteperro.webp">
-                    <h4>Descripcion</h4>
-                    <p class="articulos__p">
-                        Kong LARGE Extreme (extreme es para perros de mordida fuerte).
-                        <br>
-                        Para perros que pesan entre 13kg y 30kg.
-                        <br>
-                        Medidas aproximadas: 10.5 x 7.5 cm.
-                        <br>
-                        <br>
-                        Beneficios principales de los juguetes Kong:
-                        <br>
-                        <br>
-                    </p>
-                </article>
-                
-                <article class="articuloProductos">
-                    <h3>Cañita alambre resistente largo</h3>
-                    <img alt="Juguete de Gato" src="../static/Images/juguetegato.webp">
-                    <h4>Descripcion</h4>
-                    <p class="articulos__p">
-                        - Permite a su gato hacer ejercicio para mantenerse saludable y activo.
-                        <br>
-                        - Tiene tiras y cascabel los cuales dan un estimulo visual y auditivo.
-                        <br>
-                        - Cañita larga de 1,10mts
-                        <br>
-                        - Material y medidas: Varilla de plástico (15 cm) + Alambre de acero recubierto (80 cm) + juguete (15 cm)
-                        <br>
-                    </p>
-                </article>
-            </div>
-        </section>
-        
-        <section class="articulos__section">
-            <h2 class="h2Ropa">Ropa</h2>
-            <div class="div__articulos">
-                <article class="articuloProductos">
-                    <h3>Buzo para perro</h3>
-                    <img alt="Buzo de Perro" src="../static/Images/ropaperro.webp">
-                    <h4>Descripcion</h4>
-                    <p class="articulos__p">
-                        Caracteristicas:
-                        <br>
-                        Buzo de polar
-                        <br>
-                        Colores: VARIOS (CONSULTAR DISPONIBILIDAD DE STOCK)
-                        <br>
-                        Medidas:
-                        <br>
-                        (las medidas de cada talle pueden variar algunos cm y los colores de los bordes tambien pueden variar)
-                        <br>
-                    </p>
-                </article>
-                
-                <article class="articuloProductos">
-                    <h3>Poncho Capa Buzo Abrigo Polar Mascotas Gatos</h3>
-                    <img alt="Buzo de Gato" src="../static/Images/ropagato.webp">
-                    <h4>Descripcion</h4>
-                    <p class="articulos__p">
-                        /// BENEFICIOS ///
-                        <br>
-                        La prenda perfecta para que tu peludito esté protegido cuando haga frío, haya viento o llueva. Ideal para cachorritos. Ayudan a prevenir que tu perro se resfríe durante el invierno.
-                        <br>
-                    </p>
-                </article>
-            </div>
-        </section>
-    </div>
-    
-    <footer>
-		<br>&copy; Copyright 2023 - Todo Mascotas - Diseñado por Grupo 15 - Jujuy - Argentina
-	</footer>
-    
+	<header th:replace="~{layouts/header :: header}"> </header>
+
+	<div id="contenedor">
+		<a th:href="@{/producto/nuevo}">Nuevo Producto</a>
+		<section class="articulos__section">
+			<h2>Alimentos</h2>
+			<div class="div__articulos">
+				<article th:if="${prod.categoria}=='Alimento'"
+					th:each="prod: ${productos}" class="articuloProductos">
+					<h3 style="font-size: 30px" th:text="${prod.nombre}"></h3>
+					<h3 th:text="${prod.nombreImagen}"></h3>
+					<br>
+					<h4 style="font-size: 20px; color: red">Precio</h4>
+					<br> <span style="color: gold">$</span> <span
+						th:text="${prod.precio}"></span> <br>
+					<br>
+					<span style="color: gold">$</span> <span th:text="${prod.calcularDescuento}"></span> <span style="color: green" th:text="${prod.descuento}+'% OFF'"></span>
+					<br>
+					<br>
+					<div style="padding: 10px">
+						<a th:href="@{/producto/modificar/}+${prod.codigo}">Editar</a> <a
+							th:href="@{/producto/eliminar/}+${prod.codigo}">Eliminar</a>
+					</div>
+				</article>
+
+			</div>
+		</section>
+
+		<section class="articulos__section">
+			<h2 class="h2Juguetes">Juguetes</h2>
+			<div class="div__articulos">
+				<article th:if="${prod.categoria}=='Juguete'"
+					th:each="prod: ${productos}" class="articuloProductos">
+					<h3 style="font-size: 30px" th:text="${prod.nombre}"></h3>
+					<h3 th:text="${prod.nombreImagen}"></h3>
+					<br>
+					<h4 style="font-size: 20px; color: red">Precio</h4>
+					<br> <span style="color: gold">$</span> <span
+						th:text="${prod.precio}"></span> <br>
+					<br>
+					<span style="color: gold">$</span> <span th:text="${prod.calcularDescuento}"></span> <span style="color: green" th:text="${prod.descuento}+'% OFF'"></span>
+					<br>
+					<br>
+					<div style="padding: 10px">
+						<a th:href="@{/producto/modificar/}+${prod.codigo}">Editar</a> <a
+							th:href="@{/producto/eliminar/}+${prod.codigo}">Eliminar</a>
+					</div>
+				</article>
+
+			</div>
+		</section>
+
+		<section class="articulos__section">
+			<h2 class="h2Ropa">Ropa</h2>
+			<div class="div__articulos">
+				<article th:if="${prod.categoria}=='Ropa'"
+					th:each="prod: ${productos}" class="articuloProductos">
+					<h3 style="font-size: 30px" th:text="${prod.nombre}"></h3>
+					<h3 th:text="${prod.nombreImagen}"></h3>
+					<br>
+					<h4 style="font-size: 20px; color: red">Precio</h4>
+					<br> <span style="color: gold">$</span> <span
+						th:text="${prod.precio}"></span> <br>
+					<br>
+					<span style="color: gold">$</span> <span th:text="${prod.calcularDescuento}"></span> <span style="color: green" th:text="${prod.descuento}+'% OFF'"></span>
+					<br>
+					<br>
+					<div style="padding: 10px">
+						<a th:href="@{/producto/modificar/}+${prod.codigo}">Editar</a> <a
+							th:href="@{/producto/eliminar/}+${prod.codigo}">Eliminar</a>
+					</div>
+				</article>
+			</div>
+		</section>
+	</div>
+
+	<footer th:replace="~{layouts/footer :: footer}"> </footer>
+
 </body>
 </html>

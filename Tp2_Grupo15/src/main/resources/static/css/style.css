@@ -136,7 +136,7 @@ footer{									/*Pie de pagina*/
 /*PRODUCTOS*/
 
 #contenedor {
-    background-color: white ;
+    background-color: radial-gradient(#fdbb2d, #22c1c3) ;
     width: 1325px;
     margin: auto;
     border: 1px solid grey;

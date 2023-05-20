@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Pet shop</title>
+</head>
+<body>
+	<header th:fragment="header">
+		<h1>Todo Mascotas</h1>
+		
+		<ul class="slider">
+            <li>
+                <input type="radio" id="sbutton1" name="sradio" checked>
+                <label for="sbutton1"></label>
+                <img alt="ImagenMascotas" th:src="@{/Images/Imagen5.jpg}" title="Todo Mascotas">
+             </li>
+            <li>
+                <input type="radio" id="sbutton2" name="sradio" >
+                <label for="sbutton2"></label>
+                <img alt="ImagenMascotas" th:src="@{/Images/Imagen4.jpg}" title="Todo Mascotas">
+             </li>
+            <li>
+                <input type="radio" id="sbutton3" name="sradio">
+                <label for="sbutton3"></label>
+                <img alt="ImagenMascotas" th:src="@{/Images/Mascotas.jpeg}" title="Todo Mascotas">
+            </li>
+        </ul>
+		
+		<nav id="menuPrincipal">
+			<ul>
+				<li><a th:href="@{/index}">Inicio</a></li>
+				<li><a th:href="@{/producto/lista-producto}" style="text-shadow: 3px 3px 6px black;">Producto</a></li>
+				<li><a th:href="@{/consejos-salud}">Consejos de Salud</a></li>
+				<li><a th:href="@{/servicios-paseo}">Servicios de Paseo</a></li>
+				<li><a th:href="@{/sucursales}">Sucursales</a></li>
+				<li><a th:href="@{/contactos}">Contactenos</a></li>
+			</ul>
+		</nav>
+	</header>
+
+</body>
+</html>
