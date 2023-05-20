@@ -427,7 +427,7 @@ th,td{
 
 /*SUCURSALES*/
 
-#navSucursales > ul {
+#navSucursales  {
 	margin: 50px 60px;
 	padding:20px;	
 	border-top: 1px solid white;
