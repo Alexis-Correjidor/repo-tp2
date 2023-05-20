@@ -38,44 +38,29 @@
 			</ul>
 		</nav>
 	</header>
-	
 	<div class="conteinerSucursal">
 		<section>
-				
-				<a th:href="@{/sucursal/nuevo}">Nueva Sucursal</a>
-				<nav id="navSucursales">
-				
-				<h2 class="h2Salud">Sucursales</h2>
-				<table>
-					<tr>
-						<th>Nombre</th>
-						<th>Provincia</th>
-						<th>Direccion</th>
-						<th>Telefono</th>
-						<th>Mail</th>
-						<th>Fecha de inicio</th>
-						<th>Acciones</th>
-					</tr>
-					
-					<tr th:each="sucu: ${sucursales}">
-							<td th:text="${sucu.nombre}"></td>
-							<td th:text="${sucu.provincia}"></td>
-							<td th:text="${sucu.direccion}"></td>
-							<td th:text="${sucu.telefono}"></td> 
-							<td th:text="${sucu.email}"></td>
-							<td th:text="${#temporals.format(sucu.fechaInicio, 'dd/MM/yyyy')}"></td>
-							<td>
-								<a th:href="@{/sucursal/modificar/}+${sucu.nombre}">Editar</a>
-								<a th:href="@{/sucursal/eliminar/}+${sucu.nombre}">Eliminar</a>
-							</td>
-							
-					</tr>
-				</table>
-				</nav>
+			<h3 th:text="${edicion}?'Modificar Sucursal':'Nueva Sucursal'"></h3><br><br>	
+			<form th:action="${edicion}?@{/sucursal/modificar}:@{/sucursal/guardar}" th:object="${sucursal}" method="post">
+				<label for="nombre">Nombre</label>
+				<input type="text" id="nombre" name="sucursal_nombre" th:field="*{nombre}"><br><br>
+				<label for="provincia">Provincia</label>
+				<select id="provincia" name="sucursal_provincia" th:field="*{provincia}">
+					<option value="Salta">Salta</option>
+					<option value="Jujuy">Jujuy</option>
+					<option value="Tucuman">Tucuman</option>
+				</select><br><br>
+				<label for="direccion">Direccion</label>
+				<input type="text" id="djreccion" name="sucursal_direccion" th:field="*{direccion}"><br><br>
+				<label for="telefono">Telefono</label>
+				<input type="text" id="telefono" name="sucursal_telefono" th:field="*{telefono}"><br><br>
+				<label for="email">Email</label>
+				<input type="text" id="email" name="sucursal_email" th:field="*{email}"><br><br>
+				<label for="fecha">Fecha de inicio</label>
+				<input type="date" id="fecha" name="sucursal_fecha" th:field="*{fechaInicio}"><br><br>
+				<p><input type="submit" class="button" th:value="${edicion}?'Modificar':'Guardar'"></p>
+			</form>
 		</section>
 	</div>
-	<footer>
-		&copy; Copyright 2023 - Todo Mascotas - Diseñado por Grupo 15 - Jujuy - Argentina
-	</footer>
-</body>
-</html>
+	
+</html>	
