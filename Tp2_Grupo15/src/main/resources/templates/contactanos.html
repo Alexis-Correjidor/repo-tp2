@@ -1,45 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contacto</title>
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
   </head>
   <body>
-    <header>
-      <h1>Todo Mascotas</h1>
-     
-      <ul class="slider">
-        <li>
-          <input type="radio" id="sbutton1" name="sradio" checked />
-          <label for="sbutton1"></label>
-          <img alt="ImagenMascotas" src="../static/Images/Imagen5.jpg" title="Todo Mascotas">
-        </li>
-        <li>
-          <input type="radio" id="sbutton2" name="sradio" />
-          <label for="sbutton2"></label>
-          <img alt="ImagenMascotas" src="../static/Images/Imagen4.jpg" title="Todo Mascotas">
-        </li>
-        <li>
-          <input type="radio" id="sbutton3" name="sradio" />
-          <label for="sbutton3"></label>
-          <img alt="ImagenMascotas" src="../static/Images/Mascotas.jpeg" title="Todo Mascotas">
-        </li>
-      </ul>
-
-      <nav id="menuPrincipal">
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="./productos.html">Productos</a></li>
-          <li><a href="ConsejosSaludo.html">Consejos de Salud</a></li>
-          <li><a href="./ServiciosPaseo.html">Servicios de Paseo</a></li>
-          <li><a href="Sucursales.html">Sucursales</a></li>
-          <li><a href="./contactanos.html" style="text-shadow: 3px 3px 6px black;">Contactenos</a></li>
-        </ul>
-      </nav>
-    </header>
+    <header th:replace="~{layouts/header :: header}">
+		
+	</header>
 
     <div id="contenedorContacto2">
       <section id="sectionContacto">
@@ -53,13 +24,13 @@
         <nav id="navContactos__section">
           <ul>
             <li>
-              <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+              <a th:href="@{https://www.facebook.com/}" target="_blank">Facebook</a>
             </li>
             <li>
-              <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+              <a th:href="@{https://www.instagram.com/}" target="_blank">Instagram</a>
             </li>
             <li>
-              <a href="https://twitter.com/i/flow/login" target="_blank">Twitter</a>
+              <a th:href="@{https://twitter.com/i/flow/login}" target="_blank">Twitter</a>
             </li>
           </ul>
         </nav>
@@ -73,17 +44,17 @@
             </div>
         </div>
         <div id="section__imagenDiv">
-          <img src="../static/Images/correo.jpg" alt="correo" id="section__imagen">
+          <img th:src="@{/Images/correo.jpg}" alt="correo" id="section__imagen">
         </div>
       </section>
       <aside id="asideContacto">
         <h2>Publícidad</h2>
-        <img src="../static/Images/imagen1.gif" alt="" />
-        <img src="../static/Images/Imagen2.jpg" alt="" />
+        <img th:src="@{/Images/imagen1.gif}" alt="" />
+        <img th:src="@{/Images/Imagen2.jpg}" alt="" />
       </aside>
     </div>
-    <footer>
-		<br><br>&copy; Copyright 2023 - Todo Mascotas - Diseñado por Grupo 15 - Jujuy - Argentina
+    <footer th:replace="~{layouts/footer :: footer}">
+		
 	</footer>
   </body>
 </html>

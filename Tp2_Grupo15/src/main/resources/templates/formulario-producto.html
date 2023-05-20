@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+  </head>
+  <body>
+     <header th:replace="~{layouts/header :: header}">
+		
+	 </header>
+    <div id="contenedorContacto2">
+      <section id="sectionContacto">
+        
+        <div id="contendor__input">
+        	<h2 th:text="${editar}?'Editar Producto':'Nuevo Producto'"></h2>
+        	<form th:action="${editar}?@{/producto/modificar}:@{/producto/guardar}" th:object="${producto}" method="post">
+        		<input type="text" name="nombre" placeholder="Nombre Producto" id="producto_nombre" th:field="*{nombre}">
+	            <input type="text" name="imagen" placeholder="Nombre Imagen" id="nombre_imagen" th:field="*{nombreImagen}">
+	            <input type="text" name="codigo" placeholder="Codigo Producto" id="producto_codigo" th:field="*{codigo}" th:if="${editar}==false?'readonly'">
+	            <input type="text" name="precio" placeholder="Precio Producto" id="producto_precio" th:field="*{precio}">
+	            <input type="text" name="categoria" placeholder="Categoria Producto" id="producto_categoria" th:field="*{categoria}">
+	            <input type="text" name="descuento" placeholder="Descuento Producto" id="producto_descuento" th:field="*{descuento}">
+	            <button type="submit" id="unicoBoton" th:text="${editar}?'Modificar':'Guardar'"></button>
+        	</form>
+            <div>
+              
+            </div>
+        </div>
+        
+      </section>
+      <aside id="asideContacto">
+        
+      </aside>
+    </div>
+    <footer th:replace="~{layouts/footer :: footer}">
+		
+	</footer>
+  </body>
+</html>
