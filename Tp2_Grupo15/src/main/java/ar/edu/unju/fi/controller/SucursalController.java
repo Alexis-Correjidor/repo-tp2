@@ -15,7 +15,7 @@ import ar.edu.unju.fi.model.sucursal;
 @Controller
 @RequestMapping("/sucursal")
 public class SucursalController {
-
+ 
 	listaSucursal listaSucursales = new listaSucursal();
 	@GetMapping("/listado")
 	public String getListaSucursalesPage(Model model) {

@@ -6,38 +6,9 @@
 		<link rel="stylesheet" th:href="@{/css/style.css}">
 	</head>
 <body>
-	<header>
-		<h1>Todo Mascotas</h1>
+	<header th:replace="~{layouts/header :: header}">
 		
-		<ul class="slider">
-            <li>
-                <input type="radio" id="sbutton1" name="sradio" checked>
-                <label for="sbutton1"></label>
-                <img alt="ImagenMascotas" src="../static/Images/Imagen5.jpg" title="Todo Mascotas">
-             </li>
-            <li>
-                <input type="radio" id="sbutton2" name="sradio" >
-                <label for="sbutton2"></label>
-                <img alt="ImagenMascotas" src="../static/Images/Imagen4.jpg" title="Todo Mascotas">
-             </li>
-            <li>
-                <input type="radio" id="sbutton3" name="sradio">
-                <label for="sbutton3"></label>
-                <img alt="ImagenMascotas" src="../static/Images/Mascotas.jpeg" title="Todo Mascotas">
-            </li>
-        </ul>
-		
-		<nav id="menuPrincipal">
-			<ul>
-				<li><a href="index.html">Inicio</a></li>
-				<li><a href="./productos.html">Productos</a></li>
-				<li><a href="ConsejosSaludo.html">Consejos de Salud</a></li>
-				<li><a href="./ServiciosPaseo.html">Servicios de Paseo</a></li>
-				<li><a th:href="@{/sucursal/listado}" style="text-shadow: 3px 3px 6px black;">Sucursales</a></li>
-				<li><a href="./contactanos.html">Contactenos</a></li>
-			</ul>
-		</nav>
-	</header>
+	 </header>
 	<div class="conteinerSucursal">
 		<section>
 			<h3 th:text="${edicion}?'Modificar Sucursal':'Nueva Sucursal'"></h3><br><br>	
