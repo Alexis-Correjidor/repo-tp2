@@ -13,32 +13,25 @@
     
     <table>
     	<tr>
-            <th>Dia</th>
-            <th>Lunes</th>
-            <th>Martes</th>
-            <th>Miercoles</th>
-            <th>Jueves</th>
-            <th>Viernes</th>
-            <th>Sabado</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Dias de Trabajo</th>
+            <th COLSPAN="2">Horario Mañana</th>
+            <th COLSPAN="2">HorarioTarde</th>
+            <th>Acciones</th>
         </tr>
-        <tr>
-            <th>Horario</th>
-            <td>9 a 12 - 16 a 18</td>
-            <td>9 a 12 - 16 a 18</td>
-            <td>9 a 12 - 16 a 18</td>
-            <td>9 a 12 - 16 a 18</td>
-            <td>9 a 12 - 16 a 18</td>
-            <td>9 a 12 - 16 a 18</td>
-        </tr>
-        <tr>
-            <th>Paseador</th>
-            <td>Juan Perez</td>
-            <td>Lucas Diaz</td>
-            <td>Juan Perez</td>
-            <td>Maria Gomez</td>
-            <td>Lucas Diaz</td>
-            <td>Roberto Vazquez</td>
-        </tr>
+        <tr th:each="pas: ${paseadores}">
+							<td th:text="${pas.nombre}"></td>
+							<td th:text="${pas.apellido}"></td>
+							<td th:text="${pas.dias}"></td>
+							
+							<td th:text="${pas.horaMInicio}"></td>
+							<td th:text="${pas.horaMFin}"></td>
+							
+							<td th:text="${pas.horaTInicio}"></td>
+							<td th:text="${pas.horaTFin}"></td>
+													
+					</tr>
     </table>
     </div>
     
