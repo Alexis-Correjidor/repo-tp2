@@ -9,6 +9,7 @@
 	<header th:replace="~{layouts/header :: header}"> </header>
 	
 	<h2>Servicios de Paseo</h2>
+	<a th:href="@{/servicios/nuevo}">Nuevo Paseador</a>
 	<div class="conteinerServiciosPaseo" >
     
     <table>
@@ -16,8 +17,8 @@
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Dias de Trabajo</th>
-            <th COLSPAN="2">Horario Mañana</th>
-            <th COLSPAN="2">HorarioTarde</th>
+            <th COLSPAN="2">Horario por la Mañana</th>
+            <th COLSPAN="2">Horario por la Tarde</th>
             <th>Acciones</th>
         </tr>
         <tr th:each="pas: ${paseadores}">
@@ -30,7 +31,11 @@
 							
 							<td th:text="${pas.horaTInicio}"></td>
 							<td th:text="${pas.horaTFin}"></td>
-													
+							
+							<td>
+								<a th:href="@{/servicios/modificar/}+${pas.nombre}">Editar</a>
+								<a th:href="@{/servicios/eliminar/}+${pas.nombre}">Eliminar</a>
+							</td>						
 					</tr>
     </table>
     </div>
