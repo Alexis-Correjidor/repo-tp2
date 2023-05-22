@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Servicios de Paseo</title>
+		<link rel="stylesheet" th:href="@{/css/style.css}">
+	</head>
+<body>
+	<header th:replace="~{layouts/header :: header}"> </header>
+	<div class="conteinerSucursal">
+		<section>
+			<h3 th:text="${edicion}?'Modificar Paseador':'Nuevo Paseador'"></h3><br><br>	
+			<form th:action="${edicion}?@{/servicios/modificar}:@{/servicios/guardar}" th:object="${paseador}" method="post">
+				<label for="nombre">Nombre</label>
+				<input type="text" id="nombre" name="paseador_nombre" th:field="*{nombre}"><br><br>
+				
+				<label for="apellido">Apellido</label>
+				<input type="text" id="apellido" name="paseador_apellido" th:field="*{apellido}"><br><br>
+				
+				<label for="dias">Dias de Trabajo</label>
+				<input type="text" id="dias" name="dias_trabajo" th:field="*{dias}"><br><br>
+				
+				<label for="horaMInicio">Hora Mañana Inicio</label>
+				<input type="text" id="horaMInicio" name="horaMañanaInicio" th:field="*{horaMInicio}"><br><br>
+				
+				<label for="horaMFin">Hora Mañana Fin</label>
+				<input type="text" id="horaMFin" name="horaMañanaFin" th:field="*{horaMFin}"><br><br>
+				
+				<label for="horaTInicio">Hora Tarde Inicio</label>
+				<input type="text" id="horaTInicio" name="horaTardeInicio" th:field="*{horaTInicio}"><br><br>
+				
+				<label for="horaTFin">Hora Tarde Fin</label>
+				<input type="text" id="horaTFin" name="horaTardeFin" th:field="*{horaTFin}"><br><br>
+				
+				<p><input type="submit" class="button" th:value="${edicion}?'Modificar':'Guardar'"></p>
+			</form>
+		</section>
+	</div>
+	
+</html>	
