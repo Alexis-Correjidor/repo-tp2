@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+	<header th:replace="~{layouts/header :: header}">
+	
+	</header>
+	<div class="conteiner">
+		<section>
+			<h3 th:text="${edicion}?'Modificar Articulo':'Nuevo Articulo'"></h3><br><br>	
+			<form th:action="${edicion}?@{/consejos/modificar}:@{/consejos/guardar}" th:object="${consejosSalud}" method="post">
+				<label for="titulo">titulo</label>
+				<input type="text" id="titulo" name="consejos_titulo" th:field="*{titulo}"><br><br>
+				<label for="descripcion">Descripcion</label>
+				<input type="text" id="descripcion" name="consejos_descripcion" th:field="*{descripcion}" size="120"><br><br>
+				<label for="imagen">Nombre de Imagen</label>
+				<input type="text" id="imagen" name="consejos_imagen" th:field="*{nombreIMG}"><br><br>
+				<p><input type="submit" class="button" th:value="${edicion}?'Modificar':'Guardar'"></p>
+			</form>
+		</section>
+	</div>
+</body>
+</html>

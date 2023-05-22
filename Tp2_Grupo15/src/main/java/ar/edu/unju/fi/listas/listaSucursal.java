@@ -8,7 +8,7 @@ import ar.edu.unju.fi.model.sucursal;
 public class listaSucursal {
 
 	private List<sucursal> sucursales;
-	
+	 
 	public listaSucursal() {
 		sucursales = new ArrayList<sucursal>();
 		sucursales.add(new sucursal("Todo Mascotas - Local 1", "Jujuy", "Av. General Belgrano 3915", "+5493884999999", 

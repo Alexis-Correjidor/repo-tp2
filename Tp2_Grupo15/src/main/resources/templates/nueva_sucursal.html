@@ -6,7 +6,9 @@
 		<link rel="stylesheet" th:href="@{/css/style.css}">
 	</head>
 <body>
+
 	<header th:replace="~{layouts/header :: header}"> </header>
+
 	<div class="conteinerSucursal">
 		<section>
 			<h3 th:text="${edicion}?'Modificar Sucursal':'Nueva Sucursal'"></h3><br><br>	
