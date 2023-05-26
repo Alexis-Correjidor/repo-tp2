@@ -10,9 +10,11 @@
 	<header th:replace="~{layouts/header :: header}"> </header>
 
 	<div id="contenedor">
-		<a th:href="@{/producto/nuevo}">Nuevo Producto</a>
+		<a class="nuevoIngreso" th:href="@{/producto/nuevo}">Ingresar Nuevo Producto</a>
 		<section class="articulos__section">
+			
 			<h2>Alimentos</h2>
+			
 			<div class="div__articulos">
 				<article th:if="${prod.categoria}=='Alimento'"
 					th:each="prod: ${productos}" class="articuloProductos">
