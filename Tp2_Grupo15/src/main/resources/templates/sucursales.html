@@ -8,12 +8,11 @@
 <body>
 
 	<header th:replace="~{layouts/header :: header}"> </header>
- main
 	
 	<div class="conteinerSucursal">
 		<section>
 				
-				<a th:href="@{/sucursal/nuevo}">Nueva Sucursal</a>
+				
 				<nav id="navSucursales">
 				
 				<h2 class="h2Salud">Sucursales</h2>
@@ -42,8 +41,11 @@
 							
 					</tr>
 				</table>
+				<a class="nuevoIngreso" th:href="@{/sucursal/nuevo}">Ingresar Nueva Sucursal</a>
 				</nav>
+				
 		</section>
+		
 	</div>
 	<footer th:replace="~{layouts/footer :: footer}"> </footer>	
 </body>

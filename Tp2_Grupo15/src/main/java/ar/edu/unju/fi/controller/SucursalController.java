@@ -20,7 +20,7 @@ public class SucursalController {
 	@GetMapping("/listado")
 	public String getListaSucursalesPage(Model model) {
 		model.addAttribute("sucursales", listaSucursales.getSucursales());
-		return "Sucursales";
+		return "sucursales";
 	}
 	@GetMapping("/nuevo")
 	public String getNuevaSucursalPage(Model model) {
@@ -32,7 +32,7 @@ public class SucursalController {
 	
 	@PostMapping("/guardar")
 	public ModelAndView getGuardarSucursalPage(@ModelAttribute("sucursal")sucursal sucursal) {
-		ModelAndView modelView = new ModelAndView("Sucursales");
+		ModelAndView modelView = new ModelAndView("sucursales");
 		listaSucursales.getSucursales().add(sucursal);
 		modelView.addObject("sucursales", listaSucursales.getSucursales());
 		return modelView;
