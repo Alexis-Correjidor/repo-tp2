@@ -11,7 +11,7 @@ public class Paseador {
 	private int horaTFin;
 	
 	public Paseador() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public Paseador(String nombre, String apellido, String dias, int horaMInicio, int horaMFin, int horaTInicio,

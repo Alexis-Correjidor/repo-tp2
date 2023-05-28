@@ -8,8 +8,8 @@
 <body>
 	<header th:replace="~{layouts/header :: header}"> </header>
 	
-	<h2>Servicios de Paseo</h2>
-	<a th:href="@{/servicios/nuevo}">Nuevo Paseador</a>
+	<h2 class="h2Servcios">Servicios de Paseo</h2>
+	
 	<div class="conteinerServiciosPaseo" >
     
     <table>
@@ -38,8 +38,11 @@
 							</td>						
 					</tr>
     </table>
-    </div>
     
+    </div>
+    <section class="sectionNuevo">
+    <a class="nuevoIngreso" th:href="@{/servicios/nuevo}">Ingresar Nuevo Paseador</a>
+    </section>
     <div class="GuiaServicios">
     	<section class="forma">
     		<h3>Encuentra</h3>

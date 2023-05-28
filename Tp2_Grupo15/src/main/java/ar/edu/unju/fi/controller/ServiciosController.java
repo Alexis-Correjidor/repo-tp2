@@ -23,7 +23,7 @@ public class ServiciosController {
 	@GetMapping("/listado")
 	public String getListaPaseadoresPage(Model model) {
 		model.addAttribute("paseadores",listaPaseadores.getPaseadores());
-		return "ServiciosPaseo";
+		return "serviciosPaseo";
 	}
 	
 	@GetMapping("/nuevo")
@@ -36,7 +36,7 @@ public class ServiciosController {
 	
 	@PostMapping("/guardar")
 	public ModelAndView getGuardarPaseadorPage(@ModelAttribute("paseador") Paseador paseador) {
-		ModelAndView modelView = new ModelAndView ("ServiciosPaseo");
+		ModelAndView modelView = new ModelAndView ("serviciosPaseo");
 		listaPaseadores.getPaseadores().add(paseador);
 		modelView.addObject("paseadores",listaPaseadores.getPaseadores());
 		return modelView;

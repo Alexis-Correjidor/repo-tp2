@@ -177,13 +177,14 @@ ul a:active{
 
 ul#listaSecundaria{margin:20px 60px;}
 
-.h2Salud {
+.h2Salud, .h2Consejos,.h2Servcios,.h2Alimentos {
 	font-size:30px;
 	font-family:Times New Roman,Arial,Helvetica; 
 	font-style: italic;
 	font-weight: bold;
 	margin-bottom: 20px;
 	text-shadow: 3px 3px 6px white;
+	text-align: center;
 }
 
 #figura1Salud,#figura2Salud,#figura3Salud,#figura4Salud,#figura5Salud{
@@ -214,7 +215,7 @@ ul#listaSecundaria{margin:20px 60px;}
 	background-image:url("../Images/imagen5Salud.jpg");		
 }
 
-#h2Consejos {
+/**#h2Consejos {
 	font-size:30px;
 	font-family:Times New Roman,Arial,Helvetica; 
 	font-style: italic;
@@ -224,10 +225,9 @@ ul#listaSecundaria{margin:20px 60px;}
 	margin-right:20px;
 	margin-bottom:0px;
 	text-shadow: 3px 3px 6px black;
-}
+}**/
 
 /*CONTACTANOS */
-
 
 .container input {
     background: transparent;
@@ -272,14 +272,13 @@ ul#listaSecundaria{margin:20px 60px;}
    
 /*Servicios de Paseo*/
 
-h2{
-	text-align: center;
-	}
+
 
 .conteinerServiciosPaseo{
 	margin: 20px 40px;
 	justify-content: center ;
 	display: flex;
+	
 }
 
 
@@ -322,4 +321,35 @@ th,td{
 .conteinerSucursal{
 	margin: 20px 40px;
 	justify-content: center ;
+}
+.sectionNuevo{
+	align-items: center;
+	justify-content: center ;
+	display: flex;
+}
+.nuevoIngreso{
+	align-items: center;
+	margin: 20px;
+}
+
+form{
+	margin: 10px auto;
+	width: 350px;
+	color: #3b3b3b;
+}
+input{
+	outline: none;
+	border:0;
+	padding:10px;
+	margin:5px;
+	width:90%;
+}
+label{
+	margin:5px;
+}
+.center-content{
+	text-align:center;	
+}
+.button{
+	background-color: #3CC93F;
 }
