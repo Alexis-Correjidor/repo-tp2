@@ -18,7 +18,8 @@ import ar.edu.unju.fi.model.Producto;
 @RequestMapping("/producto")
 public class ProductoController {
 
-	ListaProducto listaProducto = new ListaProducto();
+	@Autowired
+	ListaProducto listaProducto;
 	@Autowired
 	Producto productoEncontrado;
 	
