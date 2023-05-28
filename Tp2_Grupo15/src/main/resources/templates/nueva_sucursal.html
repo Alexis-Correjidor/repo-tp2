@@ -2,36 +2,50 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Sucursales</title>
+		<link rel="stylesheet" type="text/css"
+		th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 		<link rel="stylesheet" th:href="@{/css/style.css}">
 	</head>
 <body>
 
 	<header th:replace="~{layouts/header :: header}"> </header>
 
-	<div class="conteinerSucursal">
-		<section>
+	<div class="container text-center" id="conteinerSucursal">
+		<div class="row justify-content-center">
+		<section class="col-lg-9 col-xs-6 col-xl-6" style="border: 2px solid #1c5">
 			<h3 th:text="${edicion}?'Modificar Sucursal':'Nueva Sucursal'"></h3><br><br>	
 			<form th:action="${edicion}?@{/sucursal/modificar}:@{/sucursal/guardar}" th:object="${sucursal}" method="post">
+			<div class="row justify-content-center">
+				
 				<label for="nombre">Nombre</label>
 				<input type="text" id="nombre" name="sucursal_nombre" th:field="*{nombre}"><br><br>
+				
 				<label for="provincia">Provincia</label>
 				<select id="provincia" name="sucursal_provincia" th:field="*{provincia}">
 					<option value="Salta">Salta</option>
 					<option value="Jujuy">Jujuy</option>
 					<option value="Tucuman">Tucuman</option>
 				</select><br><br>
-				<label for="direccion">Direccion</label>
+				
+				<label for="direccion" >Direccion</label>
 				<input type="text" id="djreccion" name="sucursal_direccion" th:field="*{direccion}"><br><br>
+				
 				<label for="telefono">Telefono</label>
 				<input type="text" id="telefono" name="sucursal_telefono" th:field="*{telefono}"><br><br>
+
 				<label for="email">Email</label>
 				<input type="text" id="email" name="sucursal_email" th:field="*{email}"><br><br>
+				
 				<label for="fecha">Fecha de inicio</label>
 				<input type="date" id="fecha" name="sucursal_fecha" th:field="*{fechaInicio}"><br><br>
-				<p class="center-content"><input type="submit" class="button" th:value="${edicion}?'Modificar':'Guardar'"></p>
+				
+				<button type="submit" id="unicoBoton" th:text="${editar}?'Modificar':'Guardar'"></button>
+				</div>
 			</form>
 		</section>
+		</div>
 	</div>
 	
 </html>	

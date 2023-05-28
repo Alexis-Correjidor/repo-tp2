@@ -2,51 +2,61 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 	<head>
 		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Sucursales</title>
+		<link rel="stylesheet" type="text/css"
+		th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 		<link rel="stylesheet" th:href="@{/css/style.css}">
 	</head>
 <body>
 
 	<header th:replace="~{layouts/header :: header}"> </header>
 	
-	<div class="conteinerSucursal">
+	<div class="container">
 		<section>
-				
-				
 				<nav id="navSucursales">
-				
+				<div class="row justify-content-center">
 				<h2 class="h2Salud">Sucursales</h2>
-				<table>
-					<tr>
-						<th>Nombre</th>
-						<th>Provincia</th>
-						<th>Direccion</th>
-						<th>Telefono</th>
-						<th>Mail</th>
-						<th>Fecha de inicio</th>
-						<th>Acciones</th>
+				<div class="table-responsive-xxl  table-responsive-xl table-responsive-lg table-responsive-md table-responsive-ms table-responsive-xs">
+				<table class="table table-hover table-sm">
+				<thead>
+					<tr class="table-active table-success">
+						<th scope="col">Nombre</th>
+						<th scope="col">Provincia</th>
+						<th scope="col">Direccion</th>
+						<th scope="col">Telefono</th>
+						<th scope="col">Mail</th>
+						<th scope="col">Fecha de inicio</th>
+						<th scope="col">Acciones</th>
 					</tr>
+					</thead>
+					<tbody>
 					
 					<tr th:each="sucu: ${sucursales}">
-							<td th:text="${sucu.nombre}"></td>
+							<td scope="row" th:text="${sucu.nombre}"></td>
 							<td th:text="${sucu.provincia}"></td>
 							<td th:text="${sucu.direccion}"></td>
 							<td th:text="${sucu.telefono}"></td> 
 							<td th:text="${sucu.email}"></td>
 							<td th:text="${#temporals.format(sucu.fechaInicio, 'dd/MM/yyyy')}"></td>
 							<td>
-								<a th:href="@{/sucursal/modificar/}+${sucu.nombre}">Editar</a>
-								<a th:href="@{/sucursal/eliminar/}+${sucu.nombre}">Eliminar</a>
+								<a class="btn btn-outline-success" th:href="@{/sucursal/modificar/}+${sucu.nombre}">Editar</a>
+								<a class="btn btn-outline-danger" th:href="@{/sucursal/eliminar/}+${sucu.nombre}">Eliminar</a>
 							</td>
 							
 					</tr>
+					</tbody>
 				</table>
-				<a class="nuevoIngreso" th:href="@{/sucursal/nuevo}">Ingresar Nueva Sucursal</a>
-				</nav>
-				
+				</div>
+				</div>
+				<div style="padding: 0px;" class="container text-center">
+				<a class="btn btn-info" th:href="@{/sucursal/nuevo}">Ingresar Nueva Sucursal</a></div>
+				</nav>		
 		</section>
 		
 	</div>
 	<footer th:replace="~{layouts/footer :: footer}"> </footer>	
+	<script type="tex/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>
