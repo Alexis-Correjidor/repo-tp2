@@ -1,60 +1,70 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contacto</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
-  </head>
-  <body>
-    <header th:replace="~{layouts/header :: header}">
-		
-	</header>
-
-    <div id="contenedorContacto2">
-      <section id="sectionContacto">
-        <h2>Contáctenos</h2>
-        <div class="texto__section">
-          <p>3915 Av. General Belgrano. 388-4999999</p>
-          <p>Lunes a viernes: 9:00 a. m a 8:00 p. m.</p>
-          <p>Sábado a domingo: 9:00 a. m a 12:30 p. m.</p>
-          <a href="mailto:contactos@email.com.ar">contactos@email.com.ar</a>
-        </div>
-        <nav id="navContactos__section">
-          <ul>
-            <li>
-              <a th:href="@{https://www.facebook.com/}" target="_blank">Facebook</a>
-            </li>
-            <li>
-              <a th:href="@{https://www.instagram.com/}" target="_blank">Instagram</a>
-            </li>
-            <li>
-              <a th:href="@{https://twitter.com/i/flow/login}" target="_blank">Twitter</a>
-            </li>
-          </ul>
-        </nav>
-        <div id="contendor__input">
-            <input type="text" name="nombre" placeholder="Ingrese su nombre" id="nombre" required>
-            <input type="text" name="email" placeholder="Ingrese su email" id="email" required>
-            <input type="text" name="ciudad" placeholder="Ingrese su ciudad" id="ciudad" required>
-            <textarea id="mensaje" placeholder="Mensaje"></textarea>
-            <div>
-              <button type="submit" id="unicoBoton">Enviar</button>
-            </div>
-        </div>
-        <div id="section__imagenDiv">
-          <img th:src="@{/Images/correo.jpg}" alt="correo" id="section__imagen">
-        </div>
-      </section>
-      <aside id="asideContacto">
-        <h2>Publícidad</h2>
-        <img th:src="@{/Images/imagen1.gif}" alt="" />
-        <img th:src="@{/Images/Imagen2.jpg}" alt="" />
-      </aside>
-    </div>
-    <footer th:replace="~{layouts/footer :: footer}">
-		
-	</footer>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto</title>
+<link rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+	<header th:replace="~{layouts/header :: header}"> </header>
+	<div class="container">
+		<div class="row">
+			<section style="border: 2px solid #1c5" class="col-md-6">
+				<h2>Contáctenos</h2>
+				<p>3915 Av. General Belgrano. 388-4999999</p>
+				<p>Lunes a viernes: 9:00 a. m a 8:00 p. m.</p>
+				<p>Sábado a domingo: 9:00 a. m a 12:30 p. m.</p>
+				<a href="mailto:contactos@email.com.ar">contactos@email.com.ar</a>
+				<nav>
+					<ul>
+						<li><a th:href="@{https://www.facebook.com/}" target="_blank">Facebook</a>
+						</li>
+						<li><a th:href="@{https://www.instagram.com/}"
+							target="_blank">Instagram</a></li>
+						<li><a th:href="@{https://twitter.com/i/flow/login}"
+							target="_blank">Twitter</a></li>
+					</ul>
+				</nav>
+				<div class="container">
+					<div class="row justify-content-center" >
+						<input type="text" name="nombre" placeholder="Ingrese su nombre"
+						id="nombre" required> <input type="text" name="email"
+						placeholder="Ingrese su email" id="email" required> <input
+						type="text" name="ciudad" placeholder="Ingrese su ciudad"
+						id="ciudad" required>
+						<textarea id="mensaje" placeholder="Mensaje"></textarea>
+						<button type="submit" id="unicoBoton">Enviar</button>
+					</div>
+				</div>
+				<br>
+				<div class="row justify-content-center">
+						<img style="height: 150px; width:200px" th:src="@{/Images/correo.jpg}" alt="correo"
+						id="section__imagen">
+				</div>
+			</section>
+			<aside style="border: 2px solid #1c5" class="col-md-6">
+				<h2>Publícidad</h2>
+				<div class="container">
+					<div class="row justify-content-center">
+						<img style="height: 300px; width:400px" th:src="@{/Images/imagen1.gif}" alt="" />
+					</div>
+					<br>
+					
+					<div class="row justify-content-center">
+						<img style="height: 300px; width:400px"
+						th:src="@{/Images/Imagen2.jpg}" alt="" />
+					</div>
+					
+				</div>
+				
+			</aside>
+		</div>
+	</div>
+	<footer th:replace="~{layouts/footer :: footer}"> </footer>
+	<script type="tex/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
 </html>

@@ -136,61 +136,24 @@ footer{									/*Pie de pagina*/
 /*PRODUCTOS*/
 
 #contenedor {
-    background-color: radial-gradient(#fdbb2d, #22c1c3) ;
+    background-color: transparent ;
     width: 1325px;
     margin: auto;
     border: 1px solid grey;
     box-shadow: 0 4px 15px 0 lightblue;
 }
 
-.articulos__section {
-    width: 1325px;   
-}
 
-.articuloProductos {
+#articuloProductos {
     width: 485.84px;
-    height: 500px;
+    height: 450px;
     margin: auto;
     background-color: bisque;
     border: 2px solid black;
     box-shadow: 2px 4px 15px 0 black;
 }
 
-#ar {
-	font-size:15px
-}
 
-.articulos__section h2 {
-    font-size:40px;
-	font-family:Times New Roman,Arial,Helvetica; 
-	font-style: italic;
-	font-weight: bold;
-	text-shadow: 3px 3px 6px black;
-    height: 150px;
-    text-align: center;
-    line-height: 100px;
-}
-
-.div__articulos {
-    display: flex;
-    text-align: center;
-    margin: auto;
-}
-
-
-.articuloProductos img {
-    width: 300px;
-    height: 300px;
-    margin: auto;
-}
-
-.h2Juguetes {
-    padding-top: 90px;
-}
-
-.h2Ropa {
-	padding-top: 90px;
-}
 
 /*CONSEJOSSALUD*/
 
@@ -266,87 +229,7 @@ ul#listaSecundaria{margin:20px 60px;}
 
 /*CONTACTANOS */
 
-#contenedorContacto2{
-	margin:5px 40px;
-}
-#sectionContacto {
-    background: transparent;
-    height: 720px;
-    width: 100%;
-    margin: auto;
-    border: 2px solid #1c5;
-}
-
-#sectionContacto h2,#asideContacto h2 {
-	margin-top:20px;
-	margin-bottom:20px;
-    color: black;
-    text-align: center;
-}
-
-#sectionContacto ul {
-    padding-left: 30px;
-}
-
-#section__imagen {
-    width: 100px;
-    height: 100px;
-    border-radius: 10%;
-}
-
-#navContactos__section {
-    padding: 10px 90px;
-}
-
-.texto__section {
-    padding: 10px 90px;
-    background: transparent;
-}
-
-#section__imagenDiv {
-        height: 100px;
-        width: 100%;
-        text-align: center;
-        padding: 10px;
-        justify-content:center;
-}
-
-#sectionpContacto__section ul{
-    margin: auto;
-}
-
-#asideContacto{
-    background: transparent;
-    margin: auto;
-    width: 700px;
-    height: 720px;
-    text-align: center;
-    border: 2px solid #1c5;
-
-}
-
-#asideContacto img {
-    display: block;
-    width: 200px;
-    height: 200px;
-    padding: 20px;
-    margin: auto;
-}
-
-
-#contenedorContacto2 {
-    width: 1144.550px;
-    height: 700px;
-    display: flex;
-    margin: auto;
-    margin-top: 20px;   
-}
-
-#contendor__input {
-    text-align: center;
-}
-
-#contendor__input input {
+.container input {
     background: transparent;
     width: 500px;
     height: 50px;
@@ -355,22 +238,20 @@ ul#listaSecundaria{margin:20px 60px;}
     border-bottom: 2px solid #1c5;
 }
 
-#contendor__input input:focus {
+.container input:focus {
     background: linear-gradient(to bottom,transparent,#b8b7b7);
     outline: none;
     border-bottom: 2px solid #5f9;
 }
 
-#contenedorContacto2 button[type="submit"]{
-    background-color: #094;
-    border: none;
-    border-bottom: 2px solid #1c5;
-}
 
 
 #unicoBoton {
     width: 500px;
     height: 50px;
+    background-color: #094;
+    border: none;
+    border-bottom: 2px solid #1c5;
 }
 
 

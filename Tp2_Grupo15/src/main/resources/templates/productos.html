@@ -2,90 +2,82 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Productos</title>
+<link rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 	<header th:replace="~{layouts/header :: header}"> </header>
 
-	<div id="contenedor">
-		<a class="nuevoIngreso" th:href="@{/producto/nuevo}">Ingresar Nuevo Producto</a>
-		<section class="articulos__section">
-			
+	<div style="padding: 0px;" class="container text-start">
+		<a class="btn btn-info" th:href="@{/producto/nuevo}">Nuevo
+			Producto</a>
+	</div>
+	<div class="container text-center" id="contenedor">
+		<section class="row justify-content-center">
 			<h2>Alimentos</h2>
-			
-			<div class="div__articulos">
-				<article th:if="${prod.categoria}=='Alimento'"
-					th:each="prod: ${productos}" class="articuloProductos">
-					<h3 style="font-size: 30px" th:text="${prod.nombre}"></h3>
-					<h3 th:text="${prod.nombreImagen}"></h3>
-					<br>
-					<h4 style="font-size: 20px; color: red">Precio</h4>
-					<br> <span style="color: gold">$</span> <span
-						th:text="${prod.precio}"></span> <br>
-					<br>
-					<span style="color: gold">$</span> <span th:text="${prod.calcularDescuento}"></span> <span style="color: green" th:text="${prod.descuento}+'% OFF'"></span>
-					<br>
-					<br>
-					<div style="padding: 10px">
-						<a th:href="@{/producto/modificar/}+${prod.codigo}">Editar</a> <a
-							th:href="@{/producto/eliminar/}+${prod.codigo}">Eliminar</a>
-					</div>
-				</article>
+			<article th:if="${prod.categoria}=='Alimento'"
+				th:each="prod: ${productos}" class="col-4" id="articuloProductos" style="margin: 10px">
+				<h3 style="font-size: 25px" th:text="${prod.nombre}"></h3>
+				<h3 th:text="${prod.nombreImagen}"></h3>
+				<br>
+				<h4 style="font-size: 20px; color: red">Precio</h4>
+				<br> <span style="color: gold">$</span> <span
+					th:text="${prod.precio}"></span> <br> <br> <span
+					style="color: gold">$</span> <span
+					th:text="${prod.calcularDescuento}"></span> <span
+					style="color: green" th:text="${prod.descuento}+'% OFF'"></span> <br>
+				<br> <a class="btn btn-outline-success"
+					th:href="@{/producto/modificar/}+${prod.codigo}">Modificar</a> <a
+					class="btn btn-outline-danger"
+					th:href="@{/producto/eliminar/}+${prod.codigo}">Eliminar</a>
+			</article>
 
-			</div>
 		</section>
+		<section class="row justify-content-center">
+			 <h2>Juguetes</h2>
+			<article th:if="${prod.categoria}=='Juguete'"
+				th:each="prod: ${productos}" class="col-4" id="articuloProductos" style="margin: 10px">
+				<h3 style="font-size: 25px" th:text="${prod.nombre}"></h3>
+				<h3 th:text="${prod.nombreImagen}"></h3>
+				<br>
+				<h4 style="font-size: 20px; color: red">Precio</h4>
+				<br> <span style="color: gold">$</span> <span
+					th:text="${prod.precio}"></span> <br> <br> <span
+					style="color: gold">$</span> <span
+					th:text="${prod.calcularDescuento}"></span> <span
+					style="color: green" th:text="${prod.descuento}+'% OFF'"></span> <br>
+				<br> <a class="btn btn-outline-success"
+					th:href="@{/producto/modificar/}+${prod.codigo}">Modificar</a> <a
+					class="btn btn-outline-danger"
+					th:href="@{/producto/eliminar/}+${prod.codigo}">Eliminar</a>
 
-		<section class="articulos__section">
-			<h2 class="h2Juguetes">Juguetes</h2>
-			<div class="div__articulos">
-				<article th:if="${prod.categoria}=='Juguete'"
-					th:each="prod: ${productos}" class="articuloProductos">
-					<h3 style="font-size: 30px" th:text="${prod.nombre}"></h3>
-					<h3 th:text="${prod.nombreImagen}"></h3>
-					<br>
-					<h4 style="font-size: 20px; color: red">Precio</h4>
-					<br> <span style="color: gold">$</span> <span
-						th:text="${prod.precio}"></span> <br>
-					<br>
-					<span style="color: gold">$</span> <span th:text="${prod.calcularDescuento}"></span> <span style="color: green" th:text="${prod.descuento}+'% OFF'"></span>
-					<br>
-					<br>
-					<div style="padding: 10px">
-						<a th:href="@{/producto/modificar/}+${prod.codigo}">Editar</a> <a
-							th:href="@{/producto/eliminar/}+${prod.codigo}">Eliminar</a>
-					</div>
-				</article>
-
-			</div>
+			</article>
 		</section>
-
-		<section class="articulos__section">
-			<h2 class="h2Ropa">Ropa</h2>
-			<div class="div__articulos">
-				<article th:if="${prod.categoria}=='Ropa'"
-					th:each="prod: ${productos}" class="articuloProductos">
-					<h3 style="font-size: 30px" th:text="${prod.nombre}"></h3>
-					<h3 th:text="${prod.nombreImagen}"></h3>
-					<br>
-					<h4 style="font-size: 20px; color: red">Precio</h4>
-					<br> <span style="color: gold">$</span> <span
-						th:text="${prod.precio}"></span> <br>
-					<br>
-					<span style="color: gold">$</span> <span th:text="${prod.calcularDescuento}"></span> <span style="color: green" th:text="${prod.descuento}+'% OFF'"></span>
-					<br>
-					<br>
-					<div style="padding: 10px">
-						<a th:href="@{/producto/modificar/}+${prod.codigo}">Editar</a> <a
-							th:href="@{/producto/eliminar/}+${prod.codigo}">Eliminar</a>
-					</div>
-				</article>
-			</div>
+		<section class="row justify-content-center">
+			<h2>Ropa</h2>
+			<article th:if="${prod.categoria}=='Ropa'"
+				th:each="prod: ${productos}" class="col-4" id="articuloProductos" style="margin: 10px">
+				<h3 style="font-size: 25px" th:text="${prod.nombre}"></h3>
+				<h3 th:text="${prod.nombreImagen}"></h3>
+				<br>
+				<h4 style="font-size: 20px; color: red">Precio</h4>
+				<br> <span style="color: gold">$</span> <span
+					th:text="${prod.precio}"></span> <br> <br> <span
+					style="color: gold">$</span> <span
+					th:text="${prod.calcularDescuento}"></span> <span
+					style="color: green" th:text="${prod.descuento}+'% OFF'"></span> <br>
+				<br> <a class="btn btn-outline-success"
+					th:href="@{/producto/modificar/}+${prod.codigo}">Modificar</a> <a
+					class="btn btn-outline-danger"
+					th:href="@{/producto/eliminar/}+${prod.codigo}">Eliminar</a>
+			</article>
 		</section>
 	</div>
-
 	<footer th:replace="~{layouts/footer :: footer}"> </footer>
-
+	<script type="tex/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>
