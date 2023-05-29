@@ -187,7 +187,7 @@ ul#listaSecundaria{margin:20px 60px;}
 	text-align: center;
 }
 
-#figura1Salud,#figura2Salud,#figura3Salud,#figura4Salud,#figura5Salud{
+/**#figura1Salud,#figura2Salud,#figura3Salud,#figura4Salud,#figura5Salud{
 	height:8%;
 	margin:15px;
 	
@@ -213,7 +213,7 @@ ul#listaSecundaria{margin:20px 60px;}
 
 #figura5Salud{
 	background-image:url("../Images/imagen5Salud.jpg");		
-}
+}**/
 
 /**#h2Consejos {
 	font-size:30px;
