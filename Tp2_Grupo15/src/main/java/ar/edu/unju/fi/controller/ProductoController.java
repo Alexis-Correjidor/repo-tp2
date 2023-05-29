@@ -19,9 +19,9 @@ import ar.edu.unju.fi.model.Producto;
 public class ProductoController {
 
 	@Autowired
-	ListaProducto listaProducto;
+	ListaProducto listaProducto; //inyeccion class ListaProductos
 	@Autowired
-	Producto productoEncontrado;
+	Producto productoEncontrado; //inyeccion class Producto
 	
 	@GetMapping("/lista-producto")
 	public String getListaProductoPage(Model model) {

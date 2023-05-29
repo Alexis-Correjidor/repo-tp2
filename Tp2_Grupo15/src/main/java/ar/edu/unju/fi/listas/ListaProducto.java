@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 import ar.edu.unju.fi.model.Producto;
 
-@Component
+@Component //Se guarda en spring container
 public class ListaProducto {
 	private List<Producto> productos;
 	
