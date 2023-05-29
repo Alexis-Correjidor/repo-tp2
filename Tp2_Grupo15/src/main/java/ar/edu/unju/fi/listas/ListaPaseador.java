@@ -3,10 +3,10 @@ package ar.edu.unju.fi.listas;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import org.springframework.stereotype.Component;
 import ar.edu.unju.fi.model.Paseador;
 
-
+@Component
 public class ListaPaseador {
 
 	private List<Paseador>paseadores;

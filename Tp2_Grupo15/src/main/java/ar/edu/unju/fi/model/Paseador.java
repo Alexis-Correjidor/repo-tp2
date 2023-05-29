@@ -1,5 +1,8 @@
 package ar.edu.unju.fi.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Paseador {
 
 	private String nombre;
@@ -26,6 +29,8 @@ public class Paseador {
 		this.horaTFin = horaTFin;
 	}
 
+	/*----Creacion de Getters y Setters----*/
+	
 	public String getNombre() {
 		return nombre;
 	}

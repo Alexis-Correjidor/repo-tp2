@@ -34,9 +34,13 @@ h1{						 /*Titulo Principal de Pagina*/
 	margin:20px;
 }
 
-header a{ text-decoration: none;      /*Se Quita estilos de texto predefinido(subrayado) y se aplica color blanco al texto*/            
+header a,#h2Ofertas{ 
+		  text-decoration: none;      /*Se Quita estilos de texto predefinido(subrayado) y se aplica color blanco al texto*/            
           font-weight: bold ; 
           color: white;
+          justify-content: center ;
+	align-items: center;
+	text-align: center;
           }
           
 header a:hover{ color: #93ebeb; }               
@@ -290,6 +294,7 @@ table, th, td {
 }
 th,td{
 	padding:10px;
+	    text-align: -internal-center;
 }
 
 

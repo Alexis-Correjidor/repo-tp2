@@ -2,15 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 	<head>
 		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Inicio</title>
+		<link rel="stylesheet" type="text/css"
+		th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 		<link rel="stylesheet" th:href="@{/css/style.css}">
 	</head>
 <body>
 	
 	<header th:replace="~{layouts/header :: header}"> </header>
 	
-	<div class="conteiner">
-		<section class="section">
+	<div class="container">
+		<div class="row">
+		<section class="col-lg-9" style="background-image:url(../Images/imagenfondo.jpg);background-repeat:no-repeat ;background-size: cover;background-position: center;">
 			
 			<article class="articulos">
 				<h3>Mision en general</h3>
@@ -31,13 +36,24 @@
 			</article>
 			
 		</section>
-		<aside class="publicidad">
-			Ofertas
-			<figure id="figura1"></figure>
-			<figure id="figura2"></figure>
-			<figure id="figura3"></figure>
+		<aside class="col-lg-3">
+			<div class="container">
+				<h3 id="h2Ofertas">Ofertas</h3>
+				<div class="row justify-content-center"> <!--agregue fila  -->
+						<img style="height: 300px; width:400px" th:src="@{/Images/imagen1.gif}" alt="" />
+				</div><br>
+					
+				<div class="row justify-content-center"> <!--agregue fila  -->
+						<img style="height: 300px; width:400px" th:src="@{/Images/Imagen2.jpg}" alt="" />
+				</div><br>
+				<div class="row justify-content-center"> <!--agregue fila  -->
+						<img style="height: 300px; width:400px" th:src="@{/Images/Imagen3.jpg}" alt="" />
+				</div>
+			</div>
 		</aside>
 	</div>
+	</div>
 	<footer th:replace="~{layouts/footer :: footer}"> </footer>	
+	<script type="tex/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>

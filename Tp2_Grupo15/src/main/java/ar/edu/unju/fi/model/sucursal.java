@@ -41,6 +41,7 @@ public sucursal() {
 	this.fechaInicio = fechaInicio;
 }
 	/*----creacion de getters y setters----*/
+	
 	public String getNombre() {
 		return nombre;
 	}
