@@ -10,48 +10,46 @@
 		<link rel="stylesheet" th:href="@{/css/style.css}">
 	</head>
 <body>
-	
 	<header th:replace="~{layouts/header :: header}"> </header>
-	
 	<div class="container">
 		<div class="row">
-		<section class="col-lg-9" style="background-image:url(../Images/imagenfondo.jpg);background-repeat:no-repeat ;background-size: cover;background-position: center;">
-			
-			<article class="articulos">
-				<h3>Mision en general</h3>
-				<p>Satisfacer las necesidades de sus mascotas brindándoles un excelente trato, para mejorar la calidad de vida a través de la prestación de servicios basados en el amor, la experiencia y los conocimientos adquiridos en el comportamiento canino. Brindamos las herramientas necesarias para fortalecer el vínculo familiar, logrando así una buena convivencia y el bienestar integral. De esta manera contribuimos a que cada día exista una sociedad más comprometida y responsable sobre el cuidado y respeto por los animales.</p></article>
-			
-			<article class="articulos">
-				<h3>Vision hacia el futuro</h3>
-				<p>Ser una empresa reconocida por nuestro profesionalismo en la comercialización de los mejores productos y prestación de servicios dedicados al bienestar de las mascotas, brindándoles confianza, respeto y cariño, creando ambientes ideales para la felicidad y bienestar de nuestros clientes. Liderada por un equipo con acceso a la más alta calidad de capacitación y con una mirada colaborativa e inclusiva.</p></article>
-			
-			<article class="articulos">
-				<h3>Brinda a tu perro lo que realmente necesita</h3>
-				<p>El paseo diario es una actividad fundamental para la calidad de vida de tu mascota.</p>
-				<ul id="listaSecundaria">
-					<li>Ejercicio : Un perro sin ejercicio tiene energía de sobra, y salir sólo para usar el baño no es suficiente.</li>
-					<li>Sociabilización : Muchos problemas de conducta y salud de los perros se deben a que pasan muchas horas en soledad.</li>
-					<li>Rutina : Mantener una rutina diaria significa mejor comportamiento y mayor inteligencia para tu perro.</li>
-				</ul>
-			</article>
-			
-		</section>
-		<aside class="col-lg-3">
-			<div class="container">
-				<h3 id="h2Ofertas">Ofertas</h3>
-				<div class="row justify-content-center"> <!--agregue fila  -->
-						<img style="height: 300px; width:400px" th:src="@{/Images/imagen1.gif}" alt="" />
-				</div><br>
-					
-				<div class="row justify-content-center"> <!--agregue fila  -->
-						<img style="height: 300px; width:400px" th:src="@{/Images/Imagen2.jpg}" alt="" />
-				</div><br>
-				<div class="row justify-content-center"> <!--agregue fila  -->
-						<img style="height: 300px; width:400px" th:src="@{/Images/Imagen3.jpg}" alt="" />
+			<section class="col-lg-9" style="background-image:url(../Images/imagenfondo.jpg);background-repeat:no-repeat ;background-size: cover;background-position: center;">
+				
+				<article class="articulos">
+					<h3>Mision en general</h3>
+					<p>Satisfacer las necesidades de sus mascotas brindándoles un excelente trato, para mejorar la calidad de vida a través de la prestación de servicios basados en el amor, la experiencia y los conocimientos adquiridos en el comportamiento canino. Brindamos las herramientas necesarias para fortalecer el vínculo familiar, logrando así una buena convivencia y el bienestar integral. De esta manera contribuimos a que cada día exista una sociedad más comprometida y responsable sobre el cuidado y respeto por los animales.</p></article>
+				
+				<article class="articulos">
+					<h3>Vision hacia el futuro</h3>
+					<p>Ser una empresa reconocida por nuestro profesionalismo en la comercialización de los mejores productos y prestación de servicios dedicados al bienestar de las mascotas, brindándoles confianza, respeto y cariño, creando ambientes ideales para la felicidad y bienestar de nuestros clientes. Liderada por un equipo con acceso a la más alta calidad de capacitación y con una mirada colaborativa e inclusiva.</p></article>
+				
+				<article class="articulos">
+					<h3>Brinda a tu perro lo que realmente necesita</h3>
+					<p>El paseo diario es una actividad fundamental para la calidad de vida de tu mascota.</p>
+					<ul id="listaSecundaria">
+						<li>Ejercicio : Un perro sin ejercicio tiene energía de sobra, y salir sólo para usar el baño no es suficiente.</li>
+						<li>Sociabilización : Muchos problemas de conducta y salud de los perros se deben a que pasan muchas horas en soledad.</li>
+						<li>Rutina : Mantener una rutina diaria significa mejor comportamiento y mayor inteligencia para tu perro.</li>
+					</ul>
+				</article>
+				
+			</section>
+			<aside class="col-lg-3">
+				<div class="container">
+					<h3 id="h2Ofertas">Ofertas</h3>
+					<div class="row justify-content-center"> <!--agregue fila  -->
+							<img style="height: 300px; width:400px" th:src="@{/Images/imagen1.gif}" alt="" />
+					</div><br>
+						
+					<div class="row justify-content-center"> <!--agregue fila  -->
+							<img style="height: 300px; width:400px" th:src="@{/Images/Imagen2.jpg}" alt="" />
+					</div><br>
+					<div class="row justify-content-center"> <!--agregue fila  -->
+							<img style="height: 300px; width:400px" th:src="@{/Images/Imagen3.jpg}" alt="" />
+					</div>
 				</div>
-			</div>
-		</aside>
-	</div>
+			</aside>
+		</div>
 	</div>
 	<footer th:replace="~{layouts/footer :: footer}"> </footer>	
 	<script type="tex/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>

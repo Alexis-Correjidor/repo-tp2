@@ -11,62 +11,57 @@
 	</head>
 <body>
 	<header th:replace="~{layouts/header :: header}"> </header>
-	
 	<div class="container">
-	<section>
-	<nav id="navSucursales">
-	<div class="row justify-content-center">
-    <h2 class="h2Servcios">Servicios de Paseo</h2>
-    <div class="table-responsive-xxl  table-responsive-xl table-responsive-lg table-responsive-md table-responsive-ms table-responsive-xs">
-    <table class="table table-hover table-sm">
-    	
-    	<tr class="table-active table-success">
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Dias de Trabajo</th>
-            <th COLSPAN="2">Horario por la Mañana</th>
-            <th COLSPAN="2">Horario por la Tarde</th>
-            <th>Acciones</th>
-        </tr>
-        
-        <tr th:each="pas: ${paseadores}">
+		<section id="sectionServicioPaseo">
+			<div class="row justify-content-center">
+			    <h2 class="h2Servcios">Servicios de Paseo</h2>
+			    <div class="table-responsive-xxl  table-responsive-xl table-responsive-lg table-responsive-md table-responsive-ms table-responsive-xs">
+				    <table class="table table-hover table-sm">
+				    	<tr class="table-active table-success">
+				            <th>Nombre</th>
+				            <th>Apellido</th>
+				            <th>Dias de Trabajo</th>
+				            <th COLSPAN="2">Horario por la Mañana</th>
+				            <th COLSPAN="2">Horario por la Tarde</th>
+				            <th>Acciones</th>
+				        </tr> 
+				        <tr th:each="pas: ${paseadores}">
 							<td th:text="${pas.nombre}"></td>
 							<td th:text="${pas.apellido}"></td>
 							<td th:text="${pas.dias}"></td>
-							
-							<td th:text="${pas.horaMInicio}"></td>
-							<td th:text="${pas.horaMFin}"></td>
-							
-							<td th:text="${pas.horaTInicio}"></td>
-							<td th:text="${pas.horaTFin}"></td>
-							
+							<td th:text="${#temporals.format(pas.horaMInicio, 'HH:mm')}"></td>
+							<td th:text="${#temporals.format(pas.horaMFin, 'HH:mm')}"></td>
+							<td th:text="${#temporals.format(pas.horaTInicio, 'HH:mm')}"></td>
+							<td th:text="${#temporals.format(pas.horaTFin, 'HH:mm')}"></td>
 							<td>
 								<a class="btn btn-outline-success" th:href="@{/servicios/modificar/}+${pas.nombre}">Editar</a>
 								<a class="btn btn-outline-danger" th:href="@{/servicios/eliminar/}+${pas.nombre}">Eliminar</a>
 							</td>						
-					</tr>
-    </table>
-    </div>
-    </div>
-    <div style="padding: 0px;" class="container text-center">
-		<a class="btn btn-info" th:href="@{/servicios/nuevo}">Ingresar Nuevo Paseador</a></div>
-    </nav>
-    </section>
+						</tr>
+				    </table>
+			    </div>
+		    </div>
+		    <div style="padding: 0px;" class="container text-center">
+				<a class="btn btn-info" th:href="@{/servicios/nuevo}">Ingresar Nuevo Paseador</a>
+			</div>
+	    </section>
     </div>
     
-    <div class="GuiaServicios">
-    	<section class="forma">
+    <div class="container">
+    <div class="row  justify-content-center">
+    	<section class="col-sm-4">
     		<h3>Encuentra</h3>
     		<p>Paseadores y cuidadores calificados en tu zona</p>
     	</section>
-    	<section class="forma">
+    	<section class="col-sm-4">
     		<h3>Evalúa</h3>
     		<p>Elige días y horarios de acuerdo a tus necesidades</p>
     	</section>
-    	<section class="forma">
+    	<section class="col-sm-4">
     		<h3>Acuerda</h3>
     		<p>Negocia las condiciones de trabajo</p>
    		</section>
+   		</div>
     </div>
     
     <footer th:replace="~{layouts/footer :: footer}"> </footer>	

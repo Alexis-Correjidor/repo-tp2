@@ -1,24 +1,38 @@
 package ar.edu.unju.fi.model;
 
+import java.time.LocalTime;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
 @Component
+
 public class Paseador {
 
 	private String nombre;
 	private String apellido;
 	private String dias;
-	private int horaMInicio;
-	private int horaMFin;
-	private int horaTInicio;
-	private int horaTFin;
+	@DateTimeFormat(pattern="HH:mm")
+	private LocalTime horaMInicio;
+	private LocalTime horaMFin;
+	private LocalTime horaTInicio;
+	private LocalTime horaTFin;
 	
 	public Paseador() {
 		
 	}
 
-	public Paseador(String nombre, String apellido, String dias, int horaMInicio, int horaMFin, int horaTInicio,
-			int horaTFin) {
+	/**
+	 * Constructor Sobrecargado de Paseador
+	 * @param nombre recibe un parametro tipo String para el nombre del Paseador.
+	 * @param apellido recibe un parametro tipo String para el apellido del Paseador.
+	 * @param dias recibe un parametro tipo String para los dias a trabajar.
+	 * @param horaMInicio recibe un parametro tipo LocalTime para almacenar hora inicial a trabajar por la mañana.
+	 * @param horaMFin recibe un parametro tipo LocalTime para almacenar hora final a trabajar por la tarde.
+	 * @param horaTInicio recibe un parametro tipo LocalTime para almacenar hora inicial a trabajar por la mañana.
+	 * @param horaTFin recibe un parametro tipo LocalTime para almacenar hora final a trabajar por la tarde.
+	 */
+	public Paseador(String nombre, String apellido, String dias, LocalTime horaMInicio, LocalTime horaMFin, LocalTime horaTInicio,
+			LocalTime horaTFin) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -55,35 +69,35 @@ public class Paseador {
 		this.dias = dias;
 	}
 
-	public int getHoraMInicio() {
+	public LocalTime getHoraMInicio() {
 		return horaMInicio;
 	}
 
-	public void setHoraMInicio(int horaMInicio) {
+	public void setHoraMInicio(LocalTime horaMInicio) {
 		this.horaMInicio = horaMInicio;
 	}
 
-	public int getHoraMFin() {
+	public LocalTime getHoraMFin() {
 		return horaMFin;
 	}
 
-	public void setHoraMFin(int horaMFin) {
+	public void setHoraMFin(LocalTime horaMFin) {
 		this.horaMFin = horaMFin;
 	}
 
-	public int getHoraTInicio() {
+	public LocalTime getHoraTInicio() {
 		return horaTInicio;
 	}
 
-	public void setHoraTInicio(int horaTInicio) {
+	public void setHoraTInicio(LocalTime horaTInicio) {
 		this.horaTInicio = horaTInicio;
 	}
 
-	public int getHoraTFin() {
+	public LocalTime getHoraTFin() {
 		return horaTFin;
 	}
 
-	public void setHoraTFin(int horaTFin) {
+	public void setHoraTFin(LocalTime horaTFin) {
 		this.horaTFin = horaTFin;
 	}
 	
