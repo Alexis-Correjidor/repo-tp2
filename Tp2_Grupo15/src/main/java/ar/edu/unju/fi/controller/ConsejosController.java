@@ -2,7 +2,7 @@ package ar.edu.unju.fi.controller;
 import ar.edu.unju.fi.listas.ListaConsejos;
 import ar.edu.unju.fi.model.consejosSalud;
 
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,13 +13,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 
-
 @Controller
+
+/*----Captura de peticiones para la pagina de consejoSalud----*/
 @RequestMapping("/consejos")	
 
 public class ConsejosController {
 	
-	ListaConsejos listaConsejos = new ListaConsejos();
+	/*----Inyeccion de dependencia de ListaConsejos----*/
+	@Autowired
+	ListaConsejos listaConsejos;
+	
 	@GetMapping("/listado")
 	public String getListaConsejosPage(Model model) {
 		model.addAttribute("consejos", listaConsejos.getConsejos());

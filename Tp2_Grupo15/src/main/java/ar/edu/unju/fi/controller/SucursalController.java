@@ -1,5 +1,6 @@
 package ar.edu.unju.fi.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,10 +14,14 @@ import ar.edu.unju.fi.listas.listaSucursal;
 import ar.edu.unju.fi.model.sucursal;
 
 @Controller
+
+/*----Captura de peticiones para la pagina de sucursales----*/
 @RequestMapping("/sucursal")
 public class SucursalController {
- 
-	listaSucursal listaSucursales = new listaSucursal();
+	
+	/*----Inyeccion de dependencia de ListaSucursal-----*/
+	@Autowired
+	listaSucursal listaSucursales;
 	@GetMapping("/listado")
 	public String getListaSucursalesPage(Model model) {
 		model.addAttribute("sucursales", listaSucursales.getSucursales());

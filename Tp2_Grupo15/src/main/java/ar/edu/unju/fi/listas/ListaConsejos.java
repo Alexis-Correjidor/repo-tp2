@@ -3,13 +3,17 @@ package ar.edu.unju.fi.listas;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import ar.edu.unju.fi.model.consejosSalud;
 
+/*----registro de bean y creacion de ListaConsejos----*/
+@Component
 public class ListaConsejos {
-
+	
 	private List<consejosSalud> consejos; 
 	
-	
+	/*----Creacion de lista para los atributos de consejos----*/
 	public ListaConsejos() {
 		consejos = new ArrayList<consejosSalud>();
 		consejos.add(new consejosSalud("Consejos para pasear durante climas cálidos", "Si vives en un lugar en donde ya comienza a subir la temperatura, \r\n"
@@ -29,7 +33,7 @@ public class ListaConsejos {
 				+ "						de que son más propensos al sobrepeso y la obesidad, por lo que es necesario moderar sus hábitos alimenticios. Descanso: mejora su lugar de descanso, ya que a esta edad su cuerpo es más sensible, asegúrate de que este sea cómodo, en un lugar tranquilo y privado. ", "un Gato mirando a camara"));
 		
 	}
-
+	/*----creacion de getters y setters----*/
 	public List<consejosSalud> getConsejos() {
 		return consejos;
 	}
