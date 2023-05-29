@@ -2,15 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Servicios de Paseo</title>
+		<link rel="stylesheet" type="text/css"
+		th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 		<link rel="stylesheet" th:href="@{/css/style.css}">
 	</head>
 <body>
 	<header th:replace="~{layouts/header :: header}"> </header>
-	<div class="conteinerSucursal">
-		<section>
+	<div class="container text-center" id="conteinerSucursal">
+		<div class="row justify-content-center">
+		<section class="col-lg-9 col-xs-6 col-xl-6" style="border: 2px solid #1c5">
 			<h3 th:text="${edicion}?'Modificar Paseador':'Nuevo Paseador'"></h3><br><br>	
 			<form th:action="${edicion}?@{/servicios/modificar}:@{/servicios/guardar}" th:object="${paseador}" method="post">
+				<div class="row justify-content-center">
 				<label for="nombre">Nombre: </label><br>
 				<input type="text" id="nombre" name="paseador_nombre" th:field="*{nombre}"><br><br>
 				
@@ -32,9 +37,12 @@
 				<label for="horaTFin">Fin Horario en la Tarde: </label>
 				<input type="text" id="horaTFin" name="horaTardeFin" th:field="*{horaTFin}"><br><br>
 				
-				<p class="center-content"><input type="submit" class="button" th:value="${edicion}?'Modificar':'Guardar'"></p>
+				<button type="submit" id="unicoBoton" th:text="${editar}?'Modificar':'Guardar'"></button>
+				</div>
 			</form>
 		</section>
+		</div>
 	</div>
-	
+	<script type="tex/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
 </html>	
