@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Productos</title>
 <link rel="stylesheet" type="text/css"
-	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"> 
 <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
@@ -16,11 +16,11 @@
 		<a class="btn btn-info" th:href="@{/producto/nuevo}">Nuevo
 			Producto</a>
 	</div>
-	<div class="container text-center" id="contenedor">
-		<section class="row justify-content-center">
+	<div class="container text-center" id="contenedor"> <!-- agregue container y centra el texto -->
+		<section class="row justify-content-center"> <!-- agregue fila -->
 			<h2>Alimentos</h2>
 			<article th:if="${prod.categoria}=='Alimento'"
-				th:each="prod: ${productos}" class="col-4" id="articuloProductos" style="margin: 10px">
+				th:each="prod: ${productos}" class="col-4" id="articuloProductos" style="margin: 10px"> <!-- agregue columna -->
 				<h3 style="font-size: 25px" th:text="${prod.nombre}"></h3>
 				<h3 th:text="${prod.nombreImagen}"></h3>
 				<br>
@@ -37,10 +37,10 @@
 			</article>
 
 		</section>
-		<section class="row justify-content-center">
+		<section class="row justify-content-center"> <!-- agregue fila -->
 			 <h2>Juguetes</h2>
 			<article th:if="${prod.categoria}=='Juguete'"
-				th:each="prod: ${productos}" class="col-4" id="articuloProductos" style="margin: 10px">
+				th:each="prod: ${productos}" class="col-4" id="articuloProductos" style="margin: 10px"> <!-- agregue columna -->
 				<h3 style="font-size: 25px" th:text="${prod.nombre}"></h3>
 				<h3 th:text="${prod.nombreImagen}"></h3>
 				<br>
@@ -57,10 +57,10 @@
 
 			</article>
 		</section>
-		<section class="row justify-content-center">
+		<section class="row justify-content-center"> <!-- agregue fila -->
 			<h2>Ropa</h2>
 			<article th:if="${prod.categoria}=='Ropa'"
-				th:each="prod: ${productos}" class="col-4" id="articuloProductos" style="margin: 10px">
+				th:each="prod: ${productos}" class="col-4" id="articuloProductos" style="margin: 10px"> <!-- agregue columna -->
 				<h3 style="font-size: 25px" th:text="${prod.nombre}"></h3>
 				<h3 th:text="${prod.nombreImagen}"></h3>
 				<br>

@@ -2,7 +2,7 @@ package ar.edu.unju.fi.model;
 
 import org.springframework.stereotype.Component;
 
-@Component
+@Component //Se guarda en spring container
 public class Producto {
 	private String nombre;
 	private String nombreImagen;

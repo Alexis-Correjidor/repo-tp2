@@ -11,9 +11,9 @@
 </head>
 <body>
 	<header th:replace="~{layouts/header :: header}"> </header>
-	<div class="container">
-		<div class="row">
-			<section style="border: 2px solid #1c5" class="col-md-6">
+	<div class="container"> <!--agregue columna  --> 
+		<div class="row"> <!--agregue fila  -->
+			<section style="border: 2px solid #1c5" class="col-md-6"> <!--agregue columna  -->
 				<h2>Contáctenos</h2>
 				<p>3915 Av. General Belgrano. 388-4999999</p>
 				<p>Lunes a viernes: 9:00 a. m a 8:00 p. m.</p>
@@ -29,7 +29,7 @@
 							target="_blank">Twitter</a></li>
 					</ul>
 				</nav>
-				<div class="container">
+				<div class="container"> <!--agregue container para formulario  -->
 					<div class="row justify-content-center" >
 						<input type="text" name="nombre" placeholder="Ingrese su nombre"
 						id="nombre" required> <input type="text" name="email"
@@ -41,20 +41,20 @@
 					</div>
 				</div>
 				<br>
-				<div class="row justify-content-center">
+				<div class="row justify-content-center"> <!--agregue fila  -->
 						<img style="height: 150px; width:200px" th:src="@{/Images/correo.jpg}" alt="correo"
 						id="section__imagen">
 				</div>
 			</section>
-			<aside style="border: 2px solid #1c5" class="col-md-6">
+			<aside style="border: 2px solid #1c5" class="col-md-6"> <!--agregue columna  -->
 				<h2>Publícidad</h2>
-				<div class="container">
-					<div class="row justify-content-center">
+				<div class="container"> <!--agregue columna para las imagenes  -->
+					<div class="row justify-content-center"> <!--agregue fila  -->
 						<img style="height: 300px; width:400px" th:src="@{/Images/imagen1.gif}" alt="" />
 					</div>
 					<br>
 					
-					<div class="row justify-content-center">
+					<div class="row justify-content-center"> <!--agregue fila  -->
 						<img style="height: 300px; width:400px"
 						th:src="@{/Images/Imagen2.jpg}" alt="" />
 					</div>
