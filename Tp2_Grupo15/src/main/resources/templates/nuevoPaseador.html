@@ -12,35 +12,35 @@
 	<header th:replace="~{layouts/header :: header}"> </header>
 	<div class="container text-center" id="conteinerSucursal">
 		<div class="row justify-content-center">
-		<section class="col-lg-9 col-xs-6 col-xl-6" style="border: 2px solid #1c5">
-			<h3 th:text="${edicion}?'Modificar Paseador':'Nuevo Paseador'"></h3><br><br>	
-			<form th:action="${edicion}?@{/servicios/modificar}:@{/servicios/guardar}" th:object="${paseador}" method="post">
-				<div class="row justify-content-center">
-				<label for="nombre">Nombre: </label><br>
-				<input type="text" id="nombre" name="paseador_nombre" th:field="*{nombre}"><br><br>
-				
-				<label for="apellido">Apellido: </label><br>
-				<input type="text" id="apellido" name="paseador_apellido" th:field="*{apellido}"><br><br>
-				
-				<label for="dias">Dias de Trabajo: </label><br>
-				<input type="text" id="dias" name="dias_trabajo" th:field="*{dias}"><br><br>
-				
-				<label for="horaMInicio">Inicio Horario en la Mañana: </label>
-				<input type="text" id="horaMInicio" name="horaMañanaInicio" th:field="*{horaMInicio}"><br><br>
-				
-				<label for="horaMFin">Fin Horario en la Mañana: </label>
-				<input type="text" id="horaMFin" name="horaMañanaFin" th:field="*{horaMFin}"><br><br>
-				
-				<label for="horaTInicio">Inicio Horario en la Tarde: </label>
-				<input type="text" id="horaTInicio" name="horaTardeInicio" th:field="*{horaTInicio}"><br><br>
-				
-				<label for="horaTFin">Fin Horario en la Tarde: </label>
-				<input type="text" id="horaTFin" name="horaTardeFin" th:field="*{horaTFin}"><br><br>
-				
-				<button type="submit" id="unicoBoton" th:text="${editar}?'Modificar':'Guardar'"></button>
-				</div>
-			</form>
-		</section>
+			<section class="col-lg-9 col-xs-6 col-xl-6" style="border: 2px solid #1c5">
+				<h3 th:text="${edicion}?'Modificar Paseador':'Nuevo Paseador'"></h3><br><br>	
+				<form th:action="${edicion}?@{/servicios/modificar}:@{/servicios/guardar}" th:object="${paseador}" method="post">
+					<div class="row justify-content-center">
+						<label for="nombre">Nombre: </label><br>
+						<input type="text" id="nombre" name="paseador_nombre" th:field="*{nombre}"><br><br>
+						
+						<label for="apellido">Apellido: </label><br>
+						<input type="text" id="apellido" name="paseador_apellido" th:field="*{apellido}"><br><br>
+						
+						<label for="dias">Dias de Trabajo: </label><br>
+						<input type="text" id="dias" name="dias_trabajo" th:field="*{dias}"><br><br>
+						
+						<label for="horaMInicio">Inicio Horario en la Mañana: </label>
+						<input type="time" id="horaMInicio" name="horaMañanaInicio" th:field="*{horaMInicio}"><br><br>
+						
+						<label for="horaMFin">Fin Horario en la Mañana: </label>
+						<input type="time" id="horaMFin" name="horaMañanaFin" th:field="*{horaMFin}"><br><br>
+						
+						<label for="horaTInicio">Inicio Horario en la Tarde: </label>
+						<input type="time" id="horaTInicio" name="horaTardeInicio" th:field="*{horaTInicio}"><br><br>
+						
+						<label for="horaTFin">Fin Horario en la Tarde: </label>
+						<input type="time" id="horaTFin" name="horaTardeFin" th:field="*{horaTFin}"><br><br>
+						
+						<button type="submit" id="unicoBoton" th:text="${edicion}?'Modificar':'Guardar'"></button>
+					</div>
+				</form>
+			</section>
 		</div>
 	</div>
 	<script type="tex/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>

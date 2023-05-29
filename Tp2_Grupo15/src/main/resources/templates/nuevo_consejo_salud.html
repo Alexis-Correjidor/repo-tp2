@@ -23,7 +23,7 @@
 					<textarea type="text" class="form-control" rows="5" id="descripcion" name="consejos_descripcion" th:field="*{descripcion}" size="120"></textarea><br><br>
 					<label for="imagen">Nombre de Imagen</label>
 					<input type="text" id="imagen" name="consejos_imagen" th:field="*{nombreIMG}"><br><br>
-					<button type="submit" id="unicoBoton" th:text="${editar}?'Modificar':'Guardar'"></button>
+					<button type="submit" id="unicoBoton" th:text="${edicion}?'Modificar':'Guardar'"></button>
 				</div>
 				</form>
 			</section>

@@ -13,12 +13,11 @@ import org.springframework.web.servlet.ModelAndView;
 import ar.edu.unju.fi.listas.ListaPaseador;
 import ar.edu.unju.fi.model.Paseador;
 
-
-
 @Controller
-@RequestMapping("/servicios")
+
+@RequestMapping("/servicios")	/*----Captura de peticiones de pagina serviciosPaseo----*/
 public class ServiciosController {
-	@Autowired
+	@Autowired					/*----Inyección de dependencia de ListaPaseadores-----*/
 	ListaPaseador listaPaseadores ;
 	
 	@GetMapping("/listado")
