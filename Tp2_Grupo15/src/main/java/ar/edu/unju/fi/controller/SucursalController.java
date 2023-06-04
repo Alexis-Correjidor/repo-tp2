@@ -24,15 +24,19 @@ public class SucursalController {
 	/*----Inyeccion de dependencia de ListaSucursal-----*/
 	@Autowired
 	private listaSucursal listaSucursales;
-	
+	/*----Inyeccion de dependencia de sucursal----*/
 	@Autowired
 	private sucursal sucursal;
 	
+	/*----Creacion de solicitudes HTTP GET y POST----*/
+	
+	/*----RECIBE LA PETECION ENVIADA POR URL PARA MOSTRAR LA PAGINA sucursales CON LOS OBJETOS DE LA LISTA----*/
 	@GetMapping("/listado")
 	public String getListaSucursalesPage(Model model) {
 		model.addAttribute("sucursales", listaSucursales.getSucursales());
 		return "sucursales";
 	}
+	/*----CAPTURA LA PETECION ENVIADA POR URL, MUESTRA LA PAGINA nueva_sucursal CON UN OBJETO PARA ASIGNARLE VALORES A LOS ATRIBUTOS.----*/
 	@GetMapping("/nuevo")
 	public String getNuevaSucursalPage(Model model) {
 		model.addAttribute("sucursal", sucursal);
@@ -40,19 +44,23 @@ public class SucursalController {
 		model.addAttribute("edicion", edicion);
 		return "nueva_sucursal";
 	}
-	
+	/*----EVALUA SI EL OBJETO RESULT TIENE ERRORES, VOLVERA A MOSTRAR LA PAGINA nueva_sucursal
+	 * PARA ENVIAR VALORES VALIDOS PARA LOS ATRIBUTOS. SINO A LA LISTA SE AÑADIRA UN NUEVO
+	 * OBJETO CON LOS VALORES CORRECTOS Y MOSTRARA LA PAGINA sucursales.----*/
 	@PostMapping("/guardar")
 	public ModelAndView getGuardarSucursalPage(@Valid @ModelAttribute("sucursal")sucursal sucursal, BindingResult result) {
 		ModelAndView modelView = new ModelAndView("sucursales");
 		if(result.hasErrors()) {
 			modelView.setViewName("nueva_sucursal");
 			modelView.addObject("sucursal", sucursal);
-			return modelView; 
+			return modelView;  
 		}
 		listaSucursales.getSucursales().add(sucursal);  
 		modelView.addObject("sucursales", listaSucursales.getSucursales());
 		return modelView;
 	} 
+	/*----CAPTURA LA VARIABLE ENVIADA POR URL Y MUESTRA LA PAGINA nueva_sucursal CON EL OBJETO DE LA LISTA
+	 *CON EL CUAL ENCONTRO LA COINCIDENCIA EN EL ATRIBUTO NOMBRE----*/
 	@GetMapping("/modificar/{nombre}") 
 	public String getModificarSucursalPage(Model model, @PathVariable(value="nombre")String nombre){
 		sucursal sucursalEncontrada = new sucursal();
@@ -67,6 +75,7 @@ public class SucursalController {
 		model.addAttribute("edicion", edicion);
 		return "nueva_sucursal";
 	}
+	/*----ASIGNA LOS NUEVOS VALORES A LOS ATRIBUTOS DEL OBJETO. EL NOMBRE DEBE SER EL MISMO----*/
 	@PostMapping("/modificar")
 	public String modificarSucursal(@ModelAttribute("sucursal")sucursal sucursal) {
 		for(sucursal sucu : listaSucursales.getSucursales()) {
@@ -81,7 +90,8 @@ public class SucursalController {
 		}
 		return "redirect:/sucursal/listado";
 	}
-	
+	/*----CAPTURA LA VARIABLE ENVIADA POR URL Y MUESTRA LA PAGINA sucursal/listado CON EL OBJETO DE LA LISTA
+	 * 	CON EL CUAL ENCONTRO LA COINCIDENCIA EN EL ATRIBUTO NOMBRE PARA PODER ELIMINAR EL OBJETO DE LA LISTA----*/
 	@GetMapping("/eliminar/{nombre}")
 	public String eliminarSucursal(@PathVariable(value="nombre") String nombre) {
 		for(sucursal sucu : listaSucursales.getSucursales()) {
