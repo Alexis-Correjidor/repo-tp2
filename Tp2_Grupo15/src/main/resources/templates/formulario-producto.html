@@ -13,33 +13,52 @@
 	<header th:replace="~{layouts/header :: header}"> </header>
 	<div class="container text-center">
 		<div class="row justify-content-center">
-			<section class="col-lg-9 col-xs-6 col-xl-6" style="border: 2px solid #1c5">
-			<h2 th:text="${editar}?'Editar Producto':'Nuevo Producto'"></h2>
-			<form
-				th:action="${editar}?@{/producto/modificar}:@{/producto/guardar}"
-				th:object="${producto}" method="post">
-				<div class="row justify-content-center">
-					<input type="text" name="nombre" placeholder="Nombre Producto"
-					id="producto_nombre" th:field="*{nombre}"> <br> <input
-					type="text" name="imagen" placeholder="Nombre Imagen"
-					id="nombre_imagen" th:field="*{nombreImagen}"> <br> <input
-					type="text" name="codigo" placeholder="Codigo Producto"
-					id="producto_codigo" th:field="*{codigo}"
-					> <br> <input
-					type="text" name="precio" placeholder="Precio Producto"
-					id="producto_precio" th:field="*{precio}"> <br> <input
-					type="text" name="categoria" placeholder="Categoria Producto"
-					id="producto_categoria" th:field="*{categoria}"> <br>
-					<input type="text" name="descuento" placeholder="Descuento Producto"
-					id="producto_descuento" th:field="*{descuento}"> <br>
-					<button type="submit" id="unicoBoton"
-					th:text="${editar}?'Modificar':'Guardar'"></button>
-				</div>
-			</form>
+			<section class="col-lg-9 col-xs-6 col-xl-6"
+				style="border: 2px solid #1c5">
+				<h2 th:text="${editar}?'Editar Producto':'Nuevo Producto'"></h2>
+				<form
+					th:action="${editar}?@{/producto/modificar}:@{/producto/guardar}"
+					th:object="${producto}" method="post">
+					<div class="row justify-content-center">
+						<input type="text" name="nombre" placeholder="Nombre Producto"
+							id="producto_nombre" th:field="*{nombre}"> <br>
+						<div class="text-danger" th:if="${#fields.hasErrors('nombre')}"
+							th:errors="*{nombre}"></div>
+						<input type="text" name="imagen" placeholder="Nombre Imagen"
+							id="nombre_imagen" th:field="*{nombreImagen}">
+						<div class="text-danger"
+							th:if="${#fields.hasErrors('nombreImagen')}"
+							th:errors="*{nombreImagen}"></div>
+						<br> <input type="text" name="codigo"
+							placeholder="Codigo Producto" id="producto_codigo"
+							th:field="*{codigo}">
+						<div class="text-danger" th:if="${#fields.hasErrors('codigo')}"
+							th:errors="*{codigo}"></div>
+						<br> <input type="text" name="precio"
+							placeholder="Precio Producto" id="producto_precio"
+							th:field="*{precio}">
+						<div class="text-danger" th:if="${#fields.hasErrors('precio')}"
+							th:errors="*{precio}"></div>
+						<br> <input type="text" name="categoria"
+							placeholder="Categoria Producto" id="producto_categoria"
+							th:field="*{categoria}">
+						<div class="text-danger" th:if="${#fields.hasErrors('categoria')}"
+							th:errors="*{categoria}"></div>
+						<br> <input type="text" name="descuento"
+							placeholder="Descuento Producto" id="producto_descuento"
+							th:field="*{descuento}">
+						<div class="text-danger" th:if="${#fields.hasErrors('descuento')}"
+							th:errors="*{descuento}"></div>
+						<br>
+						<button type="submit" id="unicoBoton"
+							th:text="${editar}?'Modificar':'Guardar'"></button>
+					</div>
+				</form>
 			</section>
 		</div>
 	</div>
 	<footer th:replace="~{layouts/footer :: footer}"> </footer>
-	<script type="tex/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+	<script type="tex/javascript"
+		th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>
