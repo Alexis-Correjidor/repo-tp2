@@ -28,6 +28,7 @@
 						<th scope="col">Telefono</th>
 						<th scope="col">Mail</th>
 						<th scope="col">Fecha de inicio</th>
+						<th scope="col">Empleados</th>
 						<th scope="col">Acciones</th>
 					</tr>
 					</thead>
@@ -40,6 +41,7 @@
 							<td th:text="${sucu.telefono}"></td> 
 							<td th:text="${sucu.email}"></td>
 							<td th:text="${#temporals.format(sucu.fechaInicio, 'dd/MM/yyyy')}"></td>
+							<td th:text="${sucu.cantidadEmpleados}"></td>
 							<td>
 								<a class="btn btn-outline-success" th:href="@{/sucursal/modificar/}+${sucu.nombre}">Editar</a>
 								<a class="btn btn-outline-danger" th:href="@{/sucursal/eliminar/}+${sucu.nombre}">Eliminar</a>
