@@ -40,16 +40,8 @@
 			<div class="container text-center">
 			<div class="row justify-content-start">
 			<section class="sectionNoBackground" th:each="conse: ${consejos}">
-				
-				<section>
-					<ul id="listaSecundaria">
-						<li><a href="#section1" th:text="${conse.titulo}"></a></li>
-					</ul>	
-					
-				</section>
-				
 				<article class="articulos col-12">
-					<section id="section1">
+					<section th:id="section1">
 						<h3 th:text="${conse.titulo}"></h3>
 						<h5 th:text="${conse.nombreIMG}"></h5>
 						<p th:text="${conse.descripcion}"></p>

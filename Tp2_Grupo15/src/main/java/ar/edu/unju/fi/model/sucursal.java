@@ -17,7 +17,17 @@ import jakarta.validation.constraints.Size;
 
 /*----encapsulamiento de datos sucursal----*/
 @Component
-
+/**
+ * Se utiliza para los datos de las sucursales.
+ * @author Agustin Castellon
+ * @param nombre recibe un parametro tipo String para el nombre de la sucursal.
+ * @param provincia recibe un parametro tipo String para la provincia de la sucursal.
+ * @param direccion recibe un parametro tipo String para la direccion de la sucursal.
+ * @param telegono recibe un parametro tipo String para el telefono de la sucursal.
+ * @param email recibe un parametro tipo String para el mail de la sucursal.
+ * @param fechaInicio recibe un parametro tipo LocalDate para la fecha de inicio de la sucursal.
+ * @param cantidadEmpleados recibe la cantidad de empleados que trabajan en el local.
+ */
 	public class sucursal {
 		@Size(min=8, max=30, message="El nombre debe tener entre 8 y 30 caracteres")
 		@NotEmpty(message="Este campo no debe estar vacio")
@@ -46,17 +56,7 @@ import jakarta.validation.constraints.Size;
 		
 	}
 
-	/**
-	 * Se utiliza para los datos de las sucursales.
-	 * @author Agustin Castellon
-	 * @param nombre recibe un parametro tipo String para el nombre de la sucursal.
-	 * @param provincia recibe un parametro tipo String para la provincia de la sucursal.
-	 * @param direccion recibe un parametro tipo String para la direccion de la sucursal.
-	 * @param telegono recibe un parametro tipo String para el telefono de la sucursal.
-	 * @param email recibe un parametro tipo String para el mail de la sucursal.
-	 * @param fechaInicio recibe un parametro tipo LocalDate para la fecha de inicio de la sucursal.
-	 * @param cantidadEmpleados recibe la cantidad de empleados que trabajan en el local.
-	 */
+	/*----Constructor sobrecargado----*/
 	public sucursal(String nombre, String provincia, String direccion, String telefono, String email,
 		LocalDate fechaInicio, int cantidadEmpleados) {
 	super();

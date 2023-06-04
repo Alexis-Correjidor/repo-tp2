@@ -19,10 +19,13 @@
 				<div class="row justify-content-center">
 					<label for="titulo">titulo</label>
 					<input type="text" id="titulo" name="consejos_titulo" th:field="*{titulo}"><br><br>
+						<div class="text-danger" th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}"></div>
 					<label for="descripcion" class="form-label">Descripcion</label>
 					<textarea type="text" class="form-control" rows="5" id="descripcion" name="consejos_descripcion" th:field="*{descripcion}" size="120"></textarea><br><br>
+						<div class="text-danger" th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}"></div>
 					<label for="imagen">Nombre de Imagen</label>
 					<input type="text" id="imagen" name="consejos_imagen" th:field="*{nombreIMG}"><br><br>
+						<div class="text-danger" th:if="${#fields.hasErrors('nombreIMG')}" th:errors="*{nombreIMG}"></div>
 					<button type="submit" id="unicoBoton" th:text="${edicion}?'Modificar':'Guardar'"></button>
 				</div>
 				</form>
