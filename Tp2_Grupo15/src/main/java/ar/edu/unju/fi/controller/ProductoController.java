@@ -24,6 +24,7 @@ public class ProductoController {
 	private ListaProducto listaProducto; //INYECCION CLASS LISTAPRODUCTO
 	@Autowired
 	private Producto producto; //INYECCION CLASS PRODUCTO
+
 	
 	/**RECIBE LA PETECION ENVIADA POR URL PARA MOSTRAR LA PAGINA PRODUCTOS CON LOS OBJETOS DE LA LISTA
 	 * @param model 

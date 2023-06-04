@@ -34,9 +34,13 @@ h1{						 /*Titulo Principal de Pagina*/
 	margin:20px;
 }
 
-header a{ text-decoration: none;      /*Se Quita estilos de texto predefinido(subrayado) y se aplica color blanco al texto*/            
+header a,#h2Ofertas{ 
+		  text-decoration: none;      /*Se Quita estilos de texto predefinido(subrayado) y se aplica color blanco al texto*/            
           font-weight: bold ; 
           color: white;
+          justify-content: center ;
+	align-items: center;
+	text-align: center;
           }
           
 header a:hover{ color: #93ebeb; }               
@@ -177,16 +181,17 @@ ul a:active{
 
 ul#listaSecundaria{margin:20px 60px;}
 
-.h2Salud {
+.h2Salud, .h2Consejos,.h2Servcios,.h2Alimentos {
 	font-size:30px;
 	font-family:Times New Roman,Arial,Helvetica; 
 	font-style: italic;
 	font-weight: bold;
 	margin-bottom: 20px;
 	text-shadow: 3px 3px 6px white;
+	text-align: center;
 }
 
-#figura1Salud,#figura2Salud,#figura3Salud,#figura4Salud,#figura5Salud{
+/**#figura1Salud,#figura2Salud,#figura3Salud,#figura4Salud,#figura5Salud{
 	height:8%;
 	margin:15px;
 	
@@ -212,9 +217,9 @@ ul#listaSecundaria{margin:20px 60px;}
 
 #figura5Salud{
 	background-image:url("../Images/imagen5Salud.jpg");		
-}
+}**/
 
-#h2Consejos {
+/**#h2Consejos {
 	font-size:30px;
 	font-family:Times New Roman,Arial,Helvetica; 
 	font-style: italic;
@@ -224,10 +229,9 @@ ul#listaSecundaria{margin:20px 60px;}
 	margin-right:20px;
 	margin-bottom:0px;
 	text-shadow: 3px 3px 6px black;
-}
+}**/
 
 /*CONTACTANOS */
-
 
 .container input {
     background: transparent;
@@ -272,14 +276,13 @@ ul#listaSecundaria{margin:20px 60px;}
    
 /*Servicios de Paseo*/
 
-h2{
-	text-align: center;
-	}
+
 
 .conteinerServiciosPaseo{
 	margin: 20px 40px;
 	justify-content: center ;
 	display: flex;
+	
 }
 
 
@@ -291,6 +294,7 @@ table, th, td {
 }
 th,td{
 	padding:10px;
+	    text-align: -internal-center;
 }
 
 
@@ -309,17 +313,48 @@ th,td{
 
 /*SUCURSALES*/
 
-#navSucursales  {
-	margin: 50px 60px;
+#navSucursales,#sectionServicioPaseo {
+	
 	padding:20px;	
 	border-top: 1px solid white;
 	border-bottom: 1px solid white;
 	display: flex;
   	flex-direction: column;
-  	align-items: center;
+  	
 }
 
 .conteinerSucursal{
 	margin: 20px 40px;
+	
+}
+.sectionNuevo{
+	align-items: center;
 	justify-content: center ;
+	display: flex;
+}
+.nuevoIngreso{
+	align-items: center;
+	margin: 20px;
+}
+
+form{
+	margin: 10px auto;
+	width: 350px;
+	color: #3b3b3b;
+}
+input{
+	outline: none;
+	border:0;
+	padding:10px;
+	margin:5px;
+	width:90%;
+}
+label{
+	margin:5px;
+}
+.center-content{
+	text-align:center;	
+}
+.button{
+	background-color: #3CC93F;
 }

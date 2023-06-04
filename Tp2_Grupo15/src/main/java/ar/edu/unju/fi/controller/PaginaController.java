@@ -16,7 +16,7 @@ public class PaginaController {
 	
 	@GetMapping("/sucursales")
 	public String getSucursalesPage() {
-		return "Sucursales";
+		return "sucursales";
 	}
 	
 	
@@ -29,12 +29,12 @@ public class PaginaController {
 	
 	@GetMapping("/consejos-salud")
 	public String getConsejosSaludPage() {
-		return "ConsejosSaludo";
+		return "consejoSalud";
 	}
 	
 	@GetMapping("/servicios-paseo")
 	public String getServicioPaseoPage() {
-		return "ServiciosPaseo";
+		return "serviciosPaseo";
 	}
 	
 }

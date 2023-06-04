@@ -1,5 +1,6 @@
 package ar.edu.unju.fi.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,18 +13,17 @@ import org.springframework.web.servlet.ModelAndView;
 import ar.edu.unju.fi.listas.ListaPaseador;
 import ar.edu.unju.fi.model.Paseador;
 
-
-
 @Controller
-@RequestMapping("/servicios")
-public class ServiciosController {
 
-	ListaPaseador listaPaseadores = new ListaPaseador();
+@RequestMapping("/servicios")	/*----Captura de peticiones de pagina serviciosPaseo----*/
+public class ServiciosController {
+	@Autowired					/*----Inyección de dependencia de ListaPaseadores-----*/
+	ListaPaseador listaPaseadores ;
 	
 	@GetMapping("/listado")
 	public String getListaPaseadoresPage(Model model) {
 		model.addAttribute("paseadores",listaPaseadores.getPaseadores());
-		return "ServiciosPaseo";
+		return "serviciosPaseo";
 	}
 	
 	@GetMapping("/nuevo")
@@ -36,7 +36,7 @@ public class ServiciosController {
 	
 	@PostMapping("/guardar")
 	public ModelAndView getGuardarPaseadorPage(@ModelAttribute("paseador") Paseador paseador) {
-		ModelAndView modelView = new ModelAndView ("ServiciosPaseo");
+		ModelAndView modelView = new ModelAndView ("serviciosPaseo");
 		listaPaseadores.getPaseadores().add(paseador);
 		modelView.addObject("paseadores",listaPaseadores.getPaseadores());
 		return modelView;
