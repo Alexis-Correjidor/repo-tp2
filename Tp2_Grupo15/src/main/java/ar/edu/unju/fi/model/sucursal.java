@@ -5,17 +5,42 @@ import java.time.LocalDate;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
+
 /*----encapsulamiento de datos sucursal----*/
 @Component
 
 	public class sucursal {
+		@Size(min=8, max=30, message="El nombre debe tener entre 8 y 30 caracteres")
+		@NotEmpty(message="Este campo no debe estar vacio")
 		private String nombre;
+		@NotBlank(message="Debe seleccion una provincia")
 		private String provincia;
+		@Size(min=5, max=100,message="La direccion debe tener entre 5 y 100 caracteres")
+		@NotEmpty(message="Este campo no debe estar vacio")
 		private String direccion;
+		@NotEmpty(message="Este campo no puede estar vacio")
+		@Size(min=7, max=12, message="El telefono debe tener entre 7 y 12 caracteres")
 		private String telefono;
+		@NotEmpty(message="Este campo no debe estar vacio")
+		@Email(message="Debe ingresar un email con formato valido")
 		private String email;
-		@DateTimeFormat(pattern="dd/MM/yyyy")
+		@DateTimeFormat(pattern="dd-MM-yyyy")
+		@NotNull(message="La fecha no puede ser null")
+		@Past(message="La fecha debe ser menor a la actual")
 		private LocalDate fechaInicio;
+		@Min(value=3, message="El valor mínimo permitido es 3")
+		@Max(value=15, message="El valor máximo permitido es 15")
+		@Positive(message="Solo se permiten valores positivos")
+		private int cantidadEmpleados;
 		
 	public sucursal() {
 		
@@ -30,9 +55,10 @@ import org.springframework.stereotype.Component;
 	 * @param telegono recibe un parametro tipo String para el telefono de la sucursal.
 	 * @param email recibe un parametro tipo String para el mail de la sucursal.
 	 * @param fechaInicio recibe un parametro tipo LocalDate para la fecha de inicio de la sucursal.
+	 * @param cantidadEmpleados recibe la cantidad de empleados que trabajan en el local.
 	 */
 	public sucursal(String nombre, String provincia, String direccion, String telefono, String email,
-		LocalDate fechaInicio) {
+		LocalDate fechaInicio, int cantidadEmpleados) {
 	super();
 	this.nombre = nombre;
 	this.provincia = provincia;
@@ -40,6 +66,7 @@ import org.springframework.stereotype.Component;
 	this.telefono = telefono;
 	this.email = email;
 	this.fechaInicio = fechaInicio;
+	this.cantidadEmpleados = cantidadEmpleados;
 }
 	/*----creacion de getters y setters----*/
 	
@@ -78,6 +105,14 @@ import org.springframework.stereotype.Component;
 	}
 	public void setFechaInicio(LocalDate fechaInicio) {
 		this.fechaInicio = fechaInicio;
+	}
+
+	public int getCantidadEmpleados() {
+		return cantidadEmpleados;
+	}
+
+	public void setCantidadEmpleados(int cantidadEmpleados) {
+		this.cantidadEmpleados = cantidadEmpleados;
 	}
 	
 	 

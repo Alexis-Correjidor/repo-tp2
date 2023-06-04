@@ -24,6 +24,9 @@ public class ConsejosController {
 	@Autowired
 	ListaConsejos listaConsejos;
 	
+	@Autowired
+	private consejosSalud consejosSalud;
+	
 	@GetMapping("/listado")
 	public String getListaConsejosPage(Model model) {
 		model.addAttribute("consejos", listaConsejos.getConsejos());
@@ -31,7 +34,7 @@ public class ConsejosController {
 }
 	@GetMapping("/nuevo")
 	public String getNuevoConsejoPage(Model model) {
-		model.addAttribute("consejosSalud", new consejosSalud());
+		model.addAttribute("consejosSalud", consejosSalud);
 		boolean edicion = false;
 		model.addAttribute("edicion", edicion);
 		return "nuevo_consejo_salud";

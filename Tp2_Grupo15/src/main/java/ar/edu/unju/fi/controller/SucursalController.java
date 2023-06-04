@@ -3,6 +3,7 @@ package ar.edu.unju.fi.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.unju.fi.listas.listaSucursal;
 import ar.edu.unju.fi.model.sucursal;
+import jakarta.validation.Valid;
 
 @Controller
 
@@ -21,7 +23,11 @@ public class SucursalController {
 	
 	/*----Inyeccion de dependencia de ListaSucursal-----*/
 	@Autowired
-	listaSucursal listaSucursales;
+	private listaSucursal listaSucursales;
+	
+	@Autowired
+	private sucursal sucursal;
+	
 	@GetMapping("/listado")
 	public String getListaSucursalesPage(Model model) {
 		model.addAttribute("sucursales", listaSucursales.getSucursales());
@@ -29,19 +35,24 @@ public class SucursalController {
 	}
 	@GetMapping("/nuevo")
 	public String getNuevaSucursalPage(Model model) {
-		model.addAttribute("sucursal", new sucursal());
+		model.addAttribute("sucursal", sucursal);
 		boolean edicion = false;
 		model.addAttribute("edicion", edicion);
 		return "nueva_sucursal";
 	}
 	
 	@PostMapping("/guardar")
-	public ModelAndView getGuardarSucursalPage(@ModelAttribute("sucursal")sucursal sucursal) {
+	public ModelAndView getGuardarSucursalPage(@Valid @ModelAttribute("sucursal")sucursal sucursal, BindingResult result) {
 		ModelAndView modelView = new ModelAndView("sucursales");
-		listaSucursales.getSucursales().add(sucursal);
+		if(result.hasErrors()) {
+			modelView.setViewName("nueva_sucursal");
+			modelView.addObject("sucursal", sucursal);
+			return modelView; 
+		}
+		listaSucursales.getSucursales().add(sucursal);  
 		modelView.addObject("sucursales", listaSucursales.getSucursales());
 		return modelView;
-	}
+	} 
 	@GetMapping("/modificar/{nombre}") 
 	public String getModificarSucursalPage(Model model, @PathVariable(value="nombre")String nombre){
 		sucursal sucursalEncontrada = new sucursal();
@@ -65,6 +76,7 @@ public class SucursalController {
 				sucu.setProvincia(sucursal.getProvincia());
 				sucu.setTelefono(sucursal.getTelefono());
 				sucu.setFechaInicio(sucursal.getFechaInicio());
+				sucu.setCantidadEmpleados(sucursal.getCantidadEmpleados());
 			}	
 		}
 		return "redirect:/sucursal/listado";
