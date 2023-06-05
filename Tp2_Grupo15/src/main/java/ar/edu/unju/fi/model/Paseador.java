@@ -4,17 +4,28 @@ import java.time.LocalTime;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
+/*----encapsulamiento de datos Paseador----*/
 @Component
 
 public class Paseador {
-
+	@Size(min=5, max=20, message="El nombre debe tener entre 5 y 20 caracteres")
 	private String nombre;
+	@Size(min=5, max=20, message="El apellido debe tener entre 5 y 20 caracteres")	
 	private String apellido;
+	@NotEmpty(message="Este campo no debe estar vacio")
 	private String dias;
 	@DateTimeFormat(pattern="HH:mm")
+	@NotNull(message="La hora no puede ser null")
 	private LocalTime horaMInicio;
+	@NotNull(message="La hora no puede ser null")
 	private LocalTime horaMFin;
+	@NotNull(message="La hora no puede ser null")
 	private LocalTime horaTInicio;
+	@NotNull(message="La hora no puede ser null")
 	private LocalTime horaTFin;
 	
 	public Paseador() {
@@ -101,9 +112,5 @@ public class Paseador {
 		this.horaTFin = horaTFin;
 	}
 	
-	
-	
-	
-	
-	
+
 }

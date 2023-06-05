@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 import ar.edu.unju.fi.model.Paseador;
 
+/*----Registro de bean y creacion de ListaPaseador----*/
 @Component
 public class ListaPaseador {
 
@@ -18,6 +19,8 @@ public class ListaPaseador {
 		paseadores.add(new Paseador("Maria", "Gomez", "Jueves",LocalTime.of(11,30), LocalTime.of(13,00),LocalTime.of(20,15),LocalTime.of(23,10)));
 		
 	}
+	
+	/*----creacion de getters y setters----*/
 	
 	public List<Paseador> getPaseadores() {
 		return paseadores;
