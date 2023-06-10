@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import ar.edu.unju.fi.listas.ListaProducto;
 import ar.edu.unju.fi.model.Producto;
+import ar.edu.unju.fi.service.IProductoService;
 import jakarta.validation.Valid;
 
 
@@ -21,9 +21,7 @@ import jakarta.validation.Valid;
 public class ProductoController {
 
 	@Autowired
-	private ListaProducto listaProducto; //INYECCION CLASS LISTAPRODUCTO
-	@Autowired
-	private Producto producto; //INYECCION CLASS PRODUCTO
+	private IProductoService productoService;
 
 	
 	/**RECIBE LA PETECION ENVIADA POR URL PARA MOSTRAR LA PAGINA PRODUCTOS CON LOS OBJETOS DE LA LISTA
@@ -32,7 +30,7 @@ public class ProductoController {
 	 * */
 	@GetMapping("/lista-producto")
 	public String getListaProductoPage(Model model) {
-		model.addAttribute("productos", listaProducto.getProductos());
+		model.addAttribute("productos", productoService.getProductos());
 		return "productos";
 	}
 	
@@ -44,7 +42,7 @@ public class ProductoController {
 	@GetMapping("/nuevo")
 	public String getFormularioProductoPage(Model model) {
 		boolean editar=false;
-		model.addAttribute("producto", producto);
+		model.addAttribute("producto", productoService.getProducto());
 		model.addAttribute("editar", editar);
 		return "formulario-producto";
 	}
@@ -66,9 +64,8 @@ public class ProductoController {
 			modelView.addObject("producto", producto);
 			return modelView;
 		}
-	
-		listaProducto.getProductos().add(producto);
-		modelView.addObject("productos", listaProducto.getProductos());
+		productoService.guardar(producto);
+		modelView.addObject("productos", productoService.getProductos());
 		return modelView;
 	
 	}
@@ -82,35 +79,23 @@ public class ProductoController {
 	@GetMapping("/modificar/{codigo}")
 		public String getEditarProductoPage(Model model, @PathVariable(value="codigo") String codigo) {
 			boolean editar=true;
-			Producto productoEncontrado = new Producto();
-			for (Producto prod: listaProducto.getProductos()) {
-				if (prod.getCodigo()==Integer.parseInt(codigo)) {
-					productoEncontrado = prod;
-					break;
-				}
-			}
-			model.addAttribute("producto", productoEncontrado);
+			model.addAttribute("producto", productoService.getByCodigo(codigo));
 			model.addAttribute("editar", editar);
 			return "formulario-producto";
 			
 		}
 	
-	/**ASIGNA LOS NUEVOS VALORES A LOS ATRIBUTOS DEL OBJETO. EL CODIGO DEBE SER EL MISMO
+	/**MUESTRA LA PAGINA HTML producto y formulario-producto
 	 * @param producto
-	 * @return EL OBJETO CON LOS NUEVOS VALORES EN LA PAGINA productos
+	 * @return PAGINA HTML productos y formulario-producto
 	 *   */
 	@PostMapping("/modificar")
-	public String modificarProductoPage(@ModelAttribute("producto")Producto producto) {
-		for (Producto prod: listaProducto.getProductos()) {
-			if (prod.getCodigo()== producto.getCodigo()) {
-				 prod.setNombre(producto.getNombre());
-				 prod.setNombreImagen(producto.getNombreImagen());
-				 prod.setCodigo(producto.getCodigo());
-				 prod.setPrecio(producto.getPrecio());
-				 prod.setCategoria(producto.getCategoria());
-				 prod.setDescuento(producto.getDescuento());
-			}
+	public String modificarProductoPage(@Valid @ModelAttribute("producto") Producto producto, BindingResult result) {
+		if(result.hasErrors())
+		{
+			return "formulario-producto";
 		}
+		productoService.modificar(producto);
 		return "redirect:/producto/lista-producto";
 	}
 	/** CAPTURA LA VARIABLE ENVIADA POR URL Y MUESTRA LA PAGINA FORMULARIO PRODUCTOS CON EL OBJETO DE LA LISTA
@@ -120,12 +105,7 @@ public class ProductoController {
 	 * */
 	@GetMapping("/eliminar/{codigo}")
 	public String eliminarProducto(@PathVariable(value = "codigo")String codigo) {
-		for (Producto prod: listaProducto.getProductos()) {
-			if (prod.getCodigo()== Integer.parseInt(codigo)) {
-				listaProducto.getProductos().remove(prod);
-				break;
-			}
-		}
+		productoService.eliminar(productoService.getByCodigo(codigo));	
 		return "redirect:/producto/lista-producto";
 	}
 	

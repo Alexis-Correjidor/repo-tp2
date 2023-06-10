@@ -157,6 +157,9 @@ footer{									/*Pie de pagina*/
     box-shadow: 2px 4px 15px 0 black;
 }
 
+#border{
+	border: 2px solid #1c5;
+}
 
 
 /*CONSEJOSSALUD*/

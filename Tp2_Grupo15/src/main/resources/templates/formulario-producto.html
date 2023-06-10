@@ -13,8 +13,7 @@
 	<header th:replace="~{layouts/header :: header}"> </header>
 	<div class="container text-center">
 		<div class="row justify-content-center">
-			<section class="col-lg-9 col-xs-6 col-xl-6"
-				style="border: 2px solid #1c5">
+			<section class="col-lg-9 col-xs-6 col-xl-6, border">
 				<h2 th:text="${editar}?'Editar Producto':'Nuevo Producto'"></h2>
 				<form
 					th:action="${editar}?@{/producto/modificar}:@{/producto/guardar}"
@@ -39,9 +38,11 @@
 							th:field="*{precio}">
 						<div class="text-danger" th:if="${#fields.hasErrors('precio')}"
 							th:errors="*{precio}"></div>
-						<br> <input type="text" name="categoria"
-							placeholder="Categoria Producto" id="producto_categoria"
-							th:field="*{categoria}">
+						<br> <select class="form-select" id="categoria" name="producto_categoria" th:field="*{categoria}">
+  									<option value="Ropa">Ropa</option>
+  									<option value="Alimento">Alimento</option>
+  									<option value="Juguete">Juguete</option>
+							</select>
 						<div class="text-danger" th:if="${#fields.hasErrors('categoria')}"
 							th:errors="*{categoria}"></div>
 						<br> <input type="text" name="descuento"
