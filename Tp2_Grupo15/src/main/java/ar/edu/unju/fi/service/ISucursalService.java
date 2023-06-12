@@ -7,6 +7,8 @@ import ar.edu.unju.fi.model.sucursal;
 
 public interface ISucursalService {
 
+	/** METODOS */
+	
 	List<sucursal> getLista();
 	  
 	void guardar (sucursal sucursal);
