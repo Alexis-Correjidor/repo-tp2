@@ -18,17 +18,28 @@ public class sucursalServiceImp implements ISucursalService {
 	@Autowired
 	private sucursal sucursal;
 	
+	/**
+	 * METODO QUE RETORNA LA LISTA DE SUCURSALES
+	 * */
 	@Override
 	public List<sucursal> getLista() {
 		
 		return listaSucursales.getSucursales();
 	}
-
+	
+	/**
+	 * METODO PARA AÑADIR UNA NUEVA SUCURSAL A LA LISTA
+	 * */
 	@Override
 	public void guardar(sucursal sucursal) {
 		listaSucursales.getSucursales().add(sucursal);
 	}
  
+	/**
+	 * EL METODO CONSIGUE LA SUCURSAL ATRAVES DEL NOMBRE
+	 * @param nombre
+	 * @return RETORNA LA SUCURSAL ENCONTRADA
+	 * */
 	@Override
 	public sucursal getBy(String nombre) {
 		sucursal sucursalEncontrada = null;
@@ -37,10 +48,14 @@ public class sucursalServiceImp implements ISucursalService {
 				sucursalEncontrada = sucu;
 				break;
 			}
-		}	
+		} 	
 		return sucursalEncontrada;
 	}
 
+	/**
+	 * METODO PARA MODIFICAR LOS VALORES DE UNA SUCURSAL DE LA LISTA
+	 * @param sucursal
+	 * */
 	@Override
 	public void modificar(sucursal sucursal) {
 		
@@ -56,11 +71,16 @@ public class sucursalServiceImp implements ISucursalService {
 		}
 	}
 
+	/** 
+	 * METODO QUE ELIMINA LA SUCURSAL ENVIADO POR PARAMETRO
+	 * @param sucursal
+	 * */
 	@Override
 	public void eliminar(sucursal sucursal) {
 		listaSucursales.getSucursales().remove(sucursal);
 	}
  
+	/**METODO QUE DEVUELVE LA SUCURSAL */
 	@Override
 	public sucursal getSucursal() {
 		
