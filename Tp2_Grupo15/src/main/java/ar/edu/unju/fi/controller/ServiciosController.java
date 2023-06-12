@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import ar.edu.unju.fi.listas.ListaPaseador;
+
 import ar.edu.unju.fi.model.Paseador;
+import ar.edu.unju.fi.service.IPaseoService;
 import jakarta.validation.Valid;
 
 @Controller
@@ -24,24 +25,22 @@ public class ServiciosController {
 	
 	/*----Inyección de dependencia de ListaPaseadores-----*/
 	@Autowired					
-	private ListaPaseador listaPaseadores ;
-	/*----Inyeccion de dependencia de Paseador----*/
-	@Autowired
-	private Paseador paseador;
+	private IPaseoService paseoService ;
+	
 	
 	/*----Creacion de solicitudes HTTP GET y POST----*/
 	
 	/*----RECIBE LA PETECION ENVIADA POR URL PARA MOSTRAR LA PAGINA serviciosPaseo CON LOS OBJETOS DE LA LISTA----*/
 	@GetMapping("/listado")
 	public String getListaPaseadoresPage(Model model) {
-		model.addAttribute("paseadores",listaPaseadores.getPaseadores());
+		model.addAttribute("paseadores",paseoService.getLista());
 		return "serviciosPaseo";
 	}
 	
 	/*----CAPTURA LA PETECION ENVIADA POR URL, MUESTRA LA PAGINA nuevoPaseador CON UN OBJETO PARA ASIGNARLE VALORES A LOS ATRIBUTOS.----*/
 	@GetMapping("/nuevo")
 	public String getNuevoPaseadorPage(Model model) {
-		model.addAttribute("paseador", paseador);
+		model.addAttribute("paseador", paseoService.getPaseador());
 		boolean edicion=false;
 		model.addAttribute("edicion", edicion);
 		return "nuevoPaseador";
@@ -58,8 +57,8 @@ public class ServiciosController {
 			modelView.addObject("paseador", paseador);
 			return modelView;  
 		}
-		listaPaseadores.getPaseadores().add(paseador);
-		modelView.addObject("paseadores",listaPaseadores.getPaseadores());
+		paseoService.guardar(paseador);
+		modelView.addObject("paseadores",paseoService.getLista());
 		return modelView;
 		
 	}
@@ -68,14 +67,9 @@ public class ServiciosController {
 	 *CON EL CUAL ENCONTRO LA COINCIDENCIA EN EL ATRIBUTO NOMBRE----*/
 	@GetMapping("/modificar/{nombre}")
 	public String getModificarPaseadorPage(Model model, @PathVariable(value="nombre")String nombre) {
-		Paseador paseadorEncontrado = new Paseador();
+		Paseador paseadorEncontrado = paseoService.getBy(nombre);
 		boolean edicion = true;
-		for (Paseador pas : listaPaseadores.getPaseadores()) {
-			if (pas.getNombre().equals(nombre)) {
-				paseadorEncontrado = pas;
-				break;
-			}
-		}
+		
 		model.addAttribute("paseador", paseadorEncontrado);
 		model.addAttribute("edicion", edicion);
 		return "nuevoPaseador";
@@ -83,17 +77,12 @@ public class ServiciosController {
 	
 	/*----ASIGNA LOS NUEVOS VALORES A LOS ATRIBUTOS DEL OBJETO. EL NOMBRE DEBE SER EL MISMO----*/
 	@PostMapping("/modificar")
-	public String modificarPaseador(@ModelAttribute("paseador")Paseador paseador) {
-		for(Paseador pas : listaPaseadores.getPaseadores()) {
-			if (pas.getNombre().equals(paseador.getNombre())) {
-				pas.setApellido(paseador.getApellido());
-				pas.setDias(paseador.getDias());
-				pas.setHoraMInicio(paseador.getHoraMInicio());
-				pas.setHoraMFin(paseador.getHoraMFin());
-				pas.setHoraTInicio(paseador.getHoraTInicio());
-				pas.setHoraTFin(paseador.getHoraTFin());
-			}	
+	public String modificarPaseador(@Valid @ModelAttribute("paseador")Paseador paseador, BindingResult result) {
+		if(result.hasErrors()) {
+			
+			return "nuevoPaseador";
 		}
+		paseoService.modificar(paseador);
 		return "redirect:/servicios/listado";
 	}
 	
@@ -101,12 +90,8 @@ public class ServiciosController {
 	 * 	CON EL CUAL ENCONTRO LA COINCIDENCIA EN EL ATRIBUTO NOMBRE PARA PODER ELIMINAR EL OBJETO DE LA LISTA----*/
 	@GetMapping("/eliminar/{nombre}")
 	public String eliminarPaseador(@PathVariable(value="nombre") String nombre) {
-		for(Paseador pas : listaPaseadores.getPaseadores()) {
-			if (pas.getNombre().equals(nombre)) {
-				listaPaseadores.getPaseadores().remove(pas);
-				break;
-			}
-		}
+		Paseador paseadorEncontrado = paseoService.getBy(nombre);
+		paseoService.eliminar(paseadorEncontrado);
 		return "redirect:/servicios/listado";
 	}
 	
