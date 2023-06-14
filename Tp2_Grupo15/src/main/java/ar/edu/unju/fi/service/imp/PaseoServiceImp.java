@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import ar.edu.unju.fi.entity.Paseador;
 import ar.edu.unju.fi.listas.ListaPaseador;
-import ar.edu.unju.fi.model.Paseador;
 import ar.edu.unju.fi.service.IPaseoService;
 
 @Service

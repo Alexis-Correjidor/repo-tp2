@@ -6,11 +6,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import ar.edu.unju.fi.entity.Producto;
 import ar.edu.unju.fi.listas.ListaProducto;
-import ar.edu.unju.fi.model.Producto;
 import ar.edu.unju.fi.service.IProductoService;
 
-@Service
+@Service("productoServiceImp")
 public class ProductoServiceImp implements IProductoService {
 	
 	@Autowired
@@ -38,7 +38,8 @@ public class ProductoServiceImp implements IProductoService {
 	@Override
 	public void modificar(Producto producto) {
 		for (Producto prod: listaProductos.getProductos()) {
-			if (prod.getCodigo() == producto.getCodigo()) {
+			if (prod.getId() == producto.getId()) {
+				 prod.setId(producto.getId());
 				 prod.setNombre(producto.getNombre());
 				 prod.setNombreImagen(producto.getNombreImagen());
 				 prod.setCodigo(producto.getCodigo());
@@ -57,12 +58,12 @@ public class ProductoServiceImp implements IProductoService {
 	@Override
 	public void eliminar(Producto producto) {
 		listaProductos.getProductos().remove(producto);
-		
 	}
 	/**METODO QUE DEVUELVE EL PRODUCTO */
 	@Override
 	public Producto getProducto() {
 		return producto;
+
 	}
 	
 	/**
@@ -71,10 +72,10 @@ public class ProductoServiceImp implements IProductoService {
 	 * @return RETORNA EL PRODUCTO ENCOTRADO
 	 * */
 	@Override
-	public Producto getByCodigo(String codigo) {
+	public Producto getBy(Long id) {
 		Producto productoEncontrado = null;
 		for (Producto prod: listaProductos.getProductos()) {
-			if (prod.getCodigo()==Integer.parseInt(codigo)) {
+			if (prod.getId()== id) {
 				productoEncontrado = prod;
 				break;
 			}
@@ -82,6 +83,7 @@ public class ProductoServiceImp implements IProductoService {
 		return productoEncontrado;
 	}
 	
-	
+
+
 	
 }

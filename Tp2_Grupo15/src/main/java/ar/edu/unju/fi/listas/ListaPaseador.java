@@ -4,7 +4,8 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Component;
-import ar.edu.unju.fi.model.Paseador;
+
+import ar.edu.unju.fi.entity.Paseador;
 
 /*----Registro de bean y creacion de ListaPaseador----*/
 @Component

@@ -4,9 +4,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+import ar.edu.unju.fi.entity.sucursal;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
-import ar.edu.unju.fi.model.sucursal;
 
 /*----registro de bean y creacion de ListaSucursal----*/
 @Component

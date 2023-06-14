@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import ar.edu.unju.fi.model.consejosSalud;
+import ar.edu.unju.fi.entity.consejosSalud;
 
 /*----registro de bean y creacion de ListaConsejos----*/
 @Component
