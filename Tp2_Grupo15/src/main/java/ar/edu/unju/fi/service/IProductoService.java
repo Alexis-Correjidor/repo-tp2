@@ -2,7 +2,7 @@ package ar.edu.unju.fi.service;
 
 import java.util.List;
 
-import ar.edu.unju.fi.model.Producto;
+import ar.edu.unju.fi.entity.Producto;
 
 public interface IProductoService {
 	
@@ -10,7 +10,7 @@ public interface IProductoService {
 	
 	List<Producto> getProductos();
 	
-	Producto getByCodigo(String codigo);
+	Producto getBy(Long id);
 	
 	void guardar(Producto producto);
 	

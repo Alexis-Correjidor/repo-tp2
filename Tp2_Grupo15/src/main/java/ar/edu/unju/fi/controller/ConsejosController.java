@@ -1,5 +1,5 @@
 package ar.edu.unju.fi.controller;
-import ar.edu.unju.fi.model.consejosSalud;
+import ar.edu.unju.fi.entity.consejosSalud;
 import ar.edu.unju.fi.service.IConsejoService;
 import jakarta.validation.Valid;
 

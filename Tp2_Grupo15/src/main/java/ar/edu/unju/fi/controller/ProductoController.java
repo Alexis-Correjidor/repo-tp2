@@ -1,6 +1,7 @@
 package ar.edu.unju.fi.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import ar.edu.unju.fi.model.Producto;
+import ar.edu.unju.fi.entity.Producto;
 import ar.edu.unju.fi.service.IProductoService;
 import jakarta.validation.Valid;
 
@@ -21,6 +22,7 @@ import jakarta.validation.Valid;
 public class ProductoController {
 
 	@Autowired
+	@Qualifier("productoServiceImp")
 	private IProductoService productoService;
 
 	
@@ -76,10 +78,10 @@ public class ProductoController {
 	 * @param codigo
 	 * @return RETORNA LA PAGINA formulario-producto
 	 *  */
-	@GetMapping("/modificar/{codigo}")
-		public String getEditarProductoPage(Model model, @PathVariable(value="codigo") String codigo) {
+	@GetMapping("/modificar/{id}")
+		public String getEditarProductoPage(Model model, @PathVariable(value="id") Long id) {
 			boolean editar=true;
-			model.addAttribute("producto", productoService.getByCodigo(codigo));
+			model.addAttribute("producto", productoService.getBy(id));
 			model.addAttribute("editar", editar);
 			return "formulario-producto";
 			
@@ -103,9 +105,9 @@ public class ProductoController {
 	 * @param codigo
 	 * @return RETORNA LA PAGINA productos CON EL OBJETO ELIMINADO DE LA LISTA
 	 * */
-	@GetMapping("/eliminar/{codigo}")
-	public String eliminarProducto(@PathVariable(value = "codigo")String codigo) {
-		productoService.eliminar(productoService.getByCodigo(codigo));	
+	@GetMapping("/eliminar/{id}")
+	public String eliminarProducto(@PathVariable(value = "id")Long id) {
+		productoService.eliminar(productoService.getBy(id));	
 		return "redirect:/producto/lista-producto";
 	}
 	
