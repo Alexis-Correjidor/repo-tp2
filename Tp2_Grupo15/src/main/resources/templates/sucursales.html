@@ -22,6 +22,7 @@
 				<table class="table table-hover table-sm">
 				<thead>
 					<tr class="table-active table-success">
+						<th scope="col">ID</th>
 						<th scope="col">Nombre</th>
 						<th scope="col">Provincia</th>
 						<th scope="col">Direccion</th>
@@ -35,7 +36,8 @@
 					<tbody>
 					
 					<tr th:each="sucu: ${sucursales}">
-							<td scope="row" th:text="${sucu.nombre}"></td>
+							<td scope="row" th:text="${sucu.id}"></td>
+							<td th:text="${sucu.nombre}"></td>
 							<td th:text="${sucu.provincia}"></td>
 							<td th:text="${sucu.direccion}"></td>
 							<td th:text="${sucu.telefono}"></td> 
@@ -43,8 +45,8 @@
 							<td th:text="${#temporals.format(sucu.fechaInicio, 'dd/MM/yyyy')}"></td>
 							<td th:text="${sucu.cantidadEmpleados}"></td>
 							<td>
-								<a class="btn btn-outline-success" th:href="@{/sucursal/modificar/}+${sucu.nombre}">Editar</a>
-								<a class="btn btn-outline-danger" th:href="@{/sucursal/eliminar/}+${sucu.nombre}">Eliminar</a>
+								<a class="btn btn-outline-success" th:href="@{/sucursal/modificar/}+${sucu.id}">Editar</a>
+								<a class="btn btn-outline-danger" th:href="@{/sucursal/eliminar/}+${sucu.id}">Eliminar</a>
 							</td>
 							
 					</tr>

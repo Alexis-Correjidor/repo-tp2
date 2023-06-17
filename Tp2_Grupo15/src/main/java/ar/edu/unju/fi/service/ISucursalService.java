@@ -13,7 +13,7 @@ public interface ISucursalService {
 	  
 	void guardar (sucursal sucursal);
 	
-	sucursal getBy(String nombre);
+	sucursal getBy(Long id);
 	
 	void modificar(sucursal sucursal);
 	
