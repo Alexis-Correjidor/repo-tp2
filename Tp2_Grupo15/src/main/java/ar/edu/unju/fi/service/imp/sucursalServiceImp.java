@@ -10,7 +10,7 @@ import ar.edu.unju.fi.listas.listaSucursal;
 import ar.edu.unju.fi.service.ISucursalService;
 
 
-@Service
+@Service("sucursalServiceImp")
 public class sucursalServiceImp implements ISucursalService {
 	
 	@Autowired
@@ -36,21 +36,22 @@ public class sucursalServiceImp implements ISucursalService {
 	}
  
 	/**
-	 * EL METODO CONSIGUE LA SUCURSAL ATRAVES DEL NOMBRE
-	 * @param nombre
+	 * EL METODO CONSIGUE LA SUCURSAL ATRAVES DE SU ID
+	 * @param id
 	 * @return RETORNA LA SUCURSAL ENCONTRADA
 	 * */
+	
 	@Override
-	public sucursal getBy(String nombre) {
+	 public sucursal getBy(Long id) {
 		sucursal sucursalEncontrada = null;
 		for(sucursal sucu : listaSucursales.getSucursales()) {
-			if (sucu.getNombre().equals(nombre)) {
+			if (sucu.getId().equals(id)) {
 				sucursalEncontrada = sucu;
 				break;
 			}
 		} 	
 		return sucursalEncontrada;
-	}
+	} 
 
 	/**
 	 * METODO PARA MODIFICAR LOS VALORES DE UNA SUCURSAL DE LA LISTA
@@ -60,7 +61,9 @@ public class sucursalServiceImp implements ISucursalService {
 	public void modificar(sucursal sucursal) {
 		
 		for(sucursal sucu : listaSucursales.getSucursales()) {
-			if (sucu.getNombre().equals(sucursal.getNombre())) {
+			if (sucu.getId().equals(sucursal.getId())) {
+				sucu.setId(sucursal.getId());
+				sucu.setNombre(sucursal.getNombre());
 				sucu.setDireccion(sucursal.getDireccion());
 				sucu.setEmail(sucursal.getEmail());
 				sucu.setProvincia(sucursal.getProvincia());
