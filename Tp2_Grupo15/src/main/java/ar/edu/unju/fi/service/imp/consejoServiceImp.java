@@ -9,7 +9,7 @@ import ar.edu.unju.fi.entity.consejosSalud;
 import ar.edu.unju.fi.listas.ListaConsejos;
 import ar.edu.unju.fi.service.IConsejoService;
 
-@Service
+@Service("consejoServiceImp")
 public class consejoServiceImp implements IConsejoService{
 
 	@Autowired
@@ -36,15 +36,15 @@ public class consejoServiceImp implements IConsejoService{
 	}
 
 	/**
-	 * EL METODO CONSIGUE EL CONSEJO ATRAVES DEL TITULO
-	 * @param titulo
+	 * EL METODO CONSIGUE EL CONSEJO ATRAVES DEL ID
+	 * @param ID
 	 * @return RETORNA EL CONSEJO ENCOTRADO
 	 * */
 	@Override
-	public consejosSalud getBy(String titulo) {
+	public consejosSalud getBy(Long id) {
 		consejosSalud consejoEncontrado = null; 
 		for(consejosSalud conse : listaConsejos.getConsejos()) {
-			if (conse.getTitulo().equals(titulo)) {
+			if (conse.getId().equals(id)) {
 				consejoEncontrado = conse;
 				break;
 			}
