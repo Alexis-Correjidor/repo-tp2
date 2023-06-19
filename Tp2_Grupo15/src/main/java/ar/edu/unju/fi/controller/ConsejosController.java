@@ -4,6 +4,7 @@ import ar.edu.unju.fi.service.IConsejoService;
 import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -24,6 +25,7 @@ public class ConsejosController {
 	
 	/*----Inyeccion de dependencia de ListaConsejos----*/
 	@Autowired
+	@Qualifier("consejoServiceImp")
 	private IConsejoService consejoService;
 	
 	/*----Creacion de solicitudes HTTP GET y POST----*/
@@ -58,12 +60,11 @@ public class ConsejosController {
 		return modelView;
 }
 	/*----CAPTURA LA VARIABLE ENVIADA POR URL Y MUESTRA LA PAGINA nuevo_consejo_salud CON EL OBJETO DE LA LISTA
-	 *CON EL CUAL ENCONTRO LA COINCIDENCIA EN EL ATRIBUTO TITULO----*/
-	@GetMapping("/modificar/{titulo}") 
-	public String getModificarConsejoPage(Model model, @PathVariable(value="titulo")String titulo){
-		consejosSalud consejoEncontrado = consejoService.getBy(titulo);
+	 *CON EL CUAL ENCONTRO LA COINCIDENCIA EN EL ATRIBUTO ID----*/
+	@GetMapping("/modificar/{id}") 
+	public String getModificarConsejoPage(Model model, @PathVariable(value="id")Long id){
 		boolean edicion = true;
-		model.addAttribute("consejosSalud", consejoEncontrado);
+		model.addAttribute("consejosSalud", consejoService.getBy(id)); 
 		model.addAttribute("edicion", edicion);
 		return "nuevo_consejo_salud";
 }
@@ -79,10 +80,10 @@ public class ConsejosController {
 		return "redirect:/consejos/listado";
 }
 	/*----CAPTURA LA VARIABLE ENVIADA POR URL Y MUESTRA LA PAGINA consejos/listado CON EL OBJETO DE LA LISTA
-	 * 	CON EL CUAL ENCONTRO LA COINCIDENCIA EN EL ATRIBUTO TITULO PARA PODER ELIMINAR EL OBJETO DE LA LISTA----*/
-	@GetMapping("/eliminar/{titulo}")
-	public String eliminarConsejos(@PathVariable(value="titulo") String titulo) {
-		consejosSalud consejoEncontrado = consejoService.getBy(titulo);
+	 * 	CON EL CUAL ENCONTRO LA COINCIDENCIA EN EL ATRIBUTO ID PARA PODER ELIMINAR EL OBJETO DE LA LISTA----*/
+	@GetMapping("/eliminar/{id}")
+	public String eliminarConsejos(@PathVariable(value="id") Long id) {
+		consejosSalud consejoEncontrado = consejoService.getBy(id);
 		consejoService.eliminar(consejoEncontrado);
 		return "redirect:/consejos/listado";
 	}

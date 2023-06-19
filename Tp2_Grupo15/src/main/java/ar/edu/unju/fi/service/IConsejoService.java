@@ -14,7 +14,7 @@ public interface IConsejoService {
 	  
 	void guardar (consejosSalud consejo);
 	
-	consejosSalud getBy(String titulo);
+	consejosSalud getBy(Long id);
 	
 	void modificar(consejosSalud consejo);
 	

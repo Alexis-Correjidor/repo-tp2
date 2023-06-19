@@ -32,7 +32,7 @@ public class sucursalServiceMysqlImp implements ISucursalService {
 	public void guardar(sucursal sucursal) {
 		sucursal.setEstado(true);
 		sucursalRepository.save(sucursal);
-
+ 
 	}
 
 	/**
@@ -61,7 +61,7 @@ public class sucursalServiceMysqlImp implements ISucursalService {
 	public void eliminar(sucursal sucursalEncontrada) {
 		sucursal.setEstado(false);
 		sucursalRepository.save(sucursal);
-
+ 
 	}
 
 	/** 
