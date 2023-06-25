@@ -12,6 +12,10 @@
 <body>
 	<header th:replace="~{layouts/header :: header}"> </header>
 
+	<div style="padding: 0px;" class="container text-start">
+		<a class="btn btn-info" th:href="@{/producto/nuevo}">Nuevo
+			Producto</a>
+	</div>
 	<div class="container text-center" id="contenedor"> <!-- agregue container y centra el texto -->
 		<section class="row justify-content-center"> <!-- agregue fila -->
 			<h2>Alimentos</h2>
@@ -26,6 +30,10 @@
 					style="color: gold">$</span> <span
 					th:text="${prod.calcularDescuento}"></span> <span
 					style="color: green" th:text="${prod.descuento}+'% OFF'"></span> <br>
+				<br> <a class="btn btn-outline-success"
+					th:href="@{/producto/modificar/}+${prod.id}">Modificar</a> <a
+					class="btn btn-outline-danger"
+					th:href="@{/producto/eliminar/}+${prod.id}">Eliminar</a>
 			</article>
 
 		</section>
@@ -42,6 +50,11 @@
 					style="color: gold">$</span> <span
 					th:text="${prod.calcularDescuento}"></span> <span
 					style="color: green" th:text="${prod.descuento}+'% OFF'"></span> <br>
+				<br> <a class="btn btn-outline-success"
+					th:href="@{/producto/modificar/}+${prod.id}">Modificar</a> <a
+					class="btn btn-outline-danger"
+					th:href="@{/producto/eliminar/}+${prod.id}">Eliminar</a>
+
 			</article>
 		</section>
 		<section class="row justify-content-center"> <!-- agregue fila -->
@@ -57,6 +70,10 @@
 					style="color: gold">$</span> <span
 					th:text="${prod.calcularDescuento}"></span> <span
 					style="color: green" th:text="${prod.descuento}+'% OFF'"></span> <br>
+				<br> <a class="btn btn-outline-success"
+					th:href="@{/producto/modificar/}+${prod.id}">Modificar</a> <a
+					class="btn btn-outline-danger"
+					th:href="@{/producto/eliminar/}+${prod.id}">Eliminar</a>
 			</article>
 		</section>
 	</div>
