@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestion de Datos</title>
+<link rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+	<header th:replace="~{layouts/header :: header}"> </header>
+	<div class="container text-center">
+		<h1 class="row justify-content-center">Gestion de Datos</h1>
+	</div>
+	<div class="container">
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Paginas</th>
+					<th scope="col">Listas</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row">Producto</th>
+					<td>
+						<a th:href="@{/producto/lista-producto}">Lista de Productos</a>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">Consejo de Salud</th>
+					<td>
+						<a th:href="@{/consejos/listado}">Lista de Consejos</a>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">Servicio de Paseo</th>
+					<td>
+						<a th:href="@{/servicios/listado}">Lista de Servicios</a>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">Sucursal</th>
+					<td>
+						<a th:href="@{/sucursal/listado}">Lista de Sucursales</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+</body>
+</html>
