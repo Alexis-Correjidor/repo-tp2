@@ -22,9 +22,15 @@ import jakarta.validation.Valid;
 public class ProductoController {
 
 	@Autowired
-	@Qualifier("productoServiceImp")
+	@Qualifier("productoServiceMysql")
 	private IProductoService productoService;
-
+	
+	@GetMapping("/")
+	public String getProductoPage(Model model) {
+		model.addAttribute("productos", productoService.getProductos());
+		return "productos";
+	}
+	
 	
 	/**RECIBE LA PETECION ENVIADA POR URL PARA MOSTRAR LA PAGINA PRODUCTOS CON LOS OBJETOS DE LA LISTA
 	 * @param model 
@@ -33,7 +39,7 @@ public class ProductoController {
 	@GetMapping("/lista-producto")
 	public String getListaProductoPage(Model model) {
 		model.addAttribute("productos", productoService.getProductos());
-		return "productos";
+		return "productoAbm";
 	}
 	
 	

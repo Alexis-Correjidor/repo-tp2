@@ -34,7 +34,6 @@ public class Producto {
 	/**Validaciones para el nombre de imagen de un producto*/
 	@NotBlank(message="Debe ingresar un nombre de imagen")
 	@Size(min = 3, max= 30,message="Los nombres de imagen deben tener entre 3 y 30 caracteres" )
-	@Pattern(regexp="[a-zA-Z]+",message="Los nombres solo pueden contener letras")
 	@Column(name="prod_nombreImagen")
 	private String nombreImagen;
 	/**Validaciones para codigo de producto*/

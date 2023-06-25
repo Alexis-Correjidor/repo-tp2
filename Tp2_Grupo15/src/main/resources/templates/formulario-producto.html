@@ -21,7 +21,7 @@
 					<div class="row justify-content-center">
 						<input type="text" name="id"
 							placeholder="Id Producto" id="producto_id"
-							th:field="*{id}">
+							th:field="*{id}" readonly>
 						<div class="text-danger" th:if="${#fields.hasErrors('id')}"
 							th:errors="*{id}"></div>
 						<input type="text" name="nombre" placeholder="Nombre Producto"
