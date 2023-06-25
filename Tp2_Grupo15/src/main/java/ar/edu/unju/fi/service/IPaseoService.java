@@ -11,7 +11,7 @@ public interface IPaseoService {
 	
 	void guardar (Paseador paseador);
 	
-	Paseador getBy(String nombre);
+	Paseador getBy(Long id);
 	
 	void modificar(Paseador paseador);
 	

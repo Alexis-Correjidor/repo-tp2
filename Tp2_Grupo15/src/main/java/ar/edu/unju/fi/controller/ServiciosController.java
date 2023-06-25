@@ -1,6 +1,7 @@
 package ar.edu.unju.fi.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -23,7 +24,8 @@ import jakarta.validation.Valid;
 public class ServiciosController {
 	
 	/*----Inyección de dependencia de ListaPaseadores-----*/
-	@Autowired					
+	@Autowired
+	@Qualifier("paseoServiceMysql")
 	private IPaseoService paseoService ;
 	
 	
@@ -64,12 +66,12 @@ public class ServiciosController {
 	
 	/*----CAPTURA LA VARIABLE ENVIADA POR URL Y MUESTRA LA PAGINA nuevoPaseador CON EL OBJETO DE LA LISTA
 	 *CON EL CUAL ENCONTRO LA COINCIDENCIA EN EL ATRIBUTO NOMBRE----*/
-	@GetMapping("/modificar/{nombre}")
-	public String getModificarPaseadorPage(Model model, @PathVariable(value="nombre")String nombre) {
-		Paseador paseadorEncontrado = paseoService.getBy(nombre);
+	@GetMapping("/modificar/{id}")
+	public String getModificarPaseadorPage(Model model, @PathVariable(value="id")Long id) {
+		
 		boolean edicion = true;
 		
-		model.addAttribute("paseador", paseadorEncontrado);
+		model.addAttribute("paseador", paseoService.getBy(id));
 		model.addAttribute("edicion", edicion);
 		return "nuevoPaseador";
 	}
@@ -87,9 +89,9 @@ public class ServiciosController {
 	
 	/*----CAPTURA LA VARIABLE ENVIADA POR URL Y MUESTRA LA PAGINA /servicios/listado CON EL OBJETO DE LA LISTA
 	 * 	CON EL CUAL ENCONTRO LA COINCIDENCIA EN EL ATRIBUTO NOMBRE PARA PODER ELIMINAR EL OBJETO DE LA LISTA----*/
-	@GetMapping("/eliminar/{nombre}")
-	public String eliminarPaseador(@PathVariable(value="nombre") String nombre) {
-		Paseador paseadorEncontrado = paseoService.getBy(nombre);
+	@GetMapping("/eliminar/{id}")
+	public String eliminarPaseador(@PathVariable(value="id") Long id) {
+		Paseador paseadorEncontrado = paseoService.getBy(id);
 		paseoService.eliminar(paseadorEncontrado);
 		return "redirect:/servicios/listado";
 	}
