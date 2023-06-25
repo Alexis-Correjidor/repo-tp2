@@ -4,29 +4,57 @@ import java.time.LocalTime;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 /*----encapsulamiento de datos Paseador----*/
 @Component
-
+@Entity
+@Table(name="paseadores")
 public class Paseador {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY) 
+	@Column(name="pas_id" )
+	private Long id;
+	
+	@Column(name="pas_nombre",length=20, nullable = false)
 	@Size(min=5, max=20, message="El nombre debe tener entre 5 y 20 caracteres")
 	private String nombre;
+	
+	@Column(name="pas_apellido",length=20, nullable = false)
 	@Size(min=5, max=20, message="El apellido debe tener entre 5 y 20 caracteres")	
 	private String apellido;
+	
+	@Column(name="pas_dias", nullable = false)
 	@NotEmpty(message="Este campo no debe estar vacio")
 	private String dias;
+	
+	@Column(name="pas_horaMInicio", nullable = false)
 	@DateTimeFormat(pattern="HH:mm")
 	@NotNull(message="La hora no puede ser null")
 	private LocalTime horaMInicio;
+	
+	@Column(name="pas_horaMFin", nullable = false)
 	@NotNull(message="La hora no puede ser null")
 	private LocalTime horaMFin;
+	
+	@Column(name="pas_horaTInicio", nullable = false)
 	@NotNull(message="La hora no puede ser null")
 	private LocalTime horaTInicio;
+	
+	@Column(name="pas_horaTFin", nullable = false)
 	@NotNull(message="La hora no puede ser null")
 	private LocalTime horaTFin;
+	
+	@Column(name="pas_estado")
+	private boolean estado;
 	
 	public Paseador() {
 		
@@ -42,9 +70,10 @@ public class Paseador {
 	 * @param horaTInicio recibe un parametro tipo LocalTime para almacenar hora inicial a trabajar por la mañana.
 	 * @param horaTFin recibe un parametro tipo LocalTime para almacenar hora final a trabajar por la tarde.
 	 */
-	public Paseador(String nombre, String apellido, String dias, LocalTime horaMInicio, LocalTime horaMFin, LocalTime horaTInicio,
+	public Paseador(Long id,String nombre, String apellido, String dias, LocalTime horaMInicio, LocalTime horaMFin, LocalTime horaTInicio,
 			LocalTime horaTFin) {
 		super();
+		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.dias = dias;
@@ -55,6 +84,14 @@ public class Paseador {
 	}
 
 	/*----Creacion de Getters y Setters----*/
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 	
 	public String getNombre() {
 		return nombre;
@@ -112,5 +149,12 @@ public class Paseador {
 		this.horaTFin = horaTFin;
 	}
 	
+	public boolean isEstado() {
+		return estado;
+	}
+
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
 
 }

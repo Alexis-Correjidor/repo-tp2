@@ -18,6 +18,7 @@
 			    <div class="table-responsive-xxl  table-responsive-xl table-responsive-lg table-responsive-md table-responsive-ms table-responsive-xs">
 				    <table class="table table-hover table-sm">
 				    	<tr class="table-active table-success">
+				    		<th>Id</th>
 				            <th>Nombre</th>
 				            <th>Apellido</th>
 				            <th>Dias de Trabajo</th>
@@ -26,6 +27,7 @@
 				            <th>Acciones</th>
 				        </tr> 
 				        <tr th:each="pas: ${paseadores}">
+				        	<td th:text="${pas.id}"></td>
 							<td th:text="${pas.nombre}"></td>
 							<td th:text="${pas.apellido}"></td>
 							<td th:text="${pas.dias}"></td>
@@ -34,8 +36,8 @@
 							<td th:text="${#temporals.format(pas.horaTInicio, 'HH:mm')}"></td>
 							<td th:text="${#temporals.format(pas.horaTFin, 'HH:mm')}"></td>
 							<td>
-								<a class="btn btn-outline-success" th:href="@{/servicios/modificar/}+${pas.nombre}">Editar</a>
-								<a class="btn btn-outline-danger" th:href="@{/servicios/eliminar/}+${pas.nombre}">Eliminar</a>
+								<a class="btn btn-outline-success" th:href="@{/servicios/modificar/}+${pas.id}">Editar</a>
+								<a class="btn btn-outline-danger" th:href="@{/servicios/eliminar/}+${pas.id}">Eliminar</a>
 							</td>						
 						</tr>
 				    </table>

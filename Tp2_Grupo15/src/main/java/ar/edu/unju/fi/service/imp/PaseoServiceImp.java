@@ -9,7 +9,7 @@ import ar.edu.unju.fi.entity.Paseador;
 import ar.edu.unju.fi.listas.ListaPaseador;
 import ar.edu.unju.fi.service.IPaseoService;
 
-@Service
+@Service("paseoServiceImp")
 public class PaseoServiceImp implements IPaseoService{
 
 	@Autowired
@@ -29,10 +29,10 @@ public class PaseoServiceImp implements IPaseoService{
 	}
 	
 	@Override
-	public Paseador getBy(String nombre) {
+	public Paseador getBy(Long id) {
 		Paseador paseadorEncontrado = null;
 		for (Paseador pas : listaPaseadores.getPaseadores()) {
-			if (pas.getNombre().equals(nombre)) {
+			if (pas.getId().equals(id)) {
 				paseadorEncontrado = pas;
 				break;
 			}
@@ -43,7 +43,9 @@ public class PaseoServiceImp implements IPaseoService{
 	@Override
 	public void modificar(Paseador paseador) {
 		for(Paseador pas : listaPaseadores.getPaseadores()) {
-			if (pas.getNombre().equals(paseador.getNombre())) {
+			if (pas.getId().equals(paseador.getId())) {
+				pas.setId(paseador.getId());
+				pas.setNombre(paseador.getNombre());
 				pas.setApellido(paseador.getApellido());
 				pas.setDias(paseador.getDias());
 				pas.setHoraMInicio(paseador.getHoraMInicio());
