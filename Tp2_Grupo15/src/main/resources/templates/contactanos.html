@@ -13,8 +13,8 @@
 	<header th:replace="~{layouts/header :: header}"> </header>
 	<div class="container"> <!--agregue columna  --> 
 		<div class="row"> <!--agregue fila  -->
-			<section style="border: 2px solid #1c5" class="col-md-6"> <!--agregue columna  -->
-				<h3>Contáctenos</h3>
+			<section class="col-md-6"> <!--agregue columna  -->
+				<h3 class="h2Salud">Contáctenos</h3>
 				<p>3915 Av. General Belgrano. 388-4999999</p>
 				<p>Lunes a viernes: 9:00 a. m a 8:00 p. m.</p>
 				<p>Sábado a domingo: 9:00 a. m a 12:30 p. m.</p>
@@ -42,21 +42,20 @@
 				</div>
 				<br>
 				<div class="row justify-content-center"> <!--agregue fila  -->
-						<img style="height: 150px; width:200px" th:src="@{/Images/correo.jpg}" alt="correo"
+						<img class="imagen-carta-correo" th:src="@{/Images/correo.jpg}" alt="correo"
 						id="section__imagen">
 				</div>
 			</section>
-			<aside style="border: 2px solid #1c5" class="col-md-6"> <!--agregue columna  -->
-				<h3>Publícidad</h3>
+			<aside class="col-md-6"> <!--agregue columna  -->
+				<h3 class="h2Salud">Publícidad</h3>
 				<div class="container"> <!--agregue columna para las imagenes  -->
 					<div class="row justify-content-center"> <!--agregue fila  -->
-						<img style="height: 300px; width:400px" th:src="@{/Images/imagen1.gif}" alt="" />
+						<img class="imagen-contactanos" th:src="@{/Images/imagen1.gif}" alt="" />
 					</div>
 					<br>
 					
 					<div class="row justify-content-center"> <!--agregue fila  -->
-						<img style="height: 300px; width:400px"
-						th:src="@{/Images/Imagen2.jpg}" alt="" />
+						<img class="imagen-contactanos" th:src="@{/Images/Imagen2.jpg}" alt="" />
 					</div>
 					
 				</div>
