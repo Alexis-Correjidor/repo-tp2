@@ -277,8 +277,20 @@ ul#listaSecundaria{margin:20px 60px;}
     border-bottom: 2px solid #5f9;
 }
    
-/*Servicios de Paseo*/
+.col-md-6{
+	border: 2px solid #1c5;
+}   
+   
+.imagen-contactanos{
+	height: 300px; width:400px;
+}  
 
+.imagen-carta-correo{
+	height: 150px; width:200px;
+	padding: 10px;
+} 
+   
+/*Servicios de Paseo*/
 
 
 .conteinerServiciosPaseo{
