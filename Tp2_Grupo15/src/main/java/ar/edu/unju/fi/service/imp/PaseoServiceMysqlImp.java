@@ -38,10 +38,11 @@ public class PaseoServiceMysqlImp implements IPaseoService {
 		paseador.setEstado(true);
 		paseoRepository.save(paseador);
 	}
-
+	
 	@Override
-	public void eliminar(Paseador paseadorEncontrado) {
+	public void eliminar(Paseador paseador) {
 		paseador.setEstado(false);
+		
 		paseoRepository.save(paseador);
 	}
 

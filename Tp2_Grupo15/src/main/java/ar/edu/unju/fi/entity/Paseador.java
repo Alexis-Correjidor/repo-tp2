@@ -157,4 +157,12 @@ public class Paseador {
 		this.estado = estado;
 	}
 
+	@Override
+	public String toString() {
+		return "Paseador [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", dias=" + dias
+				+ ", horaMInicio=" + horaMInicio + ", horaMFin=" + horaMFin + ", horaTInicio=" + horaTInicio
+				+ ", horaTFin=" + horaTFin + ", estado=" + estado + "]";
+	}
+
+	
 }

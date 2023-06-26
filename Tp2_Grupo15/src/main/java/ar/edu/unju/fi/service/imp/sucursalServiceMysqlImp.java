@@ -58,7 +58,7 @@ public class sucursalServiceMysqlImp implements ISucursalService {
 	 * @param sucursal
 	 */
 	@Override
-	public void eliminar(sucursal sucursalEncontrada) {
+	public void eliminar(sucursal sucursal) {
 		sucursal.setEstado(false);
 		sucursalRepository.save(sucursal);
  
