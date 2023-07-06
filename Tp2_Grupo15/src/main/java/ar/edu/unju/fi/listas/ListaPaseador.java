@@ -7,11 +7,11 @@ import org.springframework.stereotype.Component;
 
 import ar.edu.unju.fi.entity.Paseador;
 
-/*----Registro de bean y creacion de ListaPaseador----*/
-@Component
+
+@Component  //REGISTR DE UN bean DENTRO DEL FRAMEWORK
 public class ListaPaseador {
 
-	private List<Paseador>paseadores;
+	private List<Paseador>paseadores;  //CREAR LISTA DE PASEADORES
 	
 	public ListaPaseador() {
 		paseadores = new ArrayList<Paseador>();
@@ -21,9 +21,11 @@ public class ListaPaseador {
 		
 	}
 	
-	/*----creacion de getters y setters----*/
-	
-	public List<Paseador> getPaseadores() {
+	/**
+	 * METODO ENCARGADO DE LISTAR
+	 * @return Retorna un array de paseadores
+	 */
+	public List<Paseador> getPaseadores() {   
 		return paseadores;
 	}
 

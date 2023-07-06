@@ -17,7 +17,8 @@ public class PaseoServiceImp implements IPaseoService{
 	@Autowired
 	private Paseador paseador;
 	
-	@Override
+	@Override	/*La anotación @Override simplemente se utiliza, para forzar al compilador a comprobar en tiempo de compilación que estás sobrescribiendo correctamente un método, y de este modo evitar errores en tiempo de ejecución*/
+	
 	public List<Paseador> getLista() {
 		
 		return listaPaseadores.getPaseadores();
