@@ -76,7 +76,7 @@ public class ConsejoController {
 			return "nuevo_consejo_salud";
 		}
 		 
-		consejoService.guardar(consejosSalud);
+		consejoService.modificar(consejosSalud);
 		return "redirect:/consejos/listado";
 }
 	/*----CAPTURA LA VARIABLE ENVIADA POR URL Y MUESTRA LA PAGINA consejos/listado CON EL OBJETO DE LA LISTA
