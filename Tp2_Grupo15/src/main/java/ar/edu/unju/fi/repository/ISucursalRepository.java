@@ -9,11 +9,7 @@ import ar.edu.unju.fi.entity.sucursal;
 @Repository
 public interface ISucursalRepository extends CrudRepository<sucursal,Long> {
 
-	/**
-	 * METODO QUE LISTA LOS REGISTROS QUE TENGAN EL VALOR 'TRUE'
-	 * @param estado
-	 * @return
-	 */
+	
 	public List<sucursal> findByEstado(boolean estado);
 	
 }

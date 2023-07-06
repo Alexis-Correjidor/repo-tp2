@@ -9,7 +9,7 @@ import ar.edu.unju.fi.entity.sucursal;
 import ar.edu.unju.fi.repository.ISucursalRepository;
 import ar.edu.unju.fi.service.ISucursalService;
 @Service("sucursalServiceMysql")
-public class sucursalServiceMysqlImp implements ISucursalService {
+public class SucursalServiceMysqlImp implements ISucursalService {
 
 	@Autowired
 	private ISucursalRepository sucursalRepository;
@@ -58,7 +58,7 @@ public class sucursalServiceMysqlImp implements ISucursalService {
 	 * @param sucursal
 	 */
 	@Override
-	public void eliminar(sucursal sucursalEncontrada) {
+	public void eliminar(sucursal sucursal) {
 		sucursal.setEstado(false);
 		sucursalRepository.save(sucursal);
  

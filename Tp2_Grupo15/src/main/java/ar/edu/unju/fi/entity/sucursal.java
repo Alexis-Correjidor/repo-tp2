@@ -21,22 +21,13 @@ import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 
-/*----encapsulamiento de datos sucursal----*/
+
 @Component
 @Entity
 @Table(name="sucursales")
+
 /**
- * Se utiliza para los datos de las sucursales.
- * @author Agustin Castellon
- * @param id agrega un parametro tipo Long para almacenar un codigo id de una sucursal
- * @param nombre recibe un parametro tipo String para el nombre de la sucursal.
- * @param provincia recibe un parametro tipo String para la provincia de la sucursal.
- * @param direccion recibe un parametro tipo String para la direccion de la sucursal.
- * @param telegono recibe un parametro tipo String para el telefono de la sucursal.
- * @param email recibe un parametro tipo String para el mail de la sucursal.
- * @param fechaInicio recibe un parametro tipo LocalDate para la fecha de inicio de la sucursal.
- * @param cantidadEmpleados recibe la cantidad de empleados que trabajan en el local.
- * @param estado parametro logico que guarda el estado de la sucursal: verdadero la resgistra, falso se da baja.
+ * Clase que contiene los datos de una sucursal
  */
 	public class sucursal {
 		@Id
@@ -87,7 +78,17 @@ import jakarta.validation.constraints.Size;
 		
 	}
 
-	/*----Constructor sobrecargado----*/
+	/**
+	 * Captura los datos para una sucursal
+	 * @param id El identificador de la sucursal
+	 * @param nombre El nombre de la sucursal
+	 * @param provincia Provincia donde se encuentra la sucursal
+	 * @param direccion La direccion de la sucursal
+	 * @param telefono El numero de telefono de la sucursal
+	 * @param email El correo electronico de la sucursal
+	 * @param fechaInicio La fecha en la que abre la sucursal
+	 * @param cantidadEmpleados La cantidad de empleados de la sucursal
+	 */
 	public sucursal(Long id, String nombre, String provincia, String direccion, String telefono, String email,
 		LocalDate fechaInicio, int cantidadEmpleados) {
 	super();

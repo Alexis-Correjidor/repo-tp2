@@ -6,15 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ar.edu.unju.fi.entity.sucursal;
-import ar.edu.unju.fi.listas.listaSucursal;
+import ar.edu.unju.fi.listas.ListaSucursal;
 import ar.edu.unju.fi.service.ISucursalService;
 
 
 @Service("sucursalServiceImp")
-public class sucursalServiceImp implements ISucursalService {
+public class SucursalServiceImp implements ISucursalService {
 	
 	@Autowired
-	private listaSucursal listaSucursales;
+	private ListaSucursal listaSucursales;
 	@Autowired
 	private sucursal sucursal;
 	

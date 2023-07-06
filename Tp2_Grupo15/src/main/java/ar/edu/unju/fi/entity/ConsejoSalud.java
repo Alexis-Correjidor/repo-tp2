@@ -11,25 +11,22 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 
-/*----encapsulamiento de datos consejoSalud----*/
+
 @Component
 @Entity
 @Table(name="consejos")
+
 /**
- * Se utiliza para los datos que iran en el articulo.
- * @author Agustin Castellon
- * @param titulo recibe un parametro tipo String sobre el titulo del arituclo.
- * @param descripcion recibe un parametro tipo String sobre la descripcion del articulo.
- * @param nombreIMG recibe un parametro tipo String sobre la descripcion de la imagen a utilizar.
+ * Clase que contiene los datos de un articulo de salud
  */
-public class consejosSalud {
+public class ConsejoSalud {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY) 
 	@Column(name="conse_id" )
 	private Long id;
 	
-	@Column(name="conse_titulo",length=65, nullable = false)
+	@Column(name="conse_titulo")
 	@Size(min=15, max=150, message="El titulo debe tener entre 10 y 150 caracteres")
 	@NotEmpty(message="El titulo no puede estar vacio")
 	private String titulo;
@@ -39,25 +36,31 @@ public class consejosSalud {
 	@NotEmpty(message="La descripcion no puede estar vacia.")
 	private String descripcion;
 	
-	@Column(name="conse_imagen",length=55, nullable = false)
+	@Column(name="conse_imagen")
 	@NotEmpty(message="Debe describir la imagen que se usaria")
 	private String nombreIMG;
 	
 	@Column(name="conse_estado")
 	private boolean estado;
 	
-public consejosSalud () {
+public ConsejoSalud () {
 	
 }
-/*----Constructor sobrecargado----*/
-public consejosSalud(Long id, String titulo, String descripcion, String nombreIMG) {
+/**
+ * Captura los datos para el articulo
+ * @param id El identificador del articulo
+ * @param titulo El titulo del articulo
+ * @param descripcion La descripcion del articulo
+ * @param nombreIMG  Imagen del articulo
+ */
+public ConsejoSalud(Long id, String titulo, String descripcion, String nombreIMG) {
 	super();
 	this.id = id;
 	this.titulo = titulo;
 	this.descripcion = descripcion;
 	this.nombreIMG = nombreIMG;
 }
-/*----creacion de getters y setters----*/
+
 public String getNombreIMG() {
 	return nombreIMG;
 }

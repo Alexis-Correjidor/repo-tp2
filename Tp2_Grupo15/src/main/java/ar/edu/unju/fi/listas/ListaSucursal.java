@@ -9,13 +9,19 @@ import ar.edu.unju.fi.entity.sucursal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-/*----registro de bean y creacion de ListaSucursal----*/
-@Component
-public class listaSucursal {
 
+@Component
+public class ListaSucursal {
+
+	/**
+	 * Crea una lista de la clase sucursal
+	 */
 	private List<sucursal> sucursales;
-	 /*----Creacion de lista para los atributos de sucursal----*/
-	public listaSucursal() {
+	
+	 /**
+	  * Encapsula los datos para crear una lista de sucursales
+	  */
+	public ListaSucursal() {
 		sucursales = new ArrayList<sucursal>();
 		sucursales.add(new sucursal(1L, "Todo Mascotas - Local 1", "Jujuy", "Av. General Belgrano 3915", "+5493884999999", 
 				"todomascotas1@gmail.com", LocalDate.of(2022, 05, 13), 4));
@@ -24,7 +30,10 @@ public class listaSucursal {
 		sucursales.add(new sucursal( 3L, "Todo Mascotas - Local Salta 1", "Salta", "Balvin 1030", "+5493884192238", 
 				"todomascotassalta1@gmail.com", LocalDate.of(2023, 02, 05), 6));
 	}
-	/*----creacion de getters y setters----*/
+	/**
+	 * Metodo para agregar una nueva sucursal a la lista
+	 * @return sucursales Agrega la nueva sucursal a la lista
+	 */
 	public List<sucursal> getSucursales() {
 		return sucursales;
 	}
