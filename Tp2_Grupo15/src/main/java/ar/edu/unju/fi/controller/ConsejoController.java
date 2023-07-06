@@ -25,7 +25,7 @@ public class ConsejoController {
 	
 	/*----Inyeccion de dependencia de ListaConsejos----*/
 	@Autowired
-	@Qualifier("consejoServiceImp")
+	@Qualifier("consejoServiceMysql")
 	private IConsejoService consejoService;
 	
 	/*----Creacion de solicitudes HTTP GET y POST----*/

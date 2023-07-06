@@ -46,7 +46,6 @@
 						<h3 th:text="${conse.titulo}"></h3>
 						<h5 th:text="${conse.nombreIMG}"></h5>
 						<p th:text="${conse.descripcion}"></p>
-						<p th:text="${conse.id}"></p>
 						<a class="btn btn-outline-success" th:href="@{/consejos/modificar/}+${conse.id}">Editar</a>
 						<a class="btn btn-outline-danger" th:href="@{/consejos/eliminar/}+${conse.id}">Eliminar</a>
 					</section>
