@@ -5,7 +5,7 @@ import java.util.List;
 import ar.edu.unju.fi.entity.Paseador;
 
 
-public interface IPaseoService {
+public interface IPaseoService { //INTERFAZ DE METODOS ABSTRACTOS IMPLEMENTADOS EN PaseoServiceImp
 
 	List<Paseador> getLista();
 	
