@@ -61,7 +61,7 @@ public class ConsejoServiceMysqlImp implements IConsejoService {
 	 * @param consejo
 	 */
 	@Override
-	public void eliminar(consejosSalud consejoEncontrado) {
+	public void eliminar(consejosSalud consejo) {
 		consejo.setEstado(false);
 		consejoRepository.save(consejo);
 		

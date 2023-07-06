@@ -21,23 +21,11 @@ import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 
-/*----encapsulamiento de datos sucursal----*/
+
 @Component
 @Entity
 @Table(name="sucursales")
-/**
- * Se utiliza para los datos de las sucursales.
- * @author Agustin Castellon
- * @param id agrega un parametro tipo Long para almacenar un codigo id de una sucursal
- * @param nombre recibe un parametro tipo String para el nombre de la sucursal.
- * @param provincia recibe un parametro tipo String para la provincia de la sucursal.
- * @param direccion recibe un parametro tipo String para la direccion de la sucursal.
- * @param telegono recibe un parametro tipo String para el telefono de la sucursal.
- * @param email recibe un parametro tipo String para el mail de la sucursal.
- * @param fechaInicio recibe un parametro tipo LocalDate para la fecha de inicio de la sucursal.
- * @param cantidadEmpleados recibe la cantidad de empleados que trabajan en el local.
- * @param estado parametro logico que guarda el estado de la sucursal: verdadero la resgistra, falso se da baja.
- */
+
 	public class Sucursal {
 		@Id
 		@GeneratedValue(strategy=GenerationType.IDENTITY) 
@@ -87,7 +75,17 @@ import jakarta.validation.constraints.Size;
 		
 	}
 
-	/*----Constructor sobrecargado----*/
+	/**
+	 * Captura los datos para una sucursal
+	 * @param id El identificador de la sucursal
+	 * @param nombre El nombre de la sucursal
+	 * @param provincia La provincia donde estará la sucursal
+	 * @param direccion La Dirección de la sucursal
+	 * @param telefono El telefono de la sucursal
+	 * @param email El correo de la sucursal
+	 * @param fechaInicio  La fecha de inauguracion de la sucursal
+	 * @param cantidadEmpleados  La cantidad de empleados de la sucursal
+	 */
 	public Sucursal(Long id, String nombre, String provincia, String direccion, String telefono, String email,
 		LocalDate fechaInicio, int cantidadEmpleados) {
 	super();
@@ -102,63 +100,128 @@ import jakarta.validation.constraints.Size;
 }
 	/*----creacion de getters y setters----*/
 	
+	/**
+	 * @return id Retorna el identificador de la sucursal
+	 */
 	public Long getId() {
 		return id;
 	}
-
+	
+	/**
+	 * @param id Carga el identificador de la sucursal
+	 */
 	public void setId(Long id) {
 		this.id = id;
 	}
 	
+	/**
+	 * @return nombre Retorna el nombre de la sucursal
+	 */
 	public String getNombre() {
 		return nombre;
 	}
+	
+	/**
+	 * @param nombre Carga el nombre de la sucursal
+	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+	
+	/**
+	 * @return provincia Retorna la provincia de la sucursal
+	 */
 	public String getProvincia() {
 		return provincia;
 	}
+	
+	/**
+	 * @param provincia Carga la provincia de la sucursal
+	 */
 	public void setProvincia(String provincia) {
 		this.provincia = provincia;
 	}
+	
+	/**
+	 * @return direccion Retorna la direccion de la sucursal
+	 */
 	public String getDireccion() {
 		return direccion;
 	}
+	
+	/**
+	 * @param direccion Carga la direccion de la sucursal
+	 */
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
+	
+	/**
+	 * @return telefono Retorna el numero de telefono de la sucursal
+	 */
 	public String getTelefono() {
 		return telefono;
 	}
+	
+	/**
+	 * @param telefono Carga el numero de telefono de la sucursal
+	 */
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
+	
+	/**
+	 * @return email Retorna el correo de la sucursal
+	 */
 	public String getEmail() {
 		return email;
 	}
+	
+	/**
+	 * @param email Carga el correo de la sucursal
+	 */
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	/**
+	 * @return fechaInicio Retorna la fecha de inauguracion de la sucursal
+	 */
 	public LocalDate getFechaInicio() {
 		return fechaInicio;
 	}
+	
+	/**
+	 * @param fechaInicio Carga la fecha de inauguracion de la sucursal
+	 */
 	public void setFechaInicio(LocalDate fechaInicio) {
 		this.fechaInicio = fechaInicio;
 	}
 
+	/**
+	 * @return Retorna la cantidad de empleados de la sucursal
+	 */
 	public int getCantidadEmpleados() {
 		return cantidadEmpleados;
 	}
 
+	/**
+	 * @param cantidadEmpleados Carga la cantidad de empleados de la sucursal
+	 */
 	public void setCantidadEmpleados(int cantidadEmpleados) {
 		this.cantidadEmpleados = cantidadEmpleados;
 	}
 
+	/**
+	 * @return estado Retorna el estado logico de una sucursal para guardarla, modificarla o eliminarla
+	 */
 	public boolean isEstado() {
 		return estado;
 	}
 
+	/**
+	 * @param estado Carga el estado logico de una sucursal para guardarla, modificarla o eliminarla
+	 */
 	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}
