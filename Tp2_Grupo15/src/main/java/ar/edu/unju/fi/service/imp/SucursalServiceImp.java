@@ -5,24 +5,24 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ar.edu.unju.fi.entity.sucursal;
-import ar.edu.unju.fi.listas.listaSucursal;
+import ar.edu.unju.fi.entity.Sucursal;
+import ar.edu.unju.fi.listas.ListaSucursal;
 import ar.edu.unju.fi.service.ISucursalService;
 
 
 @Service("sucursalServiceImp")
-public class sucursalServiceImp implements ISucursalService {
+public class SucursalServiceImp implements ISucursalService {
 	
 	@Autowired
-	private listaSucursal listaSucursales;
+	private ListaSucursal listaSucursales;
 	@Autowired
-	private sucursal sucursal;
+	private Sucursal sucursal;
 	
 	/**
 	 * METODO QUE RETORNA LA LISTA DE SUCURSALES
 	 * */
 	@Override
-	public List<sucursal> getLista() {
+	public List<Sucursal> getLista() {
 		
 		return listaSucursales.getSucursales();
 	}
@@ -31,7 +31,7 @@ public class sucursalServiceImp implements ISucursalService {
 	 * METODO PARA AÑADIR UNA NUEVA SUCURSAL A LA LISTA
 	 * */
 	@Override
-	public void guardar(sucursal sucursal) {
+	public void guardar(Sucursal sucursal) {
 		listaSucursales.getSucursales().add(sucursal);
 	}
  
@@ -42,9 +42,9 @@ public class sucursalServiceImp implements ISucursalService {
 	 * */
 	
 	@Override
-	 public sucursal getBy(Long id) {
-		sucursal sucursalEncontrada = null;
-		for(sucursal sucu : listaSucursales.getSucursales()) {
+	 public Sucursal getBy(Long id) {
+		Sucursal sucursalEncontrada = null;
+		for(Sucursal sucu : listaSucursales.getSucursales()) {
 			if (sucu.getId().equals(id)) {
 				sucursalEncontrada = sucu;
 				break;
@@ -58,9 +58,9 @@ public class sucursalServiceImp implements ISucursalService {
 	 * @param sucursal
 	 * */
 	@Override
-	public void modificar(sucursal sucursal) {
+	public void modificar(Sucursal sucursal) {
 		
-		for(sucursal sucu : listaSucursales.getSucursales()) {
+		for(Sucursal sucu : listaSucursales.getSucursales()) {
 			if (sucu.getId().equals(sucursal.getId())) {
 				sucu.setId(sucursal.getId());
 				sucu.setNombre(sucursal.getNombre());
@@ -79,13 +79,13 @@ public class sucursalServiceImp implements ISucursalService {
 	 * @param sucursal
 	 * */
 	@Override
-	public void eliminar(sucursal sucursal) {
+	public void eliminar(Sucursal sucursal) {
 		listaSucursales.getSucursales().remove(sucursal);
 	}
  
 	/**METODO QUE DEVUELVE LA SUCURSAL */
 	@Override
-	public sucursal getSucursal() {
+	public Sucursal getSucursal() {
 		
 		return sucursal;
 	}

@@ -21,7 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 /*----Captura de peticiones para la pagina de consejoSalud----*/
 @RequestMapping("/consejos")	
 
-public class ConsejosController {
+public class ConsejoController {
 	
 	/*----Inyeccion de dependencia de ListaConsejos----*/
 	@Autowired

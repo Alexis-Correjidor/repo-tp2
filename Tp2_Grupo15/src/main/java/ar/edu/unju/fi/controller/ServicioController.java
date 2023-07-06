@@ -21,7 +21,7 @@ import jakarta.validation.Valid;
 /*----Captura de peticiones para la pagina de serviciosPaseo----*/
 
 @RequestMapping("/servicios")	
-public class ServiciosController {
+public class ServicioController {
 	
 	/*----Inyección de dependencia de ListaPaseadores-----*/
 	@Autowired

@@ -38,7 +38,7 @@ import jakarta.validation.constraints.Size;
  * @param cantidadEmpleados recibe la cantidad de empleados que trabajan en el local.
  * @param estado parametro logico que guarda el estado de la sucursal: verdadero la resgistra, falso se da baja.
  */
-	public class sucursal {
+	public class Sucursal {
 		@Id
 		@GeneratedValue(strategy=GenerationType.IDENTITY) 
 		@Column(name="sucu_id" )
@@ -83,12 +83,12 @@ import jakarta.validation.constraints.Size;
 		@Column(name="sucu_estado")
 		private boolean estado;
 		
-	public sucursal() {
+	public Sucursal() {
 		
 	}
 
 	/*----Constructor sobrecargado----*/
-	public sucursal(Long id, String nombre, String provincia, String direccion, String telefono, String email,
+	public Sucursal(Long id, String nombre, String provincia, String direccion, String telefono, String email,
 		LocalDate fechaInicio, int cantidadEmpleados) {
 	super();
 	this.id = id;
