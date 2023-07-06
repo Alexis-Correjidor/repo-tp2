@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import ar.edu.unju.fi.entity.sucursal;
+import ar.edu.unju.fi.entity.Sucursal;
 import ar.edu.unju.fi.service.ISucursalService;
 import jakarta.validation.Valid;
 
@@ -47,7 +47,7 @@ public class SucursalController {
 	 * PARA ENVIAR VALORES VALIDOS PARA LOS ATRIBUTOS. SINO A LA LISTA SE AÑADIRA UN NUEVO
 	 * OBJETO CON LOS VALORES CORRECTOS Y MOSTRARA LA PAGINA sucursales.----*/
 	@PostMapping("/guardar")
-	public ModelAndView getGuardarSucursalPage(@Valid @ModelAttribute("sucursal")sucursal sucursal, BindingResult result) {
+	public ModelAndView getGuardarSucursalPage(@Valid @ModelAttribute("sucursal")Sucursal sucursal, BindingResult result) {
 		ModelAndView modelView = new ModelAndView("sucursales");
 		if(result.hasErrors()) {
 			modelView.setViewName("nueva_sucursal");
@@ -69,7 +69,7 @@ public class SucursalController {
 	}
 	/*----ASIGNA LOS NUEVOS VALORES A LOS ATRIBUTOS DEL OBJETO. EL NOMBRE DEBE SER EL MISMO----*/
 	@PostMapping("/modificar")
-	public String modificarSucursal(@Valid @ModelAttribute("sucursal")sucursal sucursal, BindingResult result) {
+	public String modificarSucursal(@Valid @ModelAttribute("sucursal")Sucursal sucursal, BindingResult result) {
 		if(result.hasErrors()) {
 			
 			return "nueva_sucursal";
@@ -82,7 +82,7 @@ public class SucursalController {
 	 * 	CON EL CUAL ENCONTRO LA COINCIDENCIA EN EL ATRIBUTO NOMBRE PARA PODER ELIMINAR EL OBJETO DE LA LISTA----*/
 	@GetMapping("/eliminar/{id}")
 	public String eliminarSucursal(@PathVariable(value="id") Long id) {
-		sucursal sucursalEncontrada = sucursalService.getBy(id);
+		Sucursal sucursalEncontrada = sucursalService.getBy(id);
 		sucursalService.eliminar(sucursalEncontrada);
 		return "redirect:/sucursal/listado";
 	}

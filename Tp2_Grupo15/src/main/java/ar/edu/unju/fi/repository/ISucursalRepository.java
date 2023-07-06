@@ -5,15 +5,15 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import ar.edu.unju.fi.entity.sucursal;
+import ar.edu.unju.fi.entity.Sucursal;
 @Repository
-public interface ISucursalRepository extends CrudRepository<sucursal,Long> {
+public interface ISucursalRepository extends CrudRepository<Sucursal,Long> {
 
 	/**
 	 * METODO QUE LISTA LOS REGISTROS QUE TENGAN EL VALOR 'TRUE'
 	 * @param estado
 	 * @return
 	 */
-	public List<sucursal> findByEstado(boolean estado);
+	public List<Sucursal> findByEstado(boolean estado);
 	
 }

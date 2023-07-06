@@ -2,22 +2,22 @@ package ar.edu.unju.fi.service;
 
 import java.util.List;
 
-import ar.edu.unju.fi.entity.sucursal;
+import ar.edu.unju.fi.entity.Sucursal;
 
 
 public interface ISucursalService {
 
 	/** METODOS */
 	
-	List<sucursal> getLista();
+	List<Sucursal> getLista();
 	  
-	void guardar (sucursal sucursal);
+	void guardar (Sucursal sucursal);
 	
-	sucursal getBy(Long id);
+	Sucursal getBy(Long id);
 	
-	void modificar(sucursal sucursal);
+	void modificar(Sucursal sucursal);
 	
-	void eliminar(sucursal sucursalEncontrada);
+	void eliminar(Sucursal sucursalEncontrada);
 	
-	sucursal getSucursal();
+	Sucursal getSucursal();
 }
