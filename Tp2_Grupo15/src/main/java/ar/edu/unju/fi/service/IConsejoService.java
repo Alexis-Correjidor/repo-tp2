@@ -2,7 +2,7 @@ package ar.edu.unju.fi.service;
 
 import java.util.List;
 
-import ar.edu.unju.fi.entity.consejosSalud;
+import ar.edu.unju.fi.entity.ConsejoSalud;
 
 
 
@@ -10,16 +10,16 @@ public interface IConsejoService {
 
 	/** METODOS */
 	
-	List<consejosSalud> getLista();
+	List<ConsejoSalud> getLista();
 	  
-	void guardar (consejosSalud consejo);
+	void guardar (ConsejoSalud consejo);
 	
-	consejosSalud getBy(Long id);
+	ConsejoSalud getBy(Long id);
 	
-	void modificar(consejosSalud consejo);
+	void modificar(ConsejoSalud consejo);
 	
-	void eliminar(consejosSalud consejoEncontrado);
+	void eliminar(ConsejoSalud consejoEncontrado);
 	
-	consejosSalud getConsejo();
+	ConsejoSalud getConsejo();
 }
  

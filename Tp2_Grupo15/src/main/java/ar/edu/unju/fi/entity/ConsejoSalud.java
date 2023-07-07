@@ -16,7 +16,7 @@ import jakarta.validation.constraints.Size;
 @Entity
 @Table(name="consejos")
 
-	public class consejosSalud {
+	public class ConsejoSalud {
 		
 		@Id
 		@GeneratedValue(strategy=GenerationType.IDENTITY) 
@@ -40,7 +40,7 @@ import jakarta.validation.constraints.Size;
 		@Column(name="conse_estado")
 		private boolean estado;
 		
-	public consejosSalud () {
+	public ConsejoSalud () {
 		
 	}
 	/**
@@ -50,7 +50,7 @@ import jakarta.validation.constraints.Size;
 	 * @param descripcion La descripcion que del articulo
 	 * @param nombreIMG  La imagen que lleva el articulo
 	 */
-	public consejosSalud(Long id, String titulo, String descripcion, String nombreIMG) {
+	public ConsejoSalud(Long id, String titulo, String descripcion, String nombreIMG) {
 		super();
 		this.id = id;
 		this.titulo = titulo;
