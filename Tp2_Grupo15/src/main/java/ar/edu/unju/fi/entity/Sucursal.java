@@ -98,7 +98,7 @@ import jakarta.validation.constraints.Size;
 	this.fechaInicio = fechaInicio;
 	this.cantidadEmpleados = cantidadEmpleados;
 }
-	/*----creacion de getters y setters----*/
+	
 	
 	/**
 	 * @return id Retorna el identificador de la sucursal

@@ -8,7 +8,7 @@ import ar.edu.unju.fi.entity.ConsejoSalud;
 
 public interface IConsejoService {
 
-	/** METODOS */
+	
 	
 	List<ConsejoSalud> getLista();
 	  

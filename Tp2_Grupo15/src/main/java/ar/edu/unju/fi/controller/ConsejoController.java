@@ -18,25 +18,23 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 
-/*----Captura de peticiones para la pagina de consejoSalud----*/
+
 @RequestMapping("/consejos")	
 
 public class ConsejoController {
 	
-	/*----Inyeccion de dependencia de ListaConsejos----*/
+	
 	@Autowired
 	@Qualifier("consejoServiceMysql")
 	private IConsejoService consejoService;
 	
-	/*----Creacion de solicitudes HTTP GET y POST----*/
 	
-	/*----RECIBE LA PETECION ENVIADA POR URL PARA MOSTRAR LA PAGINA consejoSalud CON LOS OBJETOS DE LA LISTA----*/
 	@GetMapping("/listado")
 	public String getListaConsejosPage(Model model) {
 		model.addAttribute("consejos", consejoService.getLista());
 		return "consejoSalud";
 }
-	/*----CAPTURA LA PETECION ENVIADA POR URL, MUESTRA LA PAGINA nuevo_consejo_salud CON UN OBJETO PARA ASIGNARLE VALORES A LOS ATRIBUTOS.----*/
+	
 	@GetMapping("/nuevo")
 	public String getNuevoConsejoPage(Model model) {
 		model.addAttribute("consejosSalud", consejoService.getConsejo());
@@ -44,9 +42,7 @@ public class ConsejoController {
 		model.addAttribute("edicion", edicion);
 		return "nuevo_consejo_salud";
 	}
-	/*----EVALUA SI EL OBJETO RESULT TIENE ERRORES, VOLVERA A MOSTRAR LA PAGINA nuevo_consejo_salud
-	 * PARA ENVIAR VALORES VALIDOS PARA LOS ATRIBUTOS. SINO A LA LISTA SE AÑADIRA UN NUEVO
-	 * OBJETO CON LOS VALORES CORRECTOS Y MOSTRARA LA PAGINA consejoSalud.----*/
+	
 	@PostMapping("/guardar")
 	public ModelAndView getGuardarNuevoConsejoPage(@Valid @ModelAttribute("consejosSalud")ConsejoSalud consejosSalud, BindingResult result) {
 		ModelAndView modelView = new ModelAndView("consejoSalud");
@@ -59,8 +55,7 @@ public class ConsejoController {
 		modelView.addObject("consejos", consejoService.getLista());
 		return modelView;
 }
-	/*----CAPTURA LA VARIABLE ENVIADA POR URL Y MUESTRA LA PAGINA nuevo_consejo_salud CON EL OBJETO DE LA LISTA
-	 *CON EL CUAL ENCONTRO LA COINCIDENCIA EN EL ATRIBUTO ID----*/
+	
 	@GetMapping("/modificar/{id}") 
 	public String getModificarConsejoPage(Model model, @PathVariable(value="id")Long id){
 		boolean edicion = true;
@@ -68,7 +63,7 @@ public class ConsejoController {
 		model.addAttribute("edicion", edicion);
 		return "nuevo_consejo_salud";
 }
-	/*----ASIGNA LOS NUEVOS VALORES A LOS ATRIBUTOS DEL OBJETO. EL TITULO DEBE SER EL MISMO----*/
+	
 	@PostMapping("/modificar")
 	public String modificarConsejos(@Valid @ModelAttribute("consejosSalud")ConsejoSalud consejosSalud, BindingResult result) {
 		if(result.hasErrors()) {
@@ -79,8 +74,7 @@ public class ConsejoController {
 		consejoService.modificar(consejosSalud);
 		return "redirect:/consejos/listado";
 }
-	/*----CAPTURA LA VARIABLE ENVIADA POR URL Y MUESTRA LA PAGINA consejos/listado CON EL OBJETO DE LA LISTA
-	 * 	CON EL CUAL ENCONTRO LA COINCIDENCIA EN EL ATRIBUTO ID PARA PODER ELIMINAR EL OBJETO DE LA LISTA----*/
+	
 	@GetMapping("/eliminar/{id}")
 	public String eliminarConsejos(@PathVariable(value="id") Long id) {
 		ConsejoSalud consejoEncontrado = consejoService.getBy(id);
