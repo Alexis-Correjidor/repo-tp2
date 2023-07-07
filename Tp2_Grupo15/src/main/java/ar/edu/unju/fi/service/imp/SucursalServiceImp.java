@@ -83,7 +83,8 @@ public class SucursalServiceImp implements ISucursalService {
 		listaSucursales.getSucursales().remove(sucursal);
 	}
  
-	/**METODO QUE DEVUELVE LA SUCURSAL */
+	/**
+	 * METODO QUE DEVUELVE LA SUCURSAL */
 	@Override
 	public Sucursal getSucursal() {
 		
