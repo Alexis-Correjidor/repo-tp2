@@ -68,7 +68,17 @@ public class Producto {
 	}
 	
 	/** CONSTRUCTOR SOBRECARCADO*/
-	
+	/**
+	 * Captura los datos para un articulo
+	 * @param id El identificador del producto
+	 * @param nombre El nombre del producto
+	 * @param codigo El codigo del producto
+	 * @param nombreImagen  La imagen que lleva el articulo
+	 * @param precio Precio del producto
+	 * @param categoria La categoria del producto
+	 * @param descuento Descuento del producto
+	 * @param estado Estado del producto
+	 */
 	public Producto(Long id,String nombre,String nombreImagen, Integer codigo, Double precio, String categoria, Integer descuento, boolean estado) {
 		super();
 		this.id = id;
@@ -81,10 +91,7 @@ public class Producto {
 		this.estado = estado;
 	}
 
-
-
 	/** 
-	 * METODO PARA OBTENER PRECIO CON DESCUENTO
 	 * @return DEVULVE EL PRECIO CON EL DESCUENTO APLICADO
 	*/
 	
@@ -99,9 +106,6 @@ public class Producto {
 	
 	/** GETTERS Y SETTERS*/
 	
-	
-	
-	
 	public Long getId() {
 		return id;
 	}
@@ -110,84 +114,106 @@ public class Producto {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+	/**
+	 * @return nombreImagen Retorna nombre de la imagen del producto
+	 */
 	public String getNombreImagen() {
 		return nombreImagen;
 	}
 
+	/**
+	 * @param nombreImagen Carga el nombre de la imagen del producto
+	 */
 	public void setNombreImagen(String nombreImagen) {
 		this.nombreImagen = nombreImagen;
 	}
 
 	
-	
-
+	/**
+	 * @return nombre Retorna nombre del producto
+	 */
 	public String getNombre() {
 		return nombre;
 	}
 
-
-
+	/**
+	 * @return nombre Carga nombre del producto
+	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-
-
+	/**
+	 * @return codigo Retorna codigo del producto
+	 */
 	public Integer getCodigo() {
 		return codigo;
 	}
 
-
-
+	/**
+	 * @return codigo Carga codigo del producto
+	 */
 	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 
-
-
+	/**
+	 * @return precio Retorna precio del producto
+	 */
 	public Double getPrecio() {
 		return precio;
 	}
 
-
-
+	/**
+	 * @return precio Carga precio del producto
+	 */
 	public void setPrecio(Double precio) {
 		this.precio = precio;
 	}
 
 
-
+	/**
+	 * @return categoria Retorna precio del producto
+	 */
 	public String getCategoria() {
 		return categoria;
 	}
 
 
-
+	/**
+	 * @return categoria Carga categoria del producto
+	 */
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
 
-
-
+	
+	/**
+	 * @return descuento Retorna descuento del producto
+	 */
 	public Integer getDescuento() {
 		return descuento;
 	}
 
 
-
+	/**
+	 * @return descuento Carga descuento del producto
+	 */
 	public void setDescuento(Integer descuento) {
 		this.descuento = descuento;
 	}
-	
+	/**
+	 * @return estado Retorna estado del producto
+	 */
 	public boolean isEstado() {
 		return estado;
 	}
-
+	/**
+	 * @return estado Carga estado del producto
+	 */
 	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}
-
 }
 
 

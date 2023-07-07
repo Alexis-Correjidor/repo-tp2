@@ -9,6 +9,11 @@ import ar.edu.unju.fi.entity.Producto;
 @Repository
 public interface IProductoRepository extends CrudRepository<Producto, Long>{
 	
+	/**
+	 * METODO QUE LISTA LOS REGISTROS QUE TENGAN EL VALOR 'TRUE'
+	 * @param estado
+	 * @return
+	 */
 	public List<Producto> findByEstado(boolean estado);
 	
 }
