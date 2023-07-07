@@ -24,11 +24,15 @@ public class ListaSucursal {
 		sucursales.add(new Sucursal( 3L, "Todo Mascotas - Local Salta 1", "Salta", "Balvin 1030", "+5493884192238", 
 				"todomascotassalta1@gmail.com", LocalDate.of(2023, 02, 05), 6));
 	}
-	/*----creacion de getters y setters----*/
+	/**
+	 * @return sucursales Retorna la lista de sucursales
+	 */
 	public List<Sucursal> getSucursales() {
 		return sucursales;
 	}
-
+	/**
+	 * @param sucursales Carga la lista de sucursales
+	 */
 	public void setSucursales(List<Sucursal> sucursales) {
 		this.sucursales = sucursales;
 	}

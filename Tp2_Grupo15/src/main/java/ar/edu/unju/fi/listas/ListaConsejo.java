@@ -7,13 +7,13 @@ import org.springframework.stereotype.Component;
 
 import ar.edu.unju.fi.entity.ConsejoSalud;
 
-/*----registro de bean y creacion de ListaConsejos----*/
+
 @Component
 public class ListaConsejo {
 	
 	private List<ConsejoSalud> consejos; 
 	
-	/*----Creacion de lista para los atributos de consejos----*/
+	
 	public ListaConsejo() {
 		consejos = new ArrayList<ConsejoSalud>();
 		consejos.add(new ConsejoSalud(1L, "Consejos para pasear durante climas cálidos", "Si vives en un lugar en donde ya comienza a subir la temperatura, \r\n"
@@ -33,11 +33,15 @@ public class ListaConsejo {
 				+ "						de que son más propensos al sobrepeso y la obesidad, por lo que es necesario moderar sus hábitos alimenticios. Descanso: mejora su lugar de descanso, ya que a esta edad su cuerpo es más sensible, asegúrate de que este sea cómodo, en un lugar tranquilo y privado. ", "Imagen: un Gato mirando a camara"));
 		
 	}
-	/*----creacion de getters y setters----*/
+	/**
+	 * @return consejos Retorna la lista de articulos para consejos de salud
+	 */
 	public List<ConsejoSalud> getConsejos() {
 		return consejos;
 	}
-
+	/**
+	 * @param consejos Carga la lista de articulos para consejos de salud
+	 */
 	public void setConsejos(List<ConsejoSalud> consejos) {
 		this.consejos = consejos;
 	}

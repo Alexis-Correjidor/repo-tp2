@@ -58,7 +58,7 @@ import jakarta.validation.constraints.Size;
 		this.nombreIMG = nombreIMG;
 	}
 	
-	/*----creacion de getters y setters----*/
+	
 	
 	/**
 	 * @return nombreIMG Retorna nombre de la imagen del articulo

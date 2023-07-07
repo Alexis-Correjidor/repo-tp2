@@ -7,7 +7,7 @@ import ar.edu.unju.fi.entity.Sucursal;
 
 public interface ISucursalService {
 
-	/** METODOS */
+	
 	
 	List<Sucursal> getLista();
 	  

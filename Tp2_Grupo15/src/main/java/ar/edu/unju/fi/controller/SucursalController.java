@@ -18,24 +18,22 @@ import jakarta.validation.Valid;
 
 @Controller
 
-/*----Captura de peticiones para la pagina de sucursales----*/
+
 @RequestMapping("/sucursal")
 public class SucursalController {
 	
-	/*----Inyeccion de dependencia de ListaSucursal-----*/
+	
 	@Autowired
 	@Qualifier("sucursalServiceMysql")
 	private ISucursalService sucursalService;
 	
-	/*----Creacion de solicitudes HTTP GET y POST----*/
 	
-	/*----RECIBE LA PETECION ENVIADA POR URL PARA MOSTRAR LA PAGINA sucursales CON LOS OBJETOS DE LA LISTA----*/
 	@GetMapping("/listado")
 	public String getListaSucursalesPage(Model model) {
 		model.addAttribute("sucursales", sucursalService.getLista());
 		return "sucursales";
 	}
-	/*----CAPTURA LA PETECION ENVIADA POR URL, MUESTRA LA PAGINA nueva_sucursal CON UN OBJETO PARA ASIGNARLE VALORES A LOS ATRIBUTOS.----*/
+	
 	@GetMapping("/nuevo")
 	public String getNuevaSucursalPage(Model model) {
 		model.addAttribute("sucursal", sucursalService.getSucursal());
@@ -43,9 +41,7 @@ public class SucursalController {
 		model.addAttribute("edicion", edicion);
 		return "nueva_sucursal";
 	}
-	/*----EVALUA SI EL OBJETO RESULT TIENE ERRORES, VOLVERA A MOSTRAR LA PAGINA nueva_sucursal
-	 * PARA ENVIAR VALORES VALIDOS PARA LOS ATRIBUTOS. SINO A LA LISTA SE AÑADIRA UN NUEVO
-	 * OBJETO CON LOS VALORES CORRECTOS Y MOSTRARA LA PAGINA sucursales.----*/
+	
 	@PostMapping("/guardar")
 	public ModelAndView getGuardarSucursalPage(@Valid @ModelAttribute("sucursal")Sucursal sucursal, BindingResult result) {
 		ModelAndView modelView = new ModelAndView("sucursales");
@@ -58,8 +54,7 @@ public class SucursalController {
 		modelView.addObject("sucursales", sucursalService.getLista());
 		return modelView;
 	} 
-	/*----CAPTURA LA VARIABLE ENVIADA POR URL Y MUESTRA LA PAGINA nueva_sucursal CON EL OBJETO DE LA LISTA
-	 *CON EL CUAL ENCONTRO LA COINCIDENCIA EN EL ATRIBUTO NOMBRE----*/
+	
 	@GetMapping("/modificar/{id}") 
 	public String getModificarSucursalPage(Model model, @PathVariable(value="id") Long id){
 		boolean edicion = true;
@@ -67,7 +62,7 @@ public class SucursalController {
 		model.addAttribute("edicion", edicion);
 		return "nueva_sucursal";
 	}
-	/*----ASIGNA LOS NUEVOS VALORES A LOS ATRIBUTOS DEL OBJETO. EL NOMBRE DEBE SER EL MISMO----*/
+	
 	@PostMapping("/modificar")
 	public String modificarSucursal(@Valid @ModelAttribute("sucursal")Sucursal sucursal, BindingResult result) {
 		if(result.hasErrors()) {
@@ -78,8 +73,7 @@ public class SucursalController {
 		sucursalService.modificar(sucursal);
 		return "redirect:/sucursal/listado";
 	}
-	/*----CAPTURA LA VARIABLE ENVIADA POR URL Y MUESTRA LA PAGINA sucursal/listado CON EL OBJETO DE LA LISTA
-	 * 	CON EL CUAL ENCONTRO LA COINCIDENCIA EN EL ATRIBUTO NOMBRE PARA PODER ELIMINAR EL OBJETO DE LA LISTA----*/
+	
 	@GetMapping("/eliminar/{id}")
 	public String eliminarSucursal(@PathVariable(value="id") Long id) {
 		Sucursal sucursalEncontrada = sucursalService.getBy(id);
