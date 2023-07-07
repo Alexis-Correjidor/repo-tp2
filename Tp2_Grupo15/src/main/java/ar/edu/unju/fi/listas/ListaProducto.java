@@ -7,7 +7,8 @@ import org.springframework.stereotype.Component;
 
 import ar.edu.unju.fi.entity.Producto;
 
-@Component //Se guarda en spring container
+/*----registro de bean y creacion de ListaConsejos----*/
+@Component
 public class ListaProducto {
 	private List<Producto> productos;
 	
@@ -21,15 +22,17 @@ public class ListaProducto {
 		productos.add(new Producto(9L,"Cañita alambre resistente largo","Juguete Gato", 6, 898.99d, "Juguete", 10,true));
 	}
 
+	/**
+	 * @return productos Retorna la lista de productos 
+	 */
 	public List<Producto> getProductos() {
 		return productos;
 	}
-
+	/**
+	 * @param List<Productos> productos Carga la lista de productos
+	 */
 	public void setProductos(List<Producto> productos) {
 		this.productos = productos;
 	}
-
-
-
 
 }
