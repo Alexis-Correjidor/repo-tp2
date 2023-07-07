@@ -1,5 +1,5 @@
 package ar.edu.unju.fi.controller;
-import ar.edu.unju.fi.entity.consejosSalud;
+import ar.edu.unju.fi.entity.ConsejoSalud;
 import ar.edu.unju.fi.service.IConsejoService;
 import jakarta.validation.Valid;
 
@@ -48,7 +48,7 @@ public class ConsejoController {
 	 * PARA ENVIAR VALORES VALIDOS PARA LOS ATRIBUTOS. SINO A LA LISTA SE AÑADIRA UN NUEVO
 	 * OBJETO CON LOS VALORES CORRECTOS Y MOSTRARA LA PAGINA consejoSalud.----*/
 	@PostMapping("/guardar")
-	public ModelAndView getGuardarNuevoConsejoPage(@Valid @ModelAttribute("consejosSalud")consejosSalud consejosSalud, BindingResult result) {
+	public ModelAndView getGuardarNuevoConsejoPage(@Valid @ModelAttribute("consejosSalud")ConsejoSalud consejosSalud, BindingResult result) {
 		ModelAndView modelView = new ModelAndView("consejoSalud");
 		if(result.hasErrors()) {
 			modelView.setViewName("nuevo_consejo_salud");
@@ -70,7 +70,7 @@ public class ConsejoController {
 }
 	/*----ASIGNA LOS NUEVOS VALORES A LOS ATRIBUTOS DEL OBJETO. EL TITULO DEBE SER EL MISMO----*/
 	@PostMapping("/modificar")
-	public String modificarConsejos(@Valid @ModelAttribute("consejosSalud")consejosSalud consejosSalud, BindingResult result) {
+	public String modificarConsejos(@Valid @ModelAttribute("consejosSalud")ConsejoSalud consejosSalud, BindingResult result) {
 		if(result.hasErrors()) {
 			
 			return "nuevo_consejo_salud";
@@ -83,7 +83,7 @@ public class ConsejoController {
 	 * 	CON EL CUAL ENCONTRO LA COINCIDENCIA EN EL ATRIBUTO ID PARA PODER ELIMINAR EL OBJETO DE LA LISTA----*/
 	@GetMapping("/eliminar/{id}")
 	public String eliminarConsejos(@PathVariable(value="id") Long id) {
-		consejosSalud consejoEncontrado = consejoService.getBy(id);
+		ConsejoSalud consejoEncontrado = consejoService.getBy(id);
 		consejoService.eliminar(consejoEncontrado);
 		return "redirect:/consejos/listado";
 	}
