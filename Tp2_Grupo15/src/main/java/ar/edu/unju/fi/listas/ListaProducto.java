@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 import ar.edu.unju.fi.entity.Producto;
 
-/*----registro de bean y creacion de ListaConsejos----*/
+/*----registro de bean y creacion de Lista Productos----*/
 @Component
 public class ListaProducto {
 	private List<Producto> productos;
